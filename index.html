@@ -1,6 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=/main/">
+  <meta charset="UTF-8">
+  <title>Choose Your Language</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      background: #121016;
+      color: #EDEAF0;
+    }
+    h1 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      text-align: center;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .lang-options {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .lang-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border: 1px solid rgba(187,101,136,0.3);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #EDEAF0;
+      transition: 0.2s;
+    }
+    .lang-card:hover {
+      background: rgba(187,101,136,0.15);
+      border-color: #BB6588;
+    }
+    .flag {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
+<body>
+  <h1>
+    Choose your language<br>
+    Pilih bahasa Anda<br>
+    言語を選択してください
+  </h1>
+  <div class="lang-options">
+    <a class="lang-card" href="/id/main/">
+      <span class="flag">🇮🇩</span>
+      Indonesia
+    </a>
+    <a class="lang-card" href="/en/main/">
+      <span class="flag">🇬🇧</span>
+      English
+    </a>
+    <a class="lang-card" href="/jp/main/">
+      <span class="flag">🇯🇵</span>
+      日本語
+    </a>
+  </div>
+</body>
 </html>
