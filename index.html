@@ -52,6 +52,32 @@
       margin-bottom: 0.75rem;
     }
   </style>
+  <script>
+    (function () {
+      // Jika URL mengandung ?pilih, tampilkan kartu tanpa redirect
+      if (window.location.search.indexOf('pilih') !== -1) return;
+
+      var lang = null;
+
+      // Cek localStorage untuk pilihan tersimpan
+      try {
+        lang = localStorage.getItem('site-lang');
+      } catch (e) {}
+
+      // Jika belum ada, deteksi dari bahasa browser
+      if (!lang) {
+        var langs = navigator.languages || [navigator.language || ''];
+        for (var i = 0; i < langs.length; i++) {
+          var code = langs[i].toLowerCase().split('-')[0];
+          if (code === 'id') { lang = 'id'; break; }
+          if (code === 'ja') { lang = 'ja'; break; }
+        }
+        if (!lang) lang = 'en';
+      }
+
+      window.location.replace('/' + lang + '/main/');
+    })();
+  </script>
 </head>
 <body>
   <h1>
@@ -60,15 +86,15 @@
     言語を選択してください
   </h1>
   <div class="lang-options">
-    <a class="lang-card" href="/id/main/">
+    <a class="lang-card" href="/id/main/" onclick="try{localStorage.setItem('site-lang','id')}catch(e){}">
       <img class="flag" src="https://flagcdn.com/w80/id.png" alt="Indonesia">
       Indonesia
     </a>
-    <a class="lang-card" href="/en/main/">
+    <a class="lang-card" href="/en/main/" onclick="try{localStorage.setItem('site-lang','en')}catch(e){}">
       <img class="flag" src="https://flagcdn.com/w80/gb.png" alt="UK">
       English
     </a>
-    <a class="lang-card" href="/ja/main/">
+    <a class="lang-card" href="/ja/main/" onclick="try{localStorage.setItem('site-lang','ja')}catch(e){}">
       <img class="flag" src="https://flagcdn.com/w80/jp.png" alt="Japan">
       日本語
     </a>
