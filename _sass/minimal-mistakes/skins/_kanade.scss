@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Kanade skin
+   Palette source: index.html (language-select page)
+   Background #121016 · Text #EDEAF0 · Accent #BB6588
+   ========================================================================== */
+
+/* Colors */
+$background-color: #121016 !default;
+$text-color: #EDEAF0 !default;
+$primary-color: #BB6588 !default;
+$border-color: mix(#fff, $background-color, 15%) !default;
+$code-background-color: mix(#000, $background-color, 15%) !default;
+$code-background-color-dark: mix(#000, $background-color, 20%) !default;
+$form-background-color: mix(#000, $background-color, 15%) !default;
+$footer-background-color: mix($primary-color, #000, 8%) !default;
+$link-color: mix(#fff, $primary-color, 20%) !default;
+$link-color-hover: mix(#fff, $link-color, 25%) !default;
+$link-color-visited: mix(#000, $link-color, 15%) !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
+$navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
+
+/* notices */
+$notice-background-mix: 90% !default;
+$code-notice-background-mix: 95% !default;
+
+/* syntax highlighting (base16 — coordinated with Kanade palette) */
+$base00: #1a1520 !default;
+$base01: #221c2a !default;
+$base02: #2d2636 !default;
+$base03: #544b60 !default;
+$base04: #a99ab4 !default;
+$base05: #EDEAF0 !default;
+$base06: #f5f2f7 !default;
+$base07: #fdfcfe !default;
+$base08: #e06080 !default;
+$base09: #d98c6a !default;
+$base0a: #d4b86a !default;
+$base0b: #8cbf7a !default;
+$base0c: #6cc4b0 !default;
+$base0d: #7aa8d4 !default;
+$base0e: #b07cc8 !default;
+$base0f: #c47a6a !default;
+
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
+
+/* next/previous buttons */
+.pagination--pager {
+  color: $text-color;
+  background-color: $primary-color;
+  border-color: transparent;
+
+  &:visited {
+    color: $text-color;
+  }
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}
+
+::selection {
+  background: $primary-color !important;
+  color: $background-color !important;
+}

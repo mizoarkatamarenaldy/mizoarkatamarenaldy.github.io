@@ -90,9 +90,27 @@ Aturan mapping:
 - [ ] Halaman Main Portfolio (Psikologi, HR, Bahasa Jepang)
 - [ ] Halaman Additional Portfolio (9 halaman)
 - [ ] Easter egg Kanade (3 bahasa)
-- [ ] Desain visual dan warna theme (unsur Kanade)
+- [x] Desain visual dan warna theme (unsur Kanade)
 
 ## Aturan untuk agent
 - Kerjakan satu tugas per sesi.
 - Jangan ubah file di luar tugas.
 - Di akhir, kabari file apa saja yang diubah.
+
+## Skin Kanade
+- Nama skin: `kanade`
+- File skin: `_sass/minimal-mistakes/skins/_kanade.scss`
+- Sumber palet warna: `index.html` (halaman pilih bahasa)
+  - Background: `#121016` (ungu-hitam gelap)
+  - Teks: `#EDEAF0` (lavender terang)
+  - Aksen/primary: `#BB6588` (pink Kanade)
+- Diaktifkan via `_config.yml` → `minimal_mistakes_skin: "kanade"`
+
+### Gotcha saat pembuatan skin
+- Tidak ada warna hardcode di `_includes/`, `_layouts/`, atau `_pages/`.
+  Semua modul SCSS Minimal Mistakes sudah pakai variabel, jadi cukup
+  override variabel di file skin saja.
+- File `_includes/head/custom.html` kosong (tidak ada CSS tambahan).
+- Jika nanti menambah CSS custom (misal untuk elemen buka-tutup `<details>`
+  atau easter egg), gunakan variabel `$background-color`, `$text-color`,
+  dan `$primary-color` yang sudah didefinisikan skin, jangan hardcode.
