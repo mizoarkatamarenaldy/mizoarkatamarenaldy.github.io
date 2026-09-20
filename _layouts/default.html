@@ -12,7 +12,7 @@
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html locale=locale %}
-    {% include_cached masthead.html locale=locale %}
+    {% include masthead.html locale=locale %}
 
     <div class="initial-content">
       {{ content }}
