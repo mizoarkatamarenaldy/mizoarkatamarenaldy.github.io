@@ -19,7 +19,7 @@
                 href="{{ link.url | relative_url }}"
                 {% if link.description %} title="{{ link.description }}"{% endif %}
                 {% if link.target %} target="{{ link.target }}"{% endif %}
-              >{% if link.url == "/?pilih" %}{% case page.lang %}{% when "id" %}Ganti bahasa{% when "ja" %}言語を変更{% else %}Change language{% endcase %}{% else %}{{ link.title }}{% endif %}</a>
+              >{% if link.url == "/?pilih" %}{% if page.lang == "id" %}Ganti bahasa{% elsif page.lang == "ja" %}言語を変更{% else %}Change language{% endif %}{% else %}{{ link.title }}{% endif %}</a>
             </li>
           {%- endfor -%}
         </ul>
