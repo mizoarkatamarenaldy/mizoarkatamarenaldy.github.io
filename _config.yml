@@ -20,8 +20,8 @@ direction                : # "ltr" (default), "rtl" # set the direction of the p
 title                    : "Main Page"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Mizo Arkatama Renaldy"
+description              : "Portfolio of Mizo Arkatama Renaldy, an Islamic Psychology student and creator of the 3E framework. Building skills in psychology, HR, and Japanese, aiming for clinical psychology graduate study in Japan. Self-declared husband of Yoisaki Kanade."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -114,7 +114,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Mizo Arkatama Renaldy"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
   location         : "Somewhere"
