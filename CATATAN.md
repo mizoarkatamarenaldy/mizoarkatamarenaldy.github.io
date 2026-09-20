@@ -96,6 +96,11 @@ Aturan mapping:
 - Kerjakan satu tugas per sesi.
 - Jangan ubah file di luar tugas.
 - Di akhir, kabari file apa saja yang diubah.
+- Aturan tema:
+  - Layout halaman bebas dan boleh berbeda-beda. Yang wajib sama di semua halaman hanya palet warnanya (palet Kanade).
+  - Palet disimpan di satu tempat sebagai variabel CSS (`:root { --kanade-... }`) di `assets/css/kanade-palette.css`. File skin dan semua halaman mengambil warna dari sini, jadi ubah di satu tempat berlaku ke semua.
+  - Setiap halaman atau layout baru, termasuk yang tanpa layout Minimal Mistakes, wajib memuat `kanade-palette.css`.
+  - Dilarang warna hardcode (`#fff`, `white`, `black`, kode hex) di halaman, include, atau CSS baru. Pakai variabel palet. Butuh warna baru? Tambah dulu ke `kanade-palette.css`.
 
 ## Skin Kanade
 - Nama skin: `kanade`
