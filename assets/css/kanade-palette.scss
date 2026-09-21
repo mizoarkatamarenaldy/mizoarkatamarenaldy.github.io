@@ -1,0 +1,16 @@
+---
+# Dikompilasi Jekyll → assets/css/kanade-palette.css
+# Satu-satunya sumber warna: _kanade.scss
+# Halaman non-SCSS (standalone HTML) load file ini untuk mendapat variabel palet.
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/kanade";
+
+:root {
+  --kanade-bg:     #{$background-color};
+  --kanade-text:   #{$text-color};
+  --kanade-accent: #{$primary-color};
+}

@@ -96,11 +96,13 @@ Aturan mapping:
 - Kerjakan satu tugas per sesi.
 - Jangan ubah file di luar tugas.
 - Di akhir, kabari file apa saja yang diubah.
+- Di akhir tugas, tambahkan satu entri di `HISTORY.md` (paling atas): nomor, judul singkat, tanggal, file yang diubah, alasan. Jangan ubah entri lama. Kalau tidak yakin tanggalnya, tulis "tidak tercatat", jangan menebak.
+- Sebelum menulis daftar file di entri HISTORY.md, verifikasi dengan `git show <commit-hash> --name-only --oneline`. Hanya file yang benar-benar ada di commit yang boleh ditulis. Kalau commit hash tidak diketahui, tulis "tidak tercatat" untuk daftar file.
 - Aturan tema:
   - Layout halaman bebas dan boleh berbeda-beda. Yang wajib sama di semua halaman hanya palet warnanya (palet Kanade).
-  - Palet disimpan di satu tempat sebagai variabel CSS (`:root { --kanade-... }`) di `assets/css/kanade-palette.css`. File skin dan semua halaman mengambil warna dari sini, jadi ubah di satu tempat berlaku ke semua.
+  - Palet tersedia sebagai CSS custom properties (`:root { --kanade-... }`) lewat `assets/css/kanade-palette.css` (hasil kompilasi Jekyll dari `assets/css/kanade-palette.scss`). File skin dan semua halaman mengambil warna dari sini.
   - Setiap halaman atau layout baru, termasuk yang tanpa layout Minimal Mistakes, wajib memuat `kanade-palette.css`.
-  - Dilarang warna hardcode (`#fff`, `white`, `black`, kode hex) di halaman, include, atau CSS baru. Pakai variabel palet. Butuh warna baru? Tambah dulu ke `kanade-palette.css`.
+  - Dilarang warna hardcode (`#fff`, `white`, `black`, kode hex) di halaman, include, atau CSS baru. Pakai variabel palet. Butuh warna baru? Tambah dulu ke `_kanade.scss` dan tambah variabel baru di `kanade-palette.scss`.
 
 ## Skin Kanade
 - Nama skin: `kanade`
@@ -111,11 +113,20 @@ Aturan mapping:
   - Aksen/primary: `#BB6588` (pink Kanade)
 - Diaktifkan via `_config.yml` → `minimal_mistakes_skin: "kanade"`
 
+### Arsitektur kanade-palette.css
+**Status: sudah ada** (dibuat sesi #5, 2026-09-21)
+
+- `_kanade.scss` = satu-satunya tempat nilai warna hex ditulis (variabel SCSS: `$background-color`, `$text-color`, `$primary-color`).
+- `assets/css/kanade-palette.scss` = file SCSS dengan front matter Jekyll. Mengimport `_kanade.scss`, lalu emit `:root { --kanade-bg; --kanade-text; --kanade-accent }` via interpolasi `#{}`. Dikompilasi oleh Jekyll menjadi `assets/css/kanade-palette.css`.
+- Halaman Minimal Mistakes memuat `kanade-palette.css` via `<link>` di `_includes/head/custom.html`.
+- Halaman standalone HTML memuat `kanade-palette.css` via `<link>` langsung.
+- **Jangan tulis hex di `kanade-palette.scss`** — nilai warna hanya boleh ada di `_kanade.scss`.
+
 ### Gotcha saat pembuatan skin
 - Tidak ada warna hardcode di `_includes/`, `_layouts/`, atau `_pages/`.
   Semua modul SCSS Minimal Mistakes sudah pakai variabel, jadi cukup
   override variabel di file skin saja.
-- File `_includes/head/custom.html` kosong (tidak ada CSS tambahan).
+- File `_includes/head/custom.html` semula kosong; sekarang berisi `<link>` ke `kanade-palette.css`.
 - Jika nanti menambah CSS custom (misal untuk elemen buka-tutup `<details>`
-  atau easter egg), gunakan variabel `$background-color`, `$text-color`,
-  dan `$primary-color` yang sudah didefinisikan skin, jangan hardcode.
+  atau easter egg), gunakan variabel `--kanade-bg`, `--kanade-text`, `--kanade-accent`,
+  atau variabel SCSS `$background-color`, `$text-color`, `$primary-color` — jangan hardcode.

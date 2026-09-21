@@ -2,4 +2,29 @@
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
+<link rel="stylesheet" href="/assets/css/kanade-palette.css">
+
+<style>
+/* Easter egg trigger: kanji 奏, pojok kanan bawah, menyatu dengan background */
+.kanade-trigger {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--kanade-bg);
+  text-decoration: none;
+  z-index: 10;
+  transition: color 0.4s ease, opacity 0.4s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.kanade-trigger:hover,
+.kanade-trigger:focus {
+  color: var(--kanade-accent);
+  opacity: 0.5;
+  outline: none;
+}
+</style>
+
 <!-- end custom head snippets -->
