@@ -89,7 +89,7 @@ Aturan mapping:
 - [ ] Halaman Contact
 - [ ] Halaman Main Portfolio (Psikologi, HR, Bahasa Jepang)
 - [ ] Halaman Additional Portfolio (9 halaman)
-- [ ] Easter egg Kanade (3 bahasa)
+- [/] Easter egg Kanade (3 bahasa) — kerangka selesai, teks masih [TEKS DARI MIZO]
 - [x] Desain visual dan warna theme (unsur Kanade)
 
 ## Aturan untuk agent

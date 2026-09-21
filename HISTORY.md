@@ -10,6 +10,12 @@ Aturan:
 
 ---
 
+## #6 | kerangka easter egg Kanade
+- Tanggal: 2026-09-21
+- File: `奏/index.html`, `奏/id/index.html`, `奏/en/index.html`, `奏/ja/index.html`, `_pages/id-main.md`, `_pages/en-main.md`, `_pages/ja-main.md`, `CATATAN.md`
+- Alasan: kerangka halaman rahasia easter egg Kanade — URL berkanji 奏, 3 bahasa (id/en/ja), redirect otomatis berdasarkan bahasa browser, noscript fallback. Kanji 奏 ditaruh di pojok kanan bawah halaman home (position: fixed), warna menyatu dengan background, muncul samar saat hover. Semua teks konten masih placeholder [TEKS DARI MIZO].
+- Catatan: file list belum diverifikasi dengan `git show --name-only` (belum di-commit). Verifikasi setelah push.
+
 ## #5 | buat kanade-palette.scss + koreksi #4
 - Tanggal: 2026-09-21
 - File: `assets/css/kanade-palette.scss`, `_includes/head/custom.html`, `CATATAN.md`
