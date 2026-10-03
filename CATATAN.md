@@ -104,6 +104,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - Jangan pakai include_cached untuk masthead, karena teksnya beda per bahasa
   (dulu bikin tombol "ganti bahasa" selalu berbahasa Inggris).
 - Verifikasi Discord memakai `.well-known/discord` dengan `include: [".well-known"]` di _config.yml, dan jangan pernah menambah .nojekyll karena situs ini butuh Jekyll.
+- Branch utama repo ini adalah master, bukan main, dan branch tambahan sebelumnya (hide-kanade-seo) dibuat tidak sengaja serta sudah dihapus.
 
 ## Status fitur
 - [x] Halaman pilih bahasa
@@ -126,6 +127,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - Kerjakan satu tugas per sesi.
 - Jangan ubah file di luar tugas.
 - Di akhir tugas, tambahkan satu entri di `HISTORY.md` (paling atas): nomor, judul singkat, tanggal, file yang diubah, alasan. Jangan ubah entri lama. Kalau tidak yakin tanggalnya, tulis "tidak tercatat", jangan menebak.
+- Sebelum mulai kerja, jalankan git branch --show-current. Hasilnya harus master. Kalau hasilnya bukan master, berhenti: jangan pindah branch, jangan membuat branch, jangan commit, jangan push. Laporkan nama branch yang aktif ke pemilik. Kalau selama sesi muncul branch atau worktree baru yang dibuat otomatis oleh tool, berhenti dan laporkan juga, jangan push. Semua commit dan push dilakukan di master saja.
 1. Jalankan git status --short. Kalau ada file yang muncul tapi bukan bagian dari tugas, berhenti: jangan commit, jangan push, laporkan ke pemilik.
 2. Tambahkan entri di paling atas HISTORY.md. Daftar file diambil dari git status --short, ditambah HISTORY.md sendiri dan CATATAN.md kalau ikut berubah.
 3. Stage file dengan menyebut namanya satu per satu. Dilarang git add -A atau git add .

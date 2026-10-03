@@ -10,6 +10,12 @@ Aturan:
 
 ---
 
+## #22 | tambah aturan branch master di CATATAN.md
+- Tanggal: 2026-10-04
+- File: `CATATAN.md`, `HISTORY.md`
+- Alasan: menambahkan aturan eksplisit mengenai branch pada CATATAN.md agar agent selalu memeriksa git branch --show-current di awal sesi dan memastikan berada di branch master. Jika bukan master, atau jika selama sesi muncul branch atau worktree baru otomatis, agent wajib berhenti dan melapor ke pemilik serta tidak melakukan commit/push. Semua commit dan push dilakukan di master saja. Menambahkan poin gotcha bahwa branch utama repo ini adalah master (bukan main) dan branch tambahan sebelumnya (hide-kanade-seo) dibuat tidak sengaja serta sudah dihapus. Langkah 1 sampai 7 dan bagian lain di CATATAN.md tidak diubah.
+- Catatan: dicek manual. Langkah 1 sampai 7 masih utuh dan nomornya tidak berubah. git status --short hanya menampilkan CATATAN.md dan HISTORY.md. git branch --show-current setelah push masih menampilkan master.
+
 ## #21 | sembunyikan easter egg Kanade dari mesin pencari
 - Tanggal: 2026-10-04
 - File: `HISTORY.md`, `_config.yml`
