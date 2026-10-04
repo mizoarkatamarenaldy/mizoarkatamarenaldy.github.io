@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #28 | pasang favicon aksen Kanade di semua halaman
+- Tanggal: 2026-10-04
+- File: `_includes/head/custom.html`, `assets/images/apple-touch-icon.png`, `assets/images/favicon-32.png`, `assets/images/favicon.ico`, `assets/images/favicon.svg`, `CATATAN.md`, `index.html`, `RIWAYAT.md`, `奏/en/index.html`, `奏/id/index.html`, `奏/index.html`, `奏/ja/index.html`
+- Alasan: memasang favicon (ikon tab browser) beraksen Kanade di semua halaman situs. Empat file gambar favicon (favicon.svg, favicon-32.png, favicon.ico, apple-touch-icon.png) di folder assets/images/ dicatat sebagai pengecualian dari aturan larangan hex. Tag link dipasang secara terpusat di `_includes/head/custom.html` menggunakan relative_url (otomatis dimuat di /id/main/, /en/main/, /ja/main/, seluruh sub-halaman portofolio/3E/about/contact, dan 404.html via layout single). Untuk halaman-halaman HTML mandiri yang tidak memakai layout Minimal Mistakes (`index.html` pemilih bahasa dan seluruh halaman easter egg `奏/`), keempat tag link dipasang langsung pada elemen `<head>`. File /favicon.ico di root situs diperiksa dan tidak ditemukan, sehingga dilaporkan ke pemilik tanpa disalin sepihak sesuai instruksi.
+
 ## #27 | pasang gambar preview link og:image
 - Tanggal: 2026-10-04
 - File: `_config.yml`, `_includes/seo.html`, `assets/images/og-image.png`, `CATATAN.md`, `RIWAYAT.md`
