@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #29 | tambah sitemap dan robots.txt
+- Tanggal: 2026-10-04
+- File: `CATATAN.md`, `RIWAYAT.md`, `robots.txt`, `奏/en/index.html`, `奏/id/index.html`, `奏/ja/index.html`
+- Alasan: menambahkan sitemap.xml (dibantu plugin jekyll-sitemap yang sudah aktif) dan robots.txt di root. URL easter egg Kanade pada versi id, en, ja ditambahkan front matter `sitemap: false` untuk disembunyikan dari sitemap. robots.txt sengaja tidak memuat aturan Disallow untuk mencegah pembocoran URL rahasia.
+
 ## #28 | pasang favicon aksen Kanade di semua halaman
 - Tanggal: 2026-10-04
 - File: `_includes/head/custom.html`, `assets/images/apple-touch-icon.png`, `assets/images/favicon-32.png`, `assets/images/favicon.ico`, `assets/images/favicon.svg`, `CATATAN.md`, `index.html`, `RIWAYAT.md`, `奏/en/index.html`, `奏/id/index.html`, `奏/index.html`, `奏/ja/index.html`
