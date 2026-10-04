@@ -1,0 +1,43 @@
+{%- assign current_lang = page.url | split: '/' | slice: 1 | first -%}
+{%- if current_lang == 'id' or current_lang == 'en' or current_lang == 'ja' -%}
+  {%- assign is_home = false -%}
+  {%- if page.url == '/id/main/' or page.url == '/en/main/' or page.url == '/ja/main/' -%}
+    {%- assign is_home = true -%}
+  {%- endif -%}
+  
+  {%- if is_home -%}
+    {%- assign person_id = site.url | append: "/#person" -%}
+    {%- assign person_url = site.url | append: page.url -%}
+    {%- assign person_image = site.url | append: "/assets/images/og-image.png" -%}
+    
+    {%- case current_lang -%}
+      {%- when 'id' -%}
+        {%- assign person_desc = "Portofolio Mizo Arkatama Renaldy. Menampilkan karya dan proyek di bidang Psikologi, HR, dan Bahasa Jepang." -%}
+        {%- assign person_knows = "Psikologi, Human Resources, Bahasa Jepang" -%}
+      {%- when 'ja' -%}
+        {%- assign person_desc = "ミゾ・アルカタマ・レナルディのポートフォリオ。心理学、人事（HR）、日本語に関する作品やプロジェクトを紹介します。" -%}
+        {%- assign person_knows = "心理学, 人事 (HR), 日本語" -%}
+      {%- else -%}
+        {%- assign person_desc = "Portfolio of Mizo Arkatama Renaldy. Showcasing works and projects in Psychology, HR, and Japanese language." -%}
+        {%- assign person_knows = "Psychology, Human Resources, Japanese language" -%}
+    {%- endcase -%}
+    
+    {%- assign knows_array = person_knows | split: ", " -%}
+    {%- assign same_as_array = "https://mizoarkatamarenaldy.medium.com/,https://substack.com/@mizoarkatamarenaldy" | split: "," -%}
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": {{ person_id | jsonify }},
+  "name": "Mizo Arkatama Renaldy",
+  "alternateName": "Mizo AR",
+  "url": {{ person_url | jsonify }},
+  "image": {{ person_image | jsonify }},
+  "description": {{ person_desc | jsonify }},
+  "knowsAbout": {{ knows_array | jsonify }},
+  "sameAs": {{ same_as_array | jsonify }}
+}
+</script>
+  {%- endif -%}
+{%- endif -%}

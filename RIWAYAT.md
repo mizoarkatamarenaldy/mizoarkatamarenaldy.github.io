@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #30 | tambah structured data JSON-LD Person di HOME
+- Tanggal: 2026-10-04
+- File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_includes/head/jsonld-person.html`
+- Alasan: menambahkan structured data JSON-LD dengan tipe Person yang ditempatkan secara terpusat pada file `_includes/head/jsonld-person.html` dan dipanggil di `_includes/head/custom.html`. JSON-LD ini hanya dimunculkan di halaman HOME untuk tiga bahasa (id, en, ja). Informasi yang dimasukkan terbatas pada nama panggung ("Mizo Arkatama Renaldy" dan "Mizo AR"), link gambar og-image.png, deskripsi dari masing-masing bahasa, bidang pengetahuan (knowsAbout), serta profil media sosial (sameAs) yang sejauh ini tersedia (Medium dan Substack). Sesuai aturan privasi, data pribadi seperti nama asli atau kampus tidak disertakan, serta referensi mengenai easter egg Kanade sengaja dikecualikan dari deskripsi di JSON-LD.
+
 ## #29 | tambah sitemap dan robots.txt
 - Tanggal: 2026-10-04
 - File: `CATATAN.md`, `RIWAYAT.md`, `robots.txt`, `奏/en/index.html`, `奏/id/index.html`, `奏/ja/index.html`

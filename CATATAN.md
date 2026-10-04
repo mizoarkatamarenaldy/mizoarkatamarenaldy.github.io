@@ -108,6 +108,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - CATATAN.md, RIWAYAT.md, dan RIWAYAT_ARSIP*.md harus tetap ada di exclude di _config.yml supaya tidak ter-publish di situs. Jangan hapus dari exclude.
 - Hati-hati dengan spesifisitas CSS pada tag `<a>` (link) seperti untuk efek hover atau visited. Tema Minimal Mistakes memiliki styling bawaan (`a:hover`, `a:visited`, dll.) yang bisa menimpa class custom. Gunakan `!important` atau selector yang sangat spesifik jika elemen custom (seperti pemicu easter egg) tidak bereaksi.
 - `robots.txt` tidak boleh memuat `Disallow` untuk URL easter egg karena robots.txt bersifat publik dan justru akan membocorkan URL-nya.
+- JSON-LD Person tidak boleh memuat nama asli, kampus, atau data pribadi lain.
 
 ## Status fitur
 - [x] Halaman pilih bahasa
@@ -129,6 +130,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - [x] Gambar preview (og:image) untuk share link (file di assets/images/og-image.png, tag dipasang terpusat di _includes/seo.html dan _config.yml)
 - [x] Favicon tab browser aksen Kanade (file di assets/images/: favicon.svg, favicon.ico, favicon-32.png, apple-touch-icon.png dikecualikan dari larangan hex; tag dipasang terpusat di _includes/head/custom.html dan manual di index.html serta easter egg Kanade)
 - [x] Sitemap dan robots.txt (jekyll-sitemap, easter egg Kanade dikecualikan via sitemap: false)
+- [x] Structured data JSON-LD Person di HOME (3 bahasa, hanya nama panggung)
 
 ## Aturan untuk agent
 - Kerjakan satu tugas per sesi.
