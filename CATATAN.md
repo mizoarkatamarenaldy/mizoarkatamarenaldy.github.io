@@ -119,7 +119,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - [x] Link dari HOME ke semua sub-halaman (3E, 12 portofolio, About, Contact) lewat tombol
 - [/] Halaman 3E — kerangka selesai, isi menunggu Mizo
 - [/] Halaman About (latar belakang, pengalaman hidup, CV) — kerangka selesai, isi menunggu Mizo
-- [/] Halaman Contact — kerangka selesai, isi menunggu Mizo
+- [x] Halaman Contact — kerangka selesai, isi menunggu Mizo
 - [/] Halaman Main Portfolio (Psikologi, HR, Bahasa Jepang) — kerangka selesai, isi menunggu Mizo
 - [/] Halaman Additional Portfolio (9 halaman) — kerangka selesai, isi menunggu Mizo
 - [/] Easter egg Kanade (3 bahasa) — kerangka selesai, teks masih [TEKS DARI MIZO]

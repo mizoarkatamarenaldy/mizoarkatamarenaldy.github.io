@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #31 | isi halaman Contact (id, en, ja)
+- Tanggal: 2026-10-04
+- File: `CATATAN.md`, `RIWAYAT.md`, `_pages/en-contact.md`, `_pages/id-contact.md`, `_pages/ja-contact.md`
+- Alasan: mengisi halaman Contact dengan daftar akun profesional, pesan langsung, sosial, dan YouTube di tiga bahasa (id, en, ja). Layout dibuat responsif (CSS flex/grid inline pada markdown) dengan tombol yang menampilkan nama platform di kiri dan teks tampilan di kanan. Warna tombol dan efek hover memakai variabel palet tema Kanade tanpa ada hardcode hex. Link eksternal dibuka di tab baru dengan atribut `noopener noreferrer`. Mengubah status fitur Contact menjadi [x] di file CATATAN.md.
+
 ## #30 | tambah structured data JSON-LD Person di HOME
 - Tanggal: 2026-10-04
 - File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_includes/head/jsonld-person.html`
