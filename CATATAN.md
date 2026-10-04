@@ -126,10 +126,19 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 ## Aturan untuk agent
 - Kerjakan satu tugas per sesi.
 - Jangan ubah file di luar tugas.
-- Di akhir tugas, tambahkan satu entri di `HISTORY.md` (paling atas): nomor, judul singkat, tanggal, file yang diubah, alasan. Jangan ubah entri lama. Kalau tidak yakin tanggalnya, tulis "tidak tercatat", jangan menebak.
+- Di akhir tugas, tambahkan satu entri di `RIWAYAT.md` (paling atas): nomor, judul singkat, tanggal, file yang diubah, alasan. Jangan ubah entri lama. Kalau tidak yakin tanggalnya, tulis "tidak tercatat", jangan menebak.
+- Aturan baca RIWAYAT.md: di awal sesi, baca hanya 5 entri paling atas. Jangan baca seluruh file. Jangan baca file RIWAYAT_ARSIP*.md kecuali pemilik memintanya.
+- Aturan arsip RIWAYAT.md: sebelum menambah entri baru, hitung jumlah entri di RIWAYAT.md. Kalau sudah ada 50 entri, lakukan ini dulu:
+  1. Lihat file RIWAYAT_ARSIP*.md yang sudah ada. Ambil nomor terbesar lalu tambah 1 (kalau belum ada, mulai dari 1).
+  2. Ganti nama RIWAYAT.md jadi RIWAYAT_ARSIP{n}.md dengan git mv.
+  3. Buat RIWAYAT.md baru yang isinya sama seperti template RIWAYAT.md sebelumnya (judul, aturan, dan format entri di bagian atas file), tapi tanpa entri.
+  4. Nomor entri tidak diulang dari 1. Lanjutkan dari nomor terakhir di arsip.
+  5. Entri baru ditulis di RIWAYAT.md yang baru.
+  6. Stage RIWAYAT.md dan RIWAYAT_ARSIP{n}.md satu per satu, dan sebutkan keduanya di daftar file pada entri.
+  Jangan ubah isi file arsip setelah dibuat.
 - Sebelum mulai kerja, jalankan git branch --show-current. Hasilnya harus master. Kalau hasilnya bukan master, berhenti: jangan pindah branch, jangan membuat branch, jangan commit, jangan push. Laporkan nama branch yang aktif ke pemilik. Kalau selama sesi muncul branch atau worktree baru yang dibuat otomatis oleh tool, berhenti dan laporkan juga, jangan push. Semua commit dan push dilakukan di master saja.
 1. Jalankan git status --short. Kalau ada file yang muncul tapi bukan bagian dari tugas, berhenti: jangan commit, jangan push, laporkan ke pemilik.
-2. Tambahkan entri di paling atas HISTORY.md. Daftar file diambil dari git status --short, ditambah HISTORY.md sendiri dan CATATAN.md kalau ikut berubah.
+2. Tambahkan entri di paling atas RIWAYAT.md. Daftar file diambil dari git status --short, ditambah RIWAYAT.md sendiri dan CATATAN.md kalau ikut berubah.
 3. Stage file dengan menyebut namanya satu per satu. Dilarang git add -A atau git add .
 4. Commit dengan pesan lengkap: judul singkat, isi penjelasan, lalu dua baris trailer di bawah, dipisah satu baris kosong dari isi pesan.
    Co-authored-by: Claude <noreply@anthropic.com>

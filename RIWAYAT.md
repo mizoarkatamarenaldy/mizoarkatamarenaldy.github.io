@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #23 | ganti nama HISTORY ke RIWAYAT + aturan arsip
+- Tanggal: 2026-10-04
+- File: `CATATAN.md`, `RIWAYAT.md`
+- Alasan: mengubah nama HISTORY.md menjadi RIWAYAT.md dengan git mv; memperbarui semua penyebutan HISTORY.md di CATATAN.md menjadi RIWAYAT.md; menambahkan aturan baca RIWAYAT.md (hanya 5 entri teratas di awal sesi) dan aturan arsip RIWAYAT.md (arsip ke RIWAYAT_ARSIP{n}.md jika sudah mencapai 50 entri) di CATATAN.md. Tidak ditemukan penyebutan HISTORY di file lain di luar entri lama.
+
 ## #22 | tambah aturan branch master di CATATAN.md
 - Tanggal: 2026-10-04
 - File: `CATATAN.md`, `HISTORY.md`
