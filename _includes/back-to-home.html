@@ -1,0 +1,26 @@
+{% assign current_lang = page.lang %}
+{% unless current_lang %}
+  {% assign url_parts = page.url | split: '/' %}
+  {% if url_parts[1] == 'id' or url_parts[1] == 'en' or url_parts[1] == 'ja' %}
+    {% assign current_lang = url_parts[1] %}
+  {% endif %}
+{% endunless %}
+
+{% assign is_subpage = false %}
+{% if page.url contains '/3e/' or page.url contains '/about/' or page.url contains '/contact/' or page.url contains '/portfolio/' %}
+  {% assign is_subpage = true %}
+{% endif %}
+
+{% if is_subpage and current_lang %}
+  {% case current_lang %}
+    {% when 'id' %}
+      {% assign btn_text = 'Kembali ke HOME' %}
+    {% when 'en' %}
+      {% assign btn_text = 'Back to HOME' %}
+    {% when 'ja' %}
+      {% assign btn_text = 'HOMEに戻る' %}
+  {% endcase %}
+  <ul class="home-links" style="margin-top: 2rem;">
+    <li><a class="home-btn" href="/{{ current_lang }}/main/">{{ btn_text }}</a></li>
+  </ul>
+{% endif %}

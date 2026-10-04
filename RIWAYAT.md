@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #25 | tombol Kembali ke HOME di semua sub-halaman
+- Tanggal: 2026-10-04
+- File: `_includes/back-to-home.html`, `_layouts/single.html`, `CATATAN.md`, `RIWAYAT.md`
+- Alasan: Menambahkan tombol navigasi "Kembali ke HOME" di seluruh sub-halaman (portofolio, about, contact) untuk ketiga bahasa (id, en, ja). Tombol dipasang secara terpusat lewat satu file include baru `back-to-home.html` pada `single.html` tanpa perlu mengubah puluhan file konten secara manual. Desain menggunakan class `home-btn` dan `.home-links` bawaan sehingga otomatis responsif dan serasi dengan palet tema Kanade tanpa JavaScript.
+
 ## #24 | exclude catatan internal di _config.yml
 - Tanggal: 2026-10-04
 - File: `CATATAN.md`, `RIWAYAT.md`, `_config.yml`

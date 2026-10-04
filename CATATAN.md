@@ -123,6 +123,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - [x] Desain visual dan warna theme (unsur Kanade)
 - [x] Halaman 404 (tiga bahasa: id, en, ja)
 - [x] SEO dan meta tags multibahasa (judul tab, hreflang, lang attribute, deskripsi per bahasa)
+- [x] Tombol "Kembali ke HOME" di semua sub-halaman (dipasang otomatis ke _layouts/single.html menggunakan _includes/back-to-home.html dan class home-btn)
 
 ## Aturan untuk agent
 - Kerjakan satu tugas per sesi.
