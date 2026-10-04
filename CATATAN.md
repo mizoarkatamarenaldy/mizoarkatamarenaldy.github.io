@@ -105,6 +105,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
   (dulu bikin tombol "ganti bahasa" selalu berbahasa Inggris).
 - Verifikasi Discord memakai `.well-known/discord` dengan `include: [".well-known"]` di _config.yml, dan jangan pernah menambah .nojekyll karena situs ini butuh Jekyll.
 - Branch utama repo ini adalah master, bukan main, dan branch tambahan sebelumnya (hide-kanade-seo) dibuat tidak sengaja serta sudah dihapus.
+- CATATAN.md, RIWAYAT.md, dan RIWAYAT_ARSIP*.md harus tetap ada di exclude di _config.yml supaya tidak ter-publish di situs. Jangan hapus dari exclude.
 
 ## Status fitur
 - [x] Halaman pilih bahasa

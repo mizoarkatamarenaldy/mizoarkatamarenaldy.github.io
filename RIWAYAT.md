@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #24 | exclude catatan internal di _config.yml
+- Tanggal: 2026-10-04
+- File: `CATATAN.md`, `RIWAYAT.md`, `_config.yml`
+- Alasan: menambahkan `RIWAYAT.md` dan `RIWAYAT_ARSIP*.md` ke daftar `exclude` di `_config.yml` (menggabungkannya dengan `CATATAN.md` yang sudah ada) agar file catatan internal tidak ter-publish sebagai halaman publik di situs; memastikan kunci `include` (.well-known) tidak bentrok; serta menambahkan poin di bagian "Gotcha (jangan diulang)" pada `CATATAN.md` agar `CATATAN.md`, `RIWAYAT.md`, dan `RIWAYAT_ARSIP*.md` tidak dihapus dari `exclude`.
+
 ## #23 | ganti nama HISTORY ke RIWAYAT + aturan arsip
 - Tanggal: 2026-10-04
 - File: `CATATAN.md`, `RIWAYAT.md`
