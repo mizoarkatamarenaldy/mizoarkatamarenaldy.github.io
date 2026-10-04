@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #27 | pasang gambar preview link og:image
+- Tanggal: 2026-10-04
+- File: `_config.yml`, `_includes/seo.html`, `assets/images/og-image.png`, `CATATAN.md`, `RIWAYAT.md`
+- Alasan: memasang preview gambar (Open Graph dan Twitter Card) untuk memunculkan kartu saat link dibagikan di WhatsApp, Discord, LinkedIn, dll. Konfigurasi dilakukan terpusat di `_config.yml` (menetapkan `url` kanonikal dan default `og_image`) dan `_includes/seo.html` (memastikan `og:image` menggunakan URL absolut `https://mizoarkatamarenaldy.github.io/assets/images/og-image.png`, menambahkan atribut `og:image:width` 1200, `og:image:height` 630, `og:image:type` image/png, deskripsi `og:image:alt` yang mengikuti bahasa halaman: id, en, ja, serta `twitter:card` berupa summary_large_image dan `twitter:image`). Nilai `og:title` dan `og:description` tetap mengikuti bahasa halaman tanpa diubah. File gambar biner `assets/images/og-image.png` (1200x630 PNG) dicatat sebagai pengecualian dari aturan larangan hex di `CATATAN.md`. Halaman easter egg Kanade tidak diubah karena merupakan file HTML statis murni tanpa include layout Jekyll.
+
 ## #26 | perbaiki kanji easter egg tidak muncul saat hover
 - Tanggal: 2026-10-04
 - File: `_includes/head/custom.html`, `_pages/id-main.md`, `_pages/en-main.md`, `_pages/ja-main.md`, `CATATAN.md`, `RIWAYAT.md`
