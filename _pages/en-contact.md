@@ -161,10 +161,10 @@ a.contact-btn-col:active {
       </a>
     </li>
     <li>
-      <div class="contact-btn">
+      <a href="https://line.me/ti/p/~mizoarkatamarenaldy" class="contact-btn" target="_blank" rel="noopener noreferrer">
         <span class="contact-platform">LINE</span>
         <span class="contact-text">mizoarkatamarenaldy</span>
-      </div>
+      </a>
     </li>
   </ul>
 </div>

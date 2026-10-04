@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #32 | ubah entri LINE di Contact jadi tautan (id, en, ja)
+- Tanggal: 2026-10-04
+- File: `RIWAYAT.md`, `_pages/en-contact.md`, `_pages/id-contact.md`, `_pages/ja-contact.md`
+- Alasan: mengubah elemen entri LINE di halaman Contact (id, en, ja) dari elemen div menjadi tombol tautan (tag a dengan class contact-btn) yang mengarah ke https://line.me/ti/p/~mizoarkatamarenaldy. Teks yang ditampilkan tetap mizoarkatamarenaldy, serta tautan dibuka di tab baru menggunakan target="_blank" dan rel="noopener noreferrer".
+
 ## #31 | isi halaman Contact (id, en, ja)
 - Tanggal: 2026-10-04
 - File: `CATATAN.md`, `RIWAYAT.md`, `_pages/en-contact.md`, `_pages/id-contact.md`, `_pages/ja-contact.md`
