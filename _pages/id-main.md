@@ -48,4 +48,4 @@ Halo! Selamat datang di portofolio saya. Halaman ini masih dalam tahap pengemban
 <li><a class="home-btn" href="/id/contact/">Kontak</a></li>
 </ul>
 
-<a href="/奏/" class="kanade-trigger" aria-hidden="true" tabindex="-1">奏</a>
+<a href="/奏/" class="kanade-trigger" aria-hidden="true">奏</a>

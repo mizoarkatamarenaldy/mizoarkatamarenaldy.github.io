@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #26 | perbaiki kanji easter egg tidak muncul saat hover
+- Tanggal: 2026-10-04
+- File: `_includes/head/custom.html`, `_pages/id-main.md`, `_pages/en-main.md`, `_pages/ja-main.md`, `CATATAN.md`, `RIWAYAT.md`
+- Alasan: Kanji easter egg 奏 di HOME sebelumnya mungkin tidak muncul saat dihover karena masalah spesifisitas CSS (kalah dari aturan link bawaan tema Minimal Mistakes) atau karena `opacity: 0.5` yang membuatnya terlalu redup di atas background gelap. Solusinya, atribut CSS di `.kanade-trigger` (terutama `color` dan `z-index`) ditambahkan `!important` untuk memastikan tidak ada override, mengubah opacity saat hover menjadi `1` agar terlihat sangat jelas, dan menghapus `tabindex="-1"` pada elemen HTML di ketiga file HOME agar kanji bisa diakses (fokus) menggunakan keyboard (Tab).
+
 ## #25 | tombol Kembali ke HOME di semua sub-halaman
 - Tanggal: 2026-10-04
 - File: `_includes/back-to-home.html`, `_layouts/single.html`, `CATATAN.md`, `RIWAYAT.md`

@@ -12,17 +12,17 @@
   right: 1.5rem;
   font-size: 1.5rem;
   line-height: 1;
-  color: var(--kanade-bg);
-  text-decoration: none;
-  z-index: 10;
-  transition: color 0.4s ease, opacity 0.4s ease;
+  color: var(--kanade-bg) !important;
+  text-decoration: none !important;
+  z-index: 9999 !important;
+  transition: color 0.3s ease;
   user-select: none;
   -webkit-user-select: none;
 }
 .kanade-trigger:hover,
-.kanade-trigger:focus {
-  color: var(--kanade-accent);
-  opacity: 0.5;
+.kanade-trigger:focus,
+.kanade-trigger:focus-visible {
+  color: var(--kanade-accent) !important;
   outline: none;
 }
 

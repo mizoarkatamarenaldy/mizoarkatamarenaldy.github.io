@@ -48,4 +48,4 @@ Hello! Welcome to my portfolio. This page is still under construction — stay t
 <li><a class="home-btn" href="/en/contact/">Contact</a></li>
 </ul>
 
-<a href="/奏/" class="kanade-trigger" aria-hidden="true" tabindex="-1">奏</a>
+<a href="/奏/" class="kanade-trigger" aria-hidden="true">奏</a>
