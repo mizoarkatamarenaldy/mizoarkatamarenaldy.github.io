@@ -32,11 +32,22 @@ for lang in LANGS:
         EXPECTED_PERMALINKS.add(p.format(lang=lang))
 
 errors = {}
+warnings = {}
 
 def add_error(file, msg):
     if file not in errors:
         errors[file] = []
     errors[file].append(msg)
+
+def add_warning(file, msg):
+    if file not in warnings:
+        warnings[file] = []
+    warnings[file].append(msg)
+
+jp_regex = re.compile(r'[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]')
+def mask_match(match):
+    s = match.group(0)
+    return ''.join('\n' if c == '\n' else ' ' for c in s)
 
 # 1. Kelengkapan halaman
 for lang in LANGS:
@@ -102,7 +113,40 @@ if os.path.exists(PAGES_DIR):
                     if not os.path.exists(asset_path):
                         add_error(filename, f"Link rusak ke aset: {url}")
 
+        # 4. Check Japanese text without lang="ja" in id and en pages
+        if filename.startswith("id-") or filename.startswith("en-"):
+            text_masked = re.sub(r'^---\s*\n.*?\n---\s*\n', mask_match, content, flags=re.DOTALL)
+            text_masked = re.sub(r'```.*?```', mask_match, text_masked, flags=re.DOTALL)
+            text_masked = re.sub(r'`[^`]*`', mask_match, text_masked)
+            text_masked = re.sub(r'<([a-zA-Z0-9\-]+)[^>]*\blang=["\']?(?:ja|ja-JP)["\']?[^>]*>.*?</\1>', mask_match, text_masked, flags=re.DOTALL)
+            
+            lines = text_masked.split('\n')
+            original_lines = content.split('\n')
+            
+            for i, line in enumerate(lines):
+                if jp_regex.search(line):
+                    orig = original_lines[i]
+                    if 'lang="ja"' in orig or "lang='ja'" in orig or 'lang="ja-JP"' in orig or "lang='ja-JP'" in orig:
+                        continue
+                    if i + 1 < len(original_lines) and re.search(r'^\{:.*lang=["\']?(ja|ja-JP)["\']?.*\}', original_lines[i+1].strip()):
+                        continue
+                        
+                    snippet = orig.strip()
+                    if len(snippet) > 100:
+                        snippet = snippet[:97] + "..."
+                    add_warning(filename, f"Baris {i+1}: {snippet}")
+
 has_errors = len(errors) > 0
+has_warnings = len(warnings) > 0
+
+if has_warnings:
+    print("PERINGATAN: Teks Jepang tanpa atribut lang=\"ja\" ditemukan:")
+    for f, msgs in warnings.items():
+        print(f"\n[{f}]")
+        for m in msgs:
+            print(f"  - {m}")
+    print("\n" + "-"*50 + "\n")
+
 if has_errors:
     print("Ditemukan masalah pada konsistensi bahasa/link:")
     for f, msgs in errors.items():

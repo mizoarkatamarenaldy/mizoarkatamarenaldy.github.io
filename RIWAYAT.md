@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #34 | peringatan teks Jepang tanpa lang="ja"
+- Tanggal: 2026-10-06
+- File: `CATATAN.md`, `RIWAYAT.md`, `scripts/check-languages.py`
+- Alasan: menambah fitur peringatan pada `scripts/check-languages.py` untuk mendeteksi teks Jepang (hiragana, katakana, kanji) yang tidak diapit elemen dengan atribut `lang="ja"` di halaman id dan en. Peringatan akan menampilkan nama file, nomor baris, dan potongan teks, namun tidak mengubah exit code atau menggagalkan push. Status fitur di `CATATAN.md` diperbarui.
+
 ## #33 | pengecekan otomatis konsistensi 3 bahasa
 - Tanggal: 2026-10-06
 - File: `.github/workflows/check-languages.yml`, `CATATAN.md`, `RIWAYAT.md`, `_config.yml`, `scripts/check-languages.py`
