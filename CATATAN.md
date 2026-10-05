@@ -131,6 +131,10 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - [x] Favicon tab browser aksen Kanade (file di assets/images/: favicon.svg, favicon.ico, favicon-32.png, apple-touch-icon.png dikecualikan dari larangan hex; tag dipasang terpusat di _includes/head/custom.html dan manual di index.html serta easter egg Kanade)
 - [x] Sitemap dan robots.txt (jekyll-sitemap, easter egg Kanade dikecualikan via sitemap: false)
 - [x] Structured data JSON-LD Person di HOME (3 bahasa, hanya nama panggung)
+- [x] Pengecekan otomatis konsistensi 3 bahasa (skrip dan GitHub Action)
+
+## Pengujian Lokal
+- Untuk mengecek konsistensi bahasa, permalink, dan link rusak secara lokal, jalankan `python scripts/check-languages.py` dari root repo. Skrip akan memberikan rincian file yang bermasalah dan mengembalikan exit code 1 jika ada error.
 
 ## Aturan untuk agent
 - Kerjakan satu tugas per sesi.

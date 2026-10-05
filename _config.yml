@@ -171,6 +171,7 @@ include:
   - _pages
   - .well-known
 exclude:
+  - scripts
   - CATATAN.md
   - RIWAYAT.md
   - RIWAYAT_ARSIP*.md

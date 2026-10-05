@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #33 | pengecekan otomatis konsistensi 3 bahasa
+- Tanggal: 2026-10-06
+- File: `.github/workflows/check-languages.yml`, `CATATAN.md`, `RIWAYAT.md`, `_config.yml`, `scripts/check-languages.py`
+- Alasan: membuat skrip python murni `scripts/check-languages.py` untuk mengecek kelengkapan halaman (16 slug dari tabel untuk id, en, ja), kebenaran permalink di front matter, serta validitas link internal antar-halaman dan ke file aset. Skrip tersebut dijalankan otomatis menggunakan GitHub Action di `.github/workflows/check-languages.yml` setiap ada push atau pull request ke branch master. Direktori `scripts` ditambahkan ke `exclude` di `_config.yml` agar tidak ter-publish oleh Jekyll, tanpa mengubah daftar pengecualian lainnya. Status fitur dan panduan pengujian lokal juga diperbarui di `CATATAN.md`.
+
 ## #32 | ubah entri LINE di Contact jadi tautan (id, en, ja)
 - Tanggal: 2026-10-04
 - File: `RIWAYAT.md`, `_pages/en-contact.md`, `_pages/id-contact.md`, `_pages/ja-contact.md`
