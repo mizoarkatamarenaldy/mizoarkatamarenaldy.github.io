@@ -12,6 +12,44 @@
 
 {% include head/jsonld-person.html %}
 
+<script>
+  // Skrip anti-kedip: terapkan tema dari localStorage sebelum halaman di-render
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    } catch (e) {}
+  })();
+
+  // Event listener untuk tombol ganti tema
+  document.addEventListener('DOMContentLoaded', function() {
+    var themeToggleBtn = document.getElementById('theme-toggle-btn');
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var currentTheme = document.documentElement.getAttribute('data-theme');
+        var newTheme = '';
+        
+        if (currentTheme === 'light') {
+          newTheme = 'dark';
+        } else if (currentTheme === 'dark') {
+          newTheme = 'light';
+        } else {
+          // Jika belum ada atribut data-theme, berarti sedang mengikuti pengaturan OS
+          var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+          newTheme = prefersLight ? 'dark' : 'light';
+        }
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        try {
+          localStorage.setItem('theme', newTheme);
+        } catch (e) {}
+      });
+    }
+  });
+</script>
 <style>
 /* Perbaikan fokus global (Sesi 1) */
 a:not(.kanade-trigger):not(.home-btn):not(.contact-btn):not(.contact-btn-col):focus-visible,

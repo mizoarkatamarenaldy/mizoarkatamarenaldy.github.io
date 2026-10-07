@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #42 | tombol ganti tema dan skrip anti-kedip (Sesi 3)
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_includes/masthead.html`
+- Alasan: Mengerjakan Sesi 3. Menambahkan tombol "Ganti Tema" (dalam 3 bahasa sesuai bahasa halaman) pada bagian `masthead.html`. Elemen `<a role="button">` digunakan agar styling tombol menyatu dengan tautan navigasi dan secara otomatis menerima *focus ring* sesuai standar Sesi 1. Menyisipkan JavaScript di `_includes/head/custom.html` untuk menyimpan preferensi di `localStorage`, membaca `localStorage` (anti-kedip sebelum halaman di-render), dan mendeteksi OS default dengan `window.matchMedia` jika `localStorage` kosong. Karena Sesi 2 sudah membangun kerangka dengan `html:not([data-theme="dark"])`, penetapan atribut `data-theme` lewat JS di sesi ini sempurna meng-override fallback `@media` OS.
+
 ## #41 | perbaiki bug build GitHub Pages sass extend di Sesi 2
 - Tanggal: 2026-10-07
 - File: `assets/css/main-light.scss`, `assets/css/main-light-os.scss`, `_includes/head/custom.html`

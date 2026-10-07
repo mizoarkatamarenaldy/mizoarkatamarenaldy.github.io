@@ -12,12 +12,16 @@
 {% case masthead_lang %}
   {% when "id" %}
     {% assign masthead_title = "Beranda" %}
+    {% assign theme_btn_text = "Ganti Tema" %}
   {% when "en" %}
     {% assign masthead_title = "Home" %}
+    {% assign theme_btn_text = "Change Theme" %}
   {% when "ja" %}
     {% assign masthead_title = "ホーム" %}
+    {% assign theme_btn_text = "テーマ変更" %}
   {% else %}
     {% assign masthead_title = site.masthead_title | default: site.title %}
+    {% assign theme_btn_text = "Change Theme" %}
 {% endcase %}
 
 <div class="masthead">
@@ -69,6 +73,9 @@
               </li>
             {% endif %}
           {%- endfor -%}
+          <li class="masthead__menu-item">
+            <a href="#" id="theme-toggle-btn" class="theme-toggle" role="button" aria-label="{{ theme_btn_text }}">{{ theme_btn_text }}</a>
+          </li>
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
