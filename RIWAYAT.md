@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #43 | halaman index.html dan 404.html mendukung dua tema (Sesi 4)
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`, `_includes/masthead.html`, `index.html`
+- Alasan: Mengerjakan Sesi 4. Menambahkan skrip anti-kedip dan mengadopsi variabel palet Kanade di halaman standalone `index.html` (termasuk mengganti nilai rgba dengan color-mix). Memperbarui `masthead.html` agar tombol ganti tema di `404.html` (yang mewarisi layout Minimal Mistakes) tampil dalam tiga bahasa sekaligus ("Ganti Tema / Change Theme / テーマ変更"). Halaman `404.html` secara otomatis telah mendukung dua tema berkat infrastruktur dari Sesi 2 dan 3 yang diaplikasikan pada layout Minimal Mistakes.
+
 ## #42 | tombol ganti tema dan skrip anti-kedip (Sesi 3)
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_includes/masthead.html`

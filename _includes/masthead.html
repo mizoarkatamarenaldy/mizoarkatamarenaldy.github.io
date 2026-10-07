@@ -21,7 +21,11 @@
     {% assign theme_btn_text = "テーマ変更" %}
   {% else %}
     {% assign masthead_title = site.masthead_title | default: site.title %}
-    {% assign theme_btn_text = "Change Theme" %}
+    {% if page.url == "/404.html" %}
+      {% assign theme_btn_text = "Ganti Tema / Change Theme / テーマ変更" %}
+    {% else %}
+      {% assign theme_btn_text = "Change Theme" %}
+    {% endif %}
 {% endcase %}
 
 <div class="masthead">

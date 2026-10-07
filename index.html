@@ -16,8 +16,9 @@
       height: 100vh;
       margin: 0;
       font-family: sans-serif;
-      background: #121016;
-      color: #EDEAF0;
+      background: var(--kanade-bg);
+      color: var(--kanade-text);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     h1 {
       font-size: 1.2rem;
@@ -37,21 +38,21 @@
       justify-content: center;
       width: 140px;
       height: 140px;
-      border: 1px solid rgba(187,101,136,0.3);
+      border: 1px solid color-mix(in srgb, var(--kanade-accent) 30%, transparent);
       border-radius: 12px;
       text-decoration: none;
-      color: #EDEAF0;
+      color: var(--kanade-text);
       transition: 0.2s;
       box-sizing: border-box;
     }
     .lang-card:hover {
-      background: rgba(187,101,136,0.15);
-      border-color: #BB6588;
+      background: color-mix(in srgb, var(--kanade-accent) 15%, transparent);
+      border-color: var(--kanade-accent);
     }
     .lang-card:focus-visible {
       outline: 2px solid var(--kanade-text);
       outline-offset: 2px;
-      background: rgba(187,101,136,0.15);
+      background: color-mix(in srgb, var(--kanade-accent) 15%, transparent);
       border-color: var(--kanade-accent);
     }
     .flag {
@@ -63,6 +64,17 @@
     }
   </style>
   <link rel="stylesheet" href="/assets/css/kanade-palette.css">
+  <script>
+    // Skrip anti-kedip: terapkan tema dari localStorage
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <script>
     (function () {
       // Jika URL mengandung ?pilih, tampilkan kartu tanpa redirect
