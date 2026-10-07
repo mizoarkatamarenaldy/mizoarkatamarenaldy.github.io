@@ -21,13 +21,13 @@ $link-color-visited: $link-color-visited-light;
 $masthead-link-color-hover: $masthead-link-color-hover-light;
 $navicon-link-color-hover: $navicon-link-color-hover-light;
 
-// Explicit forced light mode
-[data-theme="light"] {
+// Fallback light mode via system preference
+html:not([data-theme="dark"]) {
   @import "minimal-mistakes";
 }
 
-// Ensure html/body gets styles when data-theme is set on html
-html[data-theme="light"] {
+// Ensure html/body gets styles
+html:not([data-theme="dark"]) {
   background-color: $background-color;
   color: $text-color;
 }

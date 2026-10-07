@@ -10,6 +10,12 @@ Aturan:
 
 ---
 
+## #41 | perbaiki bug build GitHub Pages sass extend di Sesi 2
+- Tanggal: 2026-10-07
+- File: `assets/css/main-light.scss`, `assets/css/main-light-os.scss`, `_includes/head/custom.html`
+- Alasan: GitHub Pages (Sass 3.7.4) gagal mem-build Sesi 2 karena error `"You may not @extend an outer selector from within @media"`. Untuk memperbaikinya tanpa menyentuh file inti Minimal Mistakes atau memakai JavaScript, struktur `main-light.scss` dipecah menjadi dua file agar SASS tidak lagi menggunakan `@media`. `main-light.scss` kini eksklusif menangani override lewat wrapper atribut `[data-theme="light"]`, sementara file baru `main-light-os.scss` menampung aturan dengan wrapper `html:not([data-theme="dark"])`. Fungsi `@media (prefers-color-scheme: light)` dipindahkan ke dalam tag `<link>` pemanggil di HTML. Dengan teknik ini, *fallback* pengaturan OS tetap bekerja 100% menggunakan CSS. Karena keterbatasan environment, hasil build akhir harus diverifikasi lewat GitHub Actions.
+
+
 ## #40 | fondasi palet mode terang (Sesi 2)
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_sass/minimal-mistakes/skins/_kanade.scss`, `assets/css/kanade-palette.scss`, `assets/css/main-light.scss`
