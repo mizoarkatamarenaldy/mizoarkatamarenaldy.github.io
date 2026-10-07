@@ -240,6 +240,9 @@ for d_path, d_name in color_dirs:
                     continue
                 file_path = os.path.join(root, file)
                 rel_path = os.path.relpath(file_path, REPO_ROOT).replace("\\", "/")
+                # Pengecualian: file bawaan tema, hero tidak dipakai
+                if rel_path == "_includes/page__hero.html":
+                    continue
                 check_colors(file_path, rel_path)
 
 check_colors(os.path.join(REPO_ROOT, "index.html"), "index.html")

@@ -186,7 +186,7 @@ Urutan sesi (satu sesi satu tugas):
 | Teks tombol normal (contact-btn dll) | #EDEAF0 (Teks) | #121016 (Bg) | 15.86:1 | 4.5:1 | Lulus |
 | Teks tombol hover (contact-btn dll) | #121016 (Bg) | #BB6588 (Primary)| 4.80:1 | 4.5:1 | Lulus |
 | Ring fokus di background | #EDEAF0 (Teks) | #121016 (Bg) | 15.86:1 | 3:1 | Lulus |
-| Ring fokus di warna tombol (hover state) | #EDEAF0 (Teks) | #BB6588 (Primary)| 3.95:1 | 3:1 | Lulus |
+| Ring fokus di warna tombol (hover state) | #EDEAF0 (Teks) | #BB6588 (Primary)| 3.31:1 | 3:1 | Lulus |
 
 *Catatan: Semua pasangan kontras di mode gelap lulus standar WCAG. Kegagalan kontras yang diteruskan ke Sesi 2: **NIHIL (tidak ada)**.*
 
@@ -221,7 +221,7 @@ one, namun ketika menerima fokus (hover/focus-visible), warna teks berubah menja
 Aturan untuk sesi-sesi ini: kerjakan satu sesi satu nomor, centang nomor yang selesai di `CATATAN.md` pada akhir sesinya, dan jangan mengerjakan sesi berikutnya.
 
 ## Pengujian Lokal
-- Untuk mengecek konsistensi bahasa, permalink, dan link rusak secara lokal, jalankan `python scripts/check-languages.py` dari root repo. Skrip akan memberikan rincian file yang bermasalah dan mengembalikan exit code 1 jika ada error. Skrip juga akan mencetak peringatan jika menemukan teks Jepang tanpa atribut lang="ja" di halaman id dan en. Skrip juga mencetak peringatan untuk placeholder yang belum diisi. Skrip juga akan mencetak peringatan jika menemukan warna hardcode, dan akan menghasilkan error jika teks tombol ganti tema tiga bahasa tidak lengkap di masthead.
+- Untuk mengecek konsistensi bahasa, permalink, dan link rusak secara lokal, jalankan `python scripts/check-languages.py` dari root repo. Skrip akan memberikan rincian file yang bermasalah dan mengembalikan exit code 1 jika ada error. Skrip juga akan mencetak peringatan jika menemukan teks Jepang tanpa atribut lang="ja" di halaman id dan en. Skrip juga mencetak peringatan untuk placeholder yang belum diisi. Skrip juga akan mencetak peringatan jika menemukan warna hardcode (file bawaan tema _includes/page__hero.html dikecualikan karena tidak dipakai), dan akan menghasilkan error jika teks tombol ganti tema tiga bahasa tidak lengkap di masthead.
 
 ## Aturan untuk agent
 - Kerjakan satu tugas per sesi.

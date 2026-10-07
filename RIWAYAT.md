@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #46 | bersih-bersih sisa Sesi 6
+- Tanggal: 2026-10-07
+- File: CATATAN.md, RIWAYAT.md, scripts/check-languages.py
+- Alasan: Mengoreksi angka kalkulasi ulang rasio kontras warna `Ring fokus di warna tombol (hover state)` pada mode gelap menjadi `3.31:1` dari `3.95:1` di `CATATAN.md`. Menambahkan pengecualian untuk file bawaan tema `_includes/page__hero.html` pada skrip pengecekan warna hardcode di `scripts/check-languages.py` karena file tersebut tidak dipakai oleh halaman mana pun, serta mendokumentasikan pengecualian tersebut di bagian Pengujian Lokal pada `CATATAN.md`.
+
 ## #45 | pengecekan akhir (Sesi 6)
 - Tanggal: 2026-10-07
 - File: CATATAN.md, RIWAYAT.md, scripts/check-languages.py
