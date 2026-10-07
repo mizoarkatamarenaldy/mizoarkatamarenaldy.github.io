@@ -5,8 +5,13 @@ import sys
 # Paths
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES_DIR = os.path.join(REPO_ROOT, "_pages")
+KANADE_DIR = os.path.join(REPO_ROOT, "奏")
 
 LANGS = ["id", "en", "ja"]
+PLACEHOLDER_PATTERNS = [
+    "[TEKS DARI MIZO]"
+]
+
 SLUGS = {
     "main": "/{lang}/main/",
     "3e": "/{lang}/3e/",
@@ -136,8 +141,50 @@ if os.path.exists(PAGES_DIR):
                         snippet = snippet[:97] + "..."
                     add_warning(filename, f"Baris {i+1}: {snippet}")
 
+# 5. Check for placeholders
+placeholder_warnings = []
+placeholder_counts = {lang: 0 for lang in LANGS}
+
+def check_placeholders(filepath, lang, display_path):
+    if not os.path.exists(filepath):
+        return
+    with open(filepath, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    
+    found_in_file = False
+    for i, line in enumerate(lines):
+        for pattern in PLACEHOLDER_PATTERNS:
+            if pattern in line:
+                placeholder_warnings.append({
+                    "path": display_path,
+                    "lang": lang,
+                    "pattern": pattern,
+                    "line": i + 1
+                })
+                found_in_file = True
+    
+    if found_in_file:
+        placeholder_counts[lang] += 1
+
+# Check _pages for placeholders
+if os.path.exists(PAGES_DIR):
+    for filename in sorted(os.listdir(PAGES_DIR)):
+        if not filename.endswith(".md"):
+            continue
+        parts = filename[:-3].split("-", 1)
+        lang = parts[0] if len(parts) == 2 and parts[0] in LANGS else None
+        if lang:
+            file_path = os.path.join(PAGES_DIR, filename)
+            check_placeholders(file_path, lang, f"_pages/{filename}")
+
+# Check Kanade easter egg for placeholders
+for lang in LANGS:
+    kanade_file = os.path.join(KANADE_DIR, lang, "index.html")
+    check_placeholders(kanade_file, lang, f"奏/{lang}/index.html")
+
 has_errors = len(errors) > 0
 has_warnings = len(warnings) > 0
+has_placeholder_warnings = len(placeholder_warnings) > 0
 
 if has_warnings:
     print("PERINGATAN: Teks Jepang tanpa atribut lang=\"ja\" ditemukan:")
@@ -145,6 +192,16 @@ if has_warnings:
         print(f"\n[{f}]")
         for m in msgs:
             print(f"  - {m}")
+    print("\n" + "-"*50 + "\n")
+
+if has_placeholder_warnings:
+    print("PERINGATAN: Placeholder ditemukan di halaman berikut:")
+    for w in placeholder_warnings:
+        print(f"- {w['path']} ({w['lang']}) - Pola: '{w['pattern']}' di baris {w['line']}")
+    print("\nRingkasan halaman dengan placeholder:")
+    for lang in LANGS:
+        print(f"- {lang}: {placeholder_counts[lang]} halaman")
+    print(f"Total: {sum(placeholder_counts.values())} halaman")
     print("\n" + "-"*50 + "\n")
 
 if has_errors:

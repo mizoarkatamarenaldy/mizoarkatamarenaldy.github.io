@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #35 | deteksi placeholder halaman kerangka
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`, `scripts/check-languages.py`
+- Alasan: menambah deteksi placeholder `[TEKS DARI MIZO]` pada halaman kerangka (`_pages/` dan `奏/`) di `scripts/check-languages.py`. Pola placeholder disimpan dalam list agar mudah ditambah nanti. Skrip akan mencetak peringatan berupa lokasi file, bahasa, pola, dan nomor baris, beserta ringkasan jumlah halaman per bahasa di akhir, tanpa mengubah exit code (tidak menggagalkan push). `CATATAN.md` diperbarui untuk mencatat status fitur dan panduan pengujian lokal.
+
 ## #34 | peringatan teks Jepang tanpa lang="ja"
 - Tanggal: 2026-10-06
 - File: `CATATAN.md`, `RIWAYAT.md`, `scripts/check-languages.py`
