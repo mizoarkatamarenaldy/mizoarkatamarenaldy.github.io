@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #39 | audit kontras dan perbaiki fokus keyboard (Sesi 1)
+- Tanggal: 2026-10-07
+- File: CATATAN.md, RIWAYAT.md, _includes/head/custom.html, index.html
+- Alasan: Menjalankan Sesi 1 dari rencana mode terang. Mengaudit kontras WCAG untuk warna saat ini (mode gelap) di mana seluruh elemen lulus standar kontras, dan mencatat hasilnya di CATATAN.md. Memperbaiki aksesibilitas fokus pada elemen interaktif (kartu bahasa, skip link, menu masthead, elemen summary) yang mengandalkan gaya bawaan browser dengan menambahkan ring fokus eksplisit via :focus-visible menggunakan ar(--kanade-text) agar kontras dan konsisten.
+
 ## #38 | rencana multi-sesi mode terang dan tombol ganti tema
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`

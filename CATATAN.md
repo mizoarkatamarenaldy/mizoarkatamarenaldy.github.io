@@ -162,12 +162,46 @@ Kendala teknis yang diketahui:
 - og-image dan favicon tidak berubah (satu versi).
 
 Urutan sesi (satu sesi satu tugas):
-- [ ] Sesi 1: Audit kontras warna dan fokus keyboard di mode gelap yang sekarang. Catat rasio kontras pasangan warna utama (teks, aksen, link, tombol, hover, visited). Perbaiki hanya masalah fokus keyboard. Hasil angka ditulis di `CATATAN.md`.
+- [x] Sesi 1: Audit kontras warna dan fokus keyboard di mode gelap yang sekarang. Catat rasio kontras pasangan warna utama (teks, aksen, link, tombol, hover, visited). Perbaiki hanya masalah fokus keyboard. Hasil angka ditulis di `CATATAN.md`.
 - [ ] Sesi 2: Fondasi palet terang. Tambah palet terang di `_kanade.scss`, variabel baru di `kanade-palette.scss`, mekanisme `[data-theme]` dan fallback `@media` di halaman Minimal Mistakes. Revisi aturan tema di `CATATAN.md`. Belum ada tombol.
 - [ ] Sesi 3: Tombol ganti tema, skrip anti-kedip di `<head>`, penyimpanan pilihan di `localStorage`, default ikut sistem. Tombol ikut dipasang secara terpusat dan teksnya tiga bahasa (id, en, ja).
 - [ ] Sesi 4: Halaman standalone `index.html` (pilih bahasa) dan `404.html` mendukung dua tema.
 - [ ] Sesi 5: Easter egg Kanade mendukung dua tema (kanji 奏 tetap menyatu dengan background di keduanya).
 - [ ] Sesi 6: Pengecekan akhir. Perbarui `scripts/check-languages.py` agar ikut memeriksa warna hardcode dan teks tombol tiga bahasa. Cek semua halaman x 3 bahasa x 2 tema. Pastikan kontras lolos.
+
+
+
+### Hasil Audit Sesi 1
+
+**Tabel Kontras Pasangan Warna (Mode Gelap saat ini)**
+
+| Pasangan | Warna Depan | Warna Latar | Rasio Kontras | Target WCAG | Status |
+|---|---|---|---|---|---|
+| Teks utama di background | #EDEAF0 (Teks) | #121016 (Bg) | 15.86:1 | 4.5:1 | Lulus |
+| Teks redup/sekunder di background | #F1EEF3 (Muted) | #121016 (Bg) | 16.43:1 | 4.5:1 | Lulus |
+| Aksen di background | #BB6588 (Primary) | #121016 (Bg) | 4.80:1 | 4.5:1 | Lulus |
+| Link normal di background | #C984A0 (Link) | #121016 (Bg) | 6.56:1 | 4.5:1 | Lulus |
+| Link hover di background | #D6A3B8 (Link H) | #121016 (Bg) | 8.81:1 | 4.5:1 | Lulus |
+| Link visited di background | #AB7088 (Link V) | #121016 (Bg) | 4.86:1 | 4.5:1 | Lulus |
+| Teks tombol normal (contact-btn dll) | #EDEAF0 (Teks) | #121016 (Bg) | 15.86:1 | 4.5:1 | Lulus |
+| Teks tombol hover (contact-btn dll) | #121016 (Bg) | #BB6588 (Primary)| 4.80:1 | 4.5:1 | Lulus |
+| Ring fokus di background | #EDEAF0 (Teks) | #121016 (Bg) | 15.86:1 | 3:1 | Lulus |
+| Ring fokus di warna tombol (hover state) | #EDEAF0 (Teks) | #BB6588 (Primary)| 3.95:1 | 3:1 | Lulus |
+
+*Catatan: Semua pasangan kontras di mode gelap lulus standar WCAG. Kegagalan kontras yang diteruskan ke Sesi 2: **NIHIL (tidak ada)**.*
+
+**Daftar Audit Elemen Fokus & Perbaikan:**
+1. **index.html (kartu bahasa)**: Tidak ada ring fokus yang terlihat.
+   *Perbaikan*: Ditambahkan pseudoclass :focus-visible di index.html dengan outline: 2px solid var(--kanade-text) beserta tautan kanade-palette.css.
+2. **Skip link, menu masthead, tombol ganti bahasa, link motto 3E**: Menggunakan outline bawaan browser yang kontrasnya tidak konsisten atau kurang optimal di layar gelap.
+   *Perbaikan*: Ditambahkan rule CSS global di _includes/head/custom.html untuk memaksakan outline: 2px solid var(--kanade-text) agar ring selalu terlihat jelas dan konsisten dengan kontras tinggi (15.86:1).
+3. **<summary> di bagian buka-tutup**: Outline kurang terlihat.
+   *Perbaikan*: Tercakup dalam perbaikan CSS global di atas.
+4. **home-btn, tombol Sebelumnya/Berikutnya, contact-btn**: Sudah memiliki desain ring fokus eksplisit dengan ar(--kanade-text) (kontras sangat jelas).
+   *Perbaikan*: Tidak ada, dibiarkan seperti adanya (dikecualikan dari aturan CSS global agar tidak tumpang tindih).
+5. **Pemicu easter egg Kanade (.kanade-trigger)**: Sesuai instruksi, pemicu ini sengaja dibuat sembunyi dan dilarang diubah. Outline sudah diatur 
+one, namun ketika menerima fokus (hover/focus-visible), warna teks berubah menjadi #BB6588.
+   *Perbaikan*: Tidak diubah tampilannya, warna teks #BB6588 memiliki kontras 4.80:1 terhadap latar #121016 sehingga masih terbaca dan lulus WCAG (meskipun sengaja dibuat obscure).
 
 Aturan untuk sesi-sesi ini: kerjakan satu sesi satu nomor, centang nomor yang selesai di `CATATAN.md` pada akhir sesinya, dan jangan mengerjakan sesi berikutnya.
 

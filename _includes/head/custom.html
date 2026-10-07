@@ -11,6 +11,18 @@
 {% include head/jsonld-person.html %}
 
 <style>
+/* Perbaikan fokus global (Sesi 1) */
+a:not(.kanade-trigger):not(.home-btn):not(.contact-btn):not(.contact-btn-col):focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 2px solid var(--kanade-text) !important;
+  outline-offset: 2px !important;
+}
+
 /* Easter egg trigger: kanji 奏, pojok kanan bawah, menyatu dengan background */
 .kanade-trigger {
   position: fixed;
