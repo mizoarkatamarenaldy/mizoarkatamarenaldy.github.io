@@ -130,6 +130,42 @@
     transition: none;
   }
 }
+
+/* Embed YouTube */
+.youtube-wrapper {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--kanade-bg);
+  border: 1px solid var(--kanade-accent);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+.youtube-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Lazy Image */
+.lazy-image-wrapper {
+  margin: 1.5em 0;
+  text-align: center;
+}
+.lazy-image-wrapper img.lazy-image {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  background-color: var(--kanade-bg);
+  border-radius: 4px;
+}
+.lazy-image-wrapper figcaption {
+  font-size: 0.9em;
+  color: var(--kanade-text);
+  opacity: 0.8;
+  margin-top: 0.5em;
+}
 </style>
 
 <!-- end custom head snippets -->

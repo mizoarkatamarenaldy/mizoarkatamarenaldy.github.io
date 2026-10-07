@@ -1,0 +1,16 @@
+{% if include.alt == nil or include.alt == "" %}
+  {% include ERROR_ALT_WAJIB_DIISI.html %}
+{% endif %}
+<figure class="lazy-image-wrapper">
+  <img 
+    src="{{ include.src | relative_url }}" 
+    alt="{{ include.alt }}" 
+    width="{{ include.width }}" 
+    height="{{ include.height }}" 
+    loading="lazy" 
+    decoding="async"
+    class="lazy-image">
+  {% if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

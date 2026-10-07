@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #36 | standar embed YouTube dan lazy image
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_includes/lazy-image.html`, `_includes/youtube-embed.html`
+- Alasan: Membuat cara standar untuk memasang video YouTube dan gambar dengan memisahkan komponen `youtube-embed.html` dan `lazy-image.html` menggunakan praktik lazy loading. Include ini mendukung atribut alt dan title untuk aksesibilitas, dengan pencegahan build `ERROR_ALT_WAJIB_DIISI.html` apabila parameter alt pada gambar kosong. Gaya CSS pembungkus ditambahkan ke `_includes/head/custom.html` dengan aspect-ratio dan border yang memanfaatkan variabel palet Kanade tanpa menambahkan warna hex hardcode. Dokumentasi cara pakai ditambahkan ke `CATATAN.md`.
+
 ## #35 | deteksi placeholder halaman kerangka
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`, `scripts/check-languages.py`
