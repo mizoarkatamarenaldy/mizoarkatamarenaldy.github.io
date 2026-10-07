@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #48 | pisahkan isi CATATAN.md menjadi rules dan plan
+- Tanggal: 2026-10-07
+- File: `_config.yml`, `CATATAN.md`, `plan/current.md`, `plan/future.md`, `plan/past.md`, `RIWAYAT.md`
+- Alasan: Memisahkan isi CATATAN.md menjadi dokumen aturan tetap (rules) dan rencana (plan). Membuat folder `plan/` yang berisi `current.md` (mapping target akhir dan status fitur yang sedang berjalan `[/]`), `past.md` (status fitur yang sudah selesai `[x]`, seluruh rencana multi-sesi mode terang, dan hasil audit Sesi 1), serta `future.md` (placeholder rencana mendatang). Memperbarui CATATAN.md dengan menyisakan ringkasan, struktur teknis, aturan mapping, slug URL, keputusan, gotcha, pengujian lokal, aturan untuk agent, dan skin Kanade. Menambahkan bullet aturan agent untuk alur pembacaan dan pemindahan file di folder `plan/`. Menambahkan `plan/` ke daftar exclude di `_config.yml` dan gotcha CATATAN.md.
+
 ## #47 | perbaiki bug warna masthead di mode terang
 - Tanggal: 2026-10-07
 - File: `_sass/minimal-mistakes/skins/_kanade.scss`, `assets/css/main-light.scss`, `assets/css/main-light-os.scss`, `CATATAN.md`, `RIWAYAT.md`

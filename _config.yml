@@ -175,6 +175,7 @@ exclude:
   - CATATAN.md
   - RIWAYAT.md
   - RIWAYAT_ARSIP*.md
+  - plan/
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor
