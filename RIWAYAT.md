@@ -10,6 +10,13 @@ Aturan:
 
 ---
 
+## #45 | pengecekan akhir (Sesi 6)
+- Tanggal: 2026-10-07
+- File: CATATAN.md, RIWAYAT.md, scripts/check-languages.py
+- Alasan: Mengerjakan Sesi 6. Memperbarui skrip check-languages.py untuk mengecek peringatan keberadaan warna hardcode (hex, rgb/rgba/hsl, nama warna) pada file di luar file _kanade.scss dan file gambar, serta mengecek keberadaan teks tombol ganti tema 3 bahasa di masthead.html. Mengecek seluruh file HTML dan MD terkait impor CSS dan mengecek ulang rasio kontras warna tema. Ditemukan peringatan warna hardcode peninggalan tema lama pada _includes/page__hero.html. Terdapat perbedaan hasil kalkulasi kontras pada elemen Ring fokus di warna tombol (hover state) pada mode gelap yang direkalkulasi menghasilkan rasio 3.31:1 (di tabel tercatat 3.95:1), namun hal tersebut tidak diperbaiki sendiri karena tetap memenuhi target aksesibilitas WCAG minimal 3:1.
+
+
+
 ## #44 | halaman easter egg Kanade mendukung dua tema (Sesi 5)
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`, `奏/index.html`, `奏/id/index.html`, `奏/en/index.html`, `奏/ja/index.html`

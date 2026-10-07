@@ -6,6 +6,8 @@ import sys
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES_DIR = os.path.join(REPO_ROOT, "_pages")
 KANADE_DIR = os.path.join(REPO_ROOT, "奏")
+INCLUDES_DIR = os.path.join(REPO_ROOT, "_includes")
+LAYOUTS_DIR = os.path.join(REPO_ROOT, "_layouts")
 
 LANGS = ["id", "en", "ja"]
 PLACEHOLDER_PATTERNS = [
@@ -166,7 +168,6 @@ def check_placeholders(filepath, lang, display_path):
     if found_in_file:
         placeholder_counts[lang] += 1
 
-# Check _pages for placeholders
 if os.path.exists(PAGES_DIR):
     for filename in sorted(os.listdir(PAGES_DIR)):
         if not filename.endswith(".md"):
@@ -177,14 +178,107 @@ if os.path.exists(PAGES_DIR):
             file_path = os.path.join(PAGES_DIR, filename)
             check_placeholders(file_path, lang, f"_pages/{filename}")
 
-# Check Kanade easter egg for placeholders
 for lang in LANGS:
     kanade_file = os.path.join(KANADE_DIR, lang, "index.html")
     check_placeholders(kanade_file, lang, f"奏/{lang}/index.html")
 
+# 6. Check hardcoded colors
+color_warnings = []
+hex_regex = re.compile(r'(?:^|\s|[:"\'])#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\b')
+rgb_regex = re.compile(r'\b(?:rgb|rgba|hsl|hsla)\s*\(')
+name_regex = re.compile(r'\b(?:color|background(?:-color)?|fill|stroke)\s*[:=]\s*["\']?(white|black|transparent|red|blue|green|yellow|gray|grey)\b', re.IGNORECASE)
+
+def check_colors(filepath, display_path):
+    if not os.path.exists(filepath):
+        return
+    
+    with open(filepath, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    
+    for i, line in enumerate(lines):
+        # Ignore markdown headers and anchor links
+        if line.lstrip().startswith('#'):
+            continue
+        
+        matches = []
+        for match in hex_regex.finditer(line):
+            val = match.group(0).strip(' :"\'')
+            if not val.startswith('#'): continue
+            # Basic false positive filter for anchor links
+            if f'href="{val}"' in line or f"href='{val}'" in line: continue
+            matches.append(val)
+        
+        if rgb_regex.search(line):
+            matches.append("rgb/rgba/hsl/hsla")
+            
+        name_match = name_regex.search(line)
+        if name_match:
+            matches.append(name_match.group(1))
+            
+        if matches:
+            snippet = line.strip()
+            if len(snippet) > 100: snippet = snippet[:97] + "..."
+            color_warnings.append({
+                "path": display_path,
+                "line": i + 1,
+                "matches": matches,
+                "snippet": snippet
+            })
+
+color_dirs = [
+    (PAGES_DIR, "_pages"),
+    (INCLUDES_DIR, "_includes"),
+    (LAYOUTS_DIR, "_layouts"),
+]
+
+for d_path, d_name in color_dirs:
+    if os.path.exists(d_path):
+        for root, _, files in os.walk(d_path):
+            for file in files:
+                # Exclude image files explicitly if any slip in, though these dirs usually don't have them
+                if file.endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico')):
+                    continue
+                file_path = os.path.join(root, file)
+                rel_path = os.path.relpath(file_path, REPO_ROOT).replace("\\", "/")
+                check_colors(file_path, rel_path)
+
+check_colors(os.path.join(REPO_ROOT, "index.html"), "index.html")
+check_colors(os.path.join(REPO_ROOT, "404.html"), "404.html")
+
+if os.path.exists(KANADE_DIR):
+    for root, _, files in os.walk(KANADE_DIR):
+        for file in files:
+            if file.endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico')):
+                continue
+            file_path = os.path.join(root, file)
+            rel_path = os.path.relpath(file_path, REPO_ROOT).replace("\\", "/")
+            check_colors(file_path, rel_path)
+
+# 7. Check theme button text in masthead.html
+masthead_path = os.path.join(INCLUDES_DIR, "masthead.html")
+if os.path.exists(masthead_path):
+    with open(masthead_path, "r", encoding="utf-8") as f:
+        masthead_content = f.read()
+    
+    required_texts = [
+        "Ganti Tema",
+        "Change Theme",
+        "テーマ変更",
+        "Ganti Tema / Change Theme / テーマ変更"
+    ]
+    missing_texts = []
+    for text in required_texts:
+        if f'"{text}"' not in masthead_content:
+            missing_texts.append(text)
+            
+    if missing_texts:
+        add_error("_includes/masthead.html", f"Teks tombol tema hilang: {', '.join(missing_texts)}")
+
+
 has_errors = len(errors) > 0
 has_warnings = len(warnings) > 0
 has_placeholder_warnings = len(placeholder_warnings) > 0
+has_color_warnings = len(color_warnings) > 0
 
 if has_warnings:
     print("PERINGATAN: Teks Jepang tanpa atribut lang=\"ja\" ditemukan:")
@@ -204,13 +298,20 @@ if has_placeholder_warnings:
     print(f"Total: {sum(placeholder_counts.values())} halaman")
     print("\n" + "-"*50 + "\n")
 
+if has_color_warnings:
+    print("PERINGATAN: Warna hardcode (hex/rgb/nama warna) ditemukan:")
+    for w in color_warnings:
+        print(f"- {w['path']} baris {w['line']}: {', '.join(w['matches'])}")
+        print(f"  Snippet: {w['snippet']}")
+    print("\n" + "-"*50 + "\n")
+
 if has_errors:
-    print("Ditemukan masalah pada konsistensi bahasa/link:")
+    print("Ditemukan masalah pada konsistensi bahasa/link/tema:")
     for f, msgs in errors.items():
         print(f"\n[{f}]")
         for m in msgs:
             print(f"  - {m}")
     sys.exit(1)
 else:
-    print("Pengecekan bahasa selesai: Tidak ada masalah konsistensi atau link rusak.")
+    print("Pengecekan selesai: Tidak ada masalah error.")
     sys.exit(0)

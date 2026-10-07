@@ -140,7 +140,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - [x] Peringatan placeholder yang belum diisi (tambahan di scripts/check-languages.py, hanya peringatan, tidak menggagalkan push)
 - [x] Standar embed YouTube dan lazy image tanpa JavaScript
 - [x] Navigasi Sebelumnya/Berikutnya di portofolio (dipasang otomatis ke _layouts/single.html menggunakan _includes/portfolio-nav.html, urutan halaman di _data/portfolio-nav.yml)
-- [ ] Mode terang dan tombol ganti tema (rencana multi-sesi, lihat bagian "Rencana: Mode Terang")
+- [x] Mode terang dan tombol ganti tema (rencana multi-sesi, lihat bagian "Rencana: Mode Terang")
 
 ## Rencana: Mode Terang (multi-sesi)
 
@@ -167,7 +167,7 @@ Urutan sesi (satu sesi satu tugas):
 - [x] Sesi 3: Tombol ganti tema, skrip anti-kedip di `<head>`, penyimpanan pilihan di `localStorage`, default ikut sistem. Tombol ikut dipasang secara terpusat dan teksnya tiga bahasa (id, en, ja).
 - [x] Sesi 4: Halaman standalone `index.html` (pilih bahasa) dan `404.html` mendukung dua tema.
 - [x] Sesi 5: Easter egg Kanade mendukung dua tema (kanji 奏 tetap menyatu dengan background di keduanya).
-- [ ] Sesi 6: Pengecekan akhir. Perbarui `scripts/check-languages.py` agar ikut memeriksa warna hardcode dan teks tombol tiga bahasa. Cek semua halaman x 3 bahasa x 2 tema. Pastikan kontras lolos.
+- [x] Sesi 6: Pengecekan akhir. Perbarui `scripts/check-languages.py` agar ikut memeriksa warna hardcode dan teks tombol tiga bahasa. Cek semua halaman x 3 bahasa x 2 tema. Pastikan kontras lolos.
 
 
 
@@ -221,7 +221,7 @@ one, namun ketika menerima fokus (hover/focus-visible), warna teks berubah menja
 Aturan untuk sesi-sesi ini: kerjakan satu sesi satu nomor, centang nomor yang selesai di `CATATAN.md` pada akhir sesinya, dan jangan mengerjakan sesi berikutnya.
 
 ## Pengujian Lokal
-- Untuk mengecek konsistensi bahasa, permalink, dan link rusak secara lokal, jalankan `python scripts/check-languages.py` dari root repo. Skrip akan memberikan rincian file yang bermasalah dan mengembalikan exit code 1 jika ada error. Skrip juga akan mencetak peringatan jika menemukan teks Jepang tanpa atribut lang="ja" di halaman id dan en. Skrip juga mencetak peringatan untuk placeholder yang belum diisi.
+- Untuk mengecek konsistensi bahasa, permalink, dan link rusak secara lokal, jalankan `python scripts/check-languages.py` dari root repo. Skrip akan memberikan rincian file yang bermasalah dan mengembalikan exit code 1 jika ada error. Skrip juga akan mencetak peringatan jika menemukan teks Jepang tanpa atribut lang="ja" di halaman id dan en. Skrip juga mencetak peringatan untuk placeholder yang belum diisi. Skrip juga akan mencetak peringatan jika menemukan warna hardcode, dan akan menghasilkan error jika teks tombol ganti tema tiga bahasa tidak lengkap di masthead.
 
 ## Aturan untuk agent
 - Kerjakan satu tugas per sesi.
