@@ -1,0 +1,60 @@
+{% assign path_parts = page.url | split: '/' %}
+{% assign current_lang = path_parts[1] %}
+{% assign current_slug = path_parts[3] %}
+
+{% assign nav_chain = nil %}
+{% if site.data.portfolio-nav.main contains current_slug %}
+  {% assign nav_chain = site.data.portfolio-nav.main %}
+{% elsif site.data.portfolio-nav.additional contains current_slug %}
+  {% assign nav_chain = site.data.portfolio-nav.additional %}
+{% endif %}
+
+{% if nav_chain %}
+  {% for item in nav_chain %}
+    {% if item == current_slug %}
+      {% assign current_index = forloop.index0 %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign next_index = current_index | plus: 1 %}
+
+      {% assign prev_slug = nil %}
+      {% if current_index > 0 %}
+        {% assign prev_slug = nav_chain[prev_index] %}
+      {% endif %}
+
+      {% assign next_slug = nil %}
+      {% if next_index < nav_chain.size %}
+        {% assign next_slug = nav_chain[next_index] %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if prev_slug or next_slug %}
+    <div class="portfolio-nav-wrapper">
+      {% if prev_slug %}
+        {% capture prev_url %}/{{ current_lang }}/portfolio/{{ prev_slug }}/{% endcapture %}
+        {% assign prev_page = site.pages | where: "url", prev_url | first %}
+        <a href="{{ prev_url | relative_url }}" class="home-btn prev-btn">
+          <div class="portfolio-nav-label">
+            {% if current_lang == 'id' %}Sebelumnya{% elsif current_lang == 'en' %}Previous{% elsif current_lang == 'ja' %}前へ{% endif %}
+          </div>
+          <div class="portfolio-nav-title">{{ prev_page.title }}</div>
+        </a>
+      {% else %}
+        <div style="visibility: hidden;"></div>
+      {% endif %}
+
+      {% if next_slug %}
+        {% capture next_url %}/{{ current_lang }}/portfolio/{{ next_slug }}/{% endcapture %}
+        {% assign next_page = site.pages | where: "url", next_url | first %}
+        <a href="{{ next_url | relative_url }}" class="home-btn next-btn">
+          <div class="portfolio-nav-label">
+            {% if current_lang == 'id' %}Berikutnya{% elsif current_lang == 'en' %}Next{% elsif current_lang == 'ja' %}次へ{% endif %}
+          </div>
+          <div class="portfolio-nav-title">{{ next_page.title }}</div>
+        </a>
+      {% else %}
+        <div style="visibility: hidden;"></div>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endif %}

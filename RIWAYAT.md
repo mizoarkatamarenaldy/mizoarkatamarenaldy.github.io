@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #37 | tambah navigasi Sebelumnya/Berikutnya di portofolio
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`, `_data/portfolio-nav.yml`, `_includes/head/custom.html`, `_includes/portfolio-nav.html`, `_layouts/single.html`
+- Alasan: Menambahkan tombol navigasi (Sebelumnya / Berikutnya) di semua halaman portofolio sesuai urutan dua rantai (Main dan Additional) dari daftar tunggal di `_data/portfolio-nav.yml`. Tombol ini membantu pengunjung pindah antar halaman tanpa harus kembali ke HOME. Navigasi ini diterapkan secara terpusat pada layout `single.html` menggunakan `_includes/portfolio-nav.html` khusus untuk halaman portofolio, serta gaya layout grid di `_includes/head/custom.html` yang akan menyesuaikan tampilan dengan menyusun kedua tombol berjajar atau vertikal sesuai lebar layar tanpa JavaScript dan tetap menggunakan palet warna tema Kanade.
+
 ## #36 | standar embed YouTube dan lazy image
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_includes/lazy-image.html`, `_includes/youtube-embed.html`

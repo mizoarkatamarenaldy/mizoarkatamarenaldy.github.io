@@ -50,6 +50,10 @@ layout: default
           </aside>
         {% endif %}
         {{ content }}
+        {% assign url_parts = page.url | split: '/' %}
+        {% if url_parts[2] == 'portfolio' %}
+          {% include portfolio-nav.html %}
+        {% endif %}
         {% include back-to-home.html %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>

@@ -13,6 +13,7 @@ Static saja (tanpa backend). Tema tidak akan diupdate dari upstream, boleh edit 
 - Cara pakai include baru:
   `{% include youtube-embed.html id="..." title="..." %}`
   `{% include lazy-image.html src="..." alt="..." width="..." height="..." %}`
+  `{% include portfolio-nav.html %}` (dipasang otomatis di _layouts/single.html)
 
 ## Mapping web (target akhir)
 Isi semua bahasa SAMA. Pilihan bahasa cuma mengganti bahasa tampilan.
@@ -138,6 +139,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - [x] Peringatan teks Jepang tanpa lang="ja" di halaman id/en (tambahan di scripts/check-languages.py, hanya peringatan, tidak menggagalkan push)
 - [x] Peringatan placeholder yang belum diisi (tambahan di scripts/check-languages.py, hanya peringatan, tidak menggagalkan push)
 - [x] Standar embed YouTube dan lazy image tanpa JavaScript
+- [x] Navigasi Sebelumnya/Berikutnya di portofolio (dipasang otomatis ke _layouts/single.html menggunakan _includes/portfolio-nav.html, urutan halaman di _data/portfolio-nav.yml)
 
 ## Pengujian Lokal
 - Untuk mengecek konsistensi bahasa, permalink, dan link rusak secara lokal, jalankan `python scripts/check-languages.py` dari root repo. Skrip akan memberikan rincian file yang bermasalah dan mengembalikan exit code 1 jika ada error. Skrip juga akan mencetak peringatan jika menemukan teks Jepang tanpa atribut lang="ja" di halaman id dan en. Skrip juga mencetak peringatan untuk placeholder yang belum diisi.
