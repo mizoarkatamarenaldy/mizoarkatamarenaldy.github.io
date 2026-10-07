@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #44 | halaman easter egg Kanade mendukung dua tema (Sesi 5)
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`, `奏/index.html`, `奏/id/index.html`, `奏/en/index.html`, `奏/ja/index.html`
+- Alasan: Mengerjakan Sesi 5. Menambahkan skrip anti-kedip ke semua halaman easter egg di folder `奏/` agar tidak berkedip putih saat dirender dalam mode gelap, serta transisi smooth untuk `body` dan elemen `.kanji-deco`. Kanji 奏 (`.kanji-deco`) sudah menggunakan properti `color: var(--kanade-accent)` dan `opacity: 0.25` sehingga secara otomatis beradaptasi dan tetap menyatu (blend) dengan background di kedua tema tanpa membutuhkan modifikasi warna tambahan.
+
 ## #43 | halaman index.html dan 404.html mendukung dua tema (Sesi 4)
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`, `_includes/masthead.html`, `index.html`
