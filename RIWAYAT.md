@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #38 | rencana multi-sesi mode terang dan tombol ganti tema
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`
+- Alasan: Menambahkan rencana multi-sesi untuk mode terang dan tombol ganti tema ke `CATATAN.md` tepat setelah bagian "Status fitur", serta menambahkan satu baris item pada "Status fitur". Rencana ini mencakup tujuan situs statis dengan default `prefers-color-scheme` dan penyimpanan `localStorage`, kendala teknis SCSS/runtime, skrip anti-kedip, dan rincian 6 sesi pengerjaan bertahap mulai dari audit kontras, fondasi palet, tombol ganti tema, halaman standalone, easter egg Kanade, hingga pengecekan akhir. Tidak ada perubahan pada kode, CSS, atau halaman web.
+
 ## #37 | tambah navigasi Sebelumnya/Berikutnya di portofolio
 - Tanggal: 2026-10-07
 - File: `CATATAN.md`, `RIWAYAT.md`, `_data/portfolio-nav.yml`, `_includes/head/custom.html`, `_includes/portfolio-nav.html`, `_layouts/single.html`
