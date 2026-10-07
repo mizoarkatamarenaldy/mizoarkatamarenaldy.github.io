@@ -1,0 +1,42 @@
+---
+search: false
+---
+@charset "utf-8";
+
+// Import all variables first
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+
+// Override with light mode variables for the MM core import
+$background-color: $background-color-light;
+$text-color: $text-color-light;
+$primary-color: $primary-color-light;
+$border-color: $border-color-light;
+$code-background-color: $code-background-color-light;
+$code-background-color-dark: $code-background-color-dark-light;
+$form-background-color: $form-background-color-light;
+$footer-background-color: $footer-background-color-light;
+$link-color: $link-color-light;
+$link-color-hover: $link-color-hover-light;
+$link-color-visited: $link-color-visited-light;
+$masthead-link-color-hover: $masthead-link-color-hover-light;
+$navicon-link-color-hover: $navicon-link-color-hover-light;
+
+// Explicit forced light mode
+[data-theme="light"] {
+  @import "minimal-mistakes";
+}
+
+// Ensure html/body gets styles when data-theme is set on html
+html[data-theme="light"] {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+// Fallback light mode via system preference
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) {
+    @import "minimal-mistakes";
+    background-color: $background-color;
+    color: $text-color;
+  }
+}

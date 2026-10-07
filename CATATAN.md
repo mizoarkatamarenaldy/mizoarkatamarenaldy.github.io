@@ -163,7 +163,7 @@ Kendala teknis yang diketahui:
 
 Urutan sesi (satu sesi satu tugas):
 - [x] Sesi 1: Audit kontras warna dan fokus keyboard di mode gelap yang sekarang. Catat rasio kontras pasangan warna utama (teks, aksen, link, tombol, hover, visited). Perbaiki hanya masalah fokus keyboard. Hasil angka ditulis di `CATATAN.md`.
-- [ ] Sesi 2: Fondasi palet terang. Tambah palet terang di `_kanade.scss`, variabel baru di `kanade-palette.scss`, mekanisme `[data-theme]` dan fallback `@media` di halaman Minimal Mistakes. Revisi aturan tema di `CATATAN.md`. Belum ada tombol.
+- [x] Sesi 2: Fondasi palet terang. Tambah palet terang di `_kanade.scss`, variabel baru di `kanade-palette.scss`, mekanisme `[data-theme]` dan fallback `@media` di halaman Minimal Mistakes. Revisi aturan tema di `CATATAN.md`. Belum ada tombol.
 - [ ] Sesi 3: Tombol ganti tema, skrip anti-kedip di `<head>`, penyimpanan pilihan di `localStorage`, default ikut sistem. Tombol ikut dipasang secara terpusat dan teksnya tiga bahasa (id, en, ja).
 - [ ] Sesi 4: Halaman standalone `index.html` (pilih bahasa) dan `404.html` mendukung dua tema.
 - [ ] Sesi 5: Easter egg Kanade mendukung dua tema (kanji 奏 tetap menyatu dengan background di keduanya).
@@ -189,6 +189,21 @@ Urutan sesi (satu sesi satu tugas):
 | Ring fokus di warna tombol (hover state) | #EDEAF0 (Teks) | #BB6588 (Primary)| 3.95:1 | 3:1 | Lulus |
 
 *Catatan: Semua pasangan kontras di mode gelap lulus standar WCAG. Kegagalan kontras yang diteruskan ke Sesi 2: **NIHIL (tidak ada)**.*
+
+**Tabel Kontras Pasangan Warna (Mode Terang)**
+
+| Pasangan | Warna Depan | Warna Latar | Rasio Kontras | Target WCAG | Status |
+|---|---|---|---|---|---|
+| Teks utama di background | #121016 (Teks) | #FAFAFC (Bg) | 18.13:1 | 4.5:1 | Lulus |
+| Teks redup/sekunder di background | #413F44 (Muted) | #FAFAFC (Bg) | 9.98:1 | 4.5:1 | Lulus |
+| Aksen di background | #A85A7A (Primary) | #FAFAFC (Bg) | 4.57:1 | 4.5:1 | Lulus |
+| Link normal di background | #864861 (Link) | #FAFAFC (Bg) | 6.47:1 | 4.5:1 | Lulus |
+| Link hover di background | #643648 (Link H) | #FAFAFC (Bg) | 9.31:1 | 4.5:1 | Lulus |
+| Link visited di background | #986378 (Link V) | #FAFAFC (Bg) | 4.59:1 | 4.5:1 | Lulus |
+| Teks tombol normal | #121016 (Teks) | #FAFAFC (Bg) | 18.13:1 | 4.5:1 | Lulus |
+| Teks tombol hover | #FAFAFC (Bg) | #A85A7A (Primary)| 4.57:1 | 4.5:1 | Lulus |
+| Ring fokus di background | #121016 (Teks) | #FAFAFC (Bg) | 18.13:1 | 3:1 | Lulus |
+| Ring fokus di warna tombol (hover state) | #121016 (Teks) | #A85A7A (Primary)| 3.97:1 | 3:1 | Lulus |
 
 **Daftar Audit Elemen Fokus & Perbaikan:**
 1. **index.html (kartu bahasa)**: Tidak ada ring fokus yang terlihat.
@@ -240,20 +255,25 @@ Aturan untuk sesi-sesi ini: kerjakan satu sesi satu nomor, centang nomor yang se
 ## Skin Kanade
 - Nama skin: `kanade`
 - File skin: `_sass/minimal-mistakes/skins/_kanade.scss`
-- Sumber palet warna: `index.html` (halaman pilih bahasa)
+- Sumber palet warna (Gelap):
   - Background: `#121016` (ungu-hitam gelap)
   - Teks: `#EDEAF0` (lavender terang)
   - Aksen/primary: `#BB6588` (pink Kanade)
+- Sumber palet warna (Terang):
+  - Background: `#FAFAFC` (silver-putih pucat)
+  - Teks: `#121016` (ungu-hitam gelap)
+  - Aksen/primary: `#A85A7A` (pink Kanade pekat)
 - Diaktifkan via `_config.yml` → `minimal_mistakes_skin: "kanade"`
 
-### Arsitektur kanade-palette.css
-**Status: sudah ada** (dibuat sesi #5, 2026-09-21)
+### Arsitektur kanade-palette.css & main-light.css
+**Status: sudah ada** (diperbarui Sesi 2)
 
-- `_kanade.scss` = satu-satunya tempat nilai warna hex ditulis (variabel SCSS: `$background-color`, `$text-color`, `$primary-color`).
-- `assets/css/kanade-palette.scss` = file SCSS dengan front matter Jekyll. Mengimport `_kanade.scss`, lalu emit `:root { --kanade-bg; --kanade-text; --kanade-accent }` via interpolasi `#{}`. Dikompilasi oleh Jekyll menjadi `assets/css/kanade-palette.css`.
-- Halaman Minimal Mistakes memuat `kanade-palette.css` via `<link>` di `_includes/head/custom.html`.
+- `_kanade.scss` (dan turunannya) = satu-satunya tempat nilai warna hex untuk tema gelap maupun terang ditulis (variabel SCSS).
+- `assets/css/kanade-palette.scss` = file SCSS dengan front matter Jekyll. Mengimport `_kanade.scss`, lalu emit `:root` dan CSS fallback (media query & data-theme) untuk mengaktifkan palet terang.
+- Tema Terang = dikompilasi ke `assets/css/main-light.css` menggunakan wrapper SASS `[data-theme="light"]` dan fallback `@media (prefers-color-scheme: light)`, mengimport ulang inti SASS Minimal Mistakes agar berjalan murni CSS tanpa JS.
+- Halaman Minimal Mistakes memuat `kanade-palette.css` dan `main-light.css` via `<link>` di `_includes/head/custom.html`.
 - Halaman standalone HTML memuat `kanade-palette.css` via `<link>` langsung.
-- **Jangan tulis hex di `kanade-palette.scss`** — nilai warna hanya boleh ada di `_kanade.scss`.
+- **Jangan tulis hex di `kanade-palette.scss` maupun `main-light.scss`** — nilai warna hanya boleh ada di `_kanade.scss`.
 
 ### Gotcha saat pembuatan skin
 - Tidak ada warna hardcode di `_includes/`, `_layouts/`, atau `_pages/`.

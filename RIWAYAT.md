@@ -10,6 +10,12 @@ Aturan:
 
 ---
 
+## #40 | fondasi palet mode terang (Sesi 2)
+- Tanggal: 2026-10-07
+- File: `CATATAN.md`, `RIWAYAT.md`, `_includes/head/custom.html`, `_sass/minimal-mistakes/skins/_kanade.scss`, `assets/css/kanade-palette.scss`, `assets/css/main-light.scss`
+- Alasan: Mengerjakan Sesi 2 (Fondasi palet terang). Menambahkan warna terang (latar, teks, aksen, dan warn turunan SASS) ke `_kanade.scss` dengan nilai default. Membuat file `assets/css/main-light.scss` untuk mengompilasi CSS tema terang menggunakan teknik SASS wrapper (`[data-theme="light"]` dan `@media (prefers-color-scheme: light)`) agar bisa dieksekusi tanpa JavaScript. Memasukkan CSS mode terang ke dalam pemanggilan `custom.html`. Mengupdate variabel root di `kanade-palette.scss`. Mengubah aturan warna dan menambahkan tabel kontras mode terang ke `CATATAN.md`.
+
+
 ## #39 | audit kontras dan perbaiki fokus keyboard (Sesi 1)
 - Tanggal: 2026-10-07
 - File: CATATAN.md, RIWAYAT.md, _includes/head/custom.html, index.html

@@ -14,3 +14,19 @@ search: false
   --kanade-text:   #{$text-color};
   --kanade-accent: #{$primary-color};
 }
+
+/* Light mode (forced via attribute) */
+html[data-theme="light"] {
+  --kanade-bg:     #{$background-color-light};
+  --kanade-text:   #{$text-color-light};
+  --kanade-accent: #{$primary-color-light};
+}
+
+/* Light mode (fallback via system preference, only if not forced to dark) */
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) {
+    --kanade-bg:     #{$background-color-light};
+    --kanade-text:   #{$text-color-light};
+    --kanade-accent: #{$primary-color-light};
+  }
+}

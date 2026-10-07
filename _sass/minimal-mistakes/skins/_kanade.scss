@@ -20,6 +20,21 @@ $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
+/* Light Mode Base Variables (used by kanade-palette and main-light) */
+$background-color-light: #FAFAFC !default;
+$text-color-light: #121016 !default;
+$primary-color-light: #A85A7A !default;
+$border-color-light: mix(#000, $background-color-light, 15%) !default;
+$code-background-color-light: mix(#000, $background-color-light, 5%) !default;
+$code-background-color-dark-light: mix(#000, $background-color-light, 10%) !default;
+$form-background-color-light: mix(#000, $background-color-light, 5%) !default;
+$footer-background-color-light: mix(#000, $background-color-light, 5%) !default;
+$link-color-light: mix(#000, $primary-color-light, 20%) !default;
+$link-color-hover-light: mix(#000, $link-color-light, 25%) !default;
+$link-color-visited-light: mix(#fff, $link-color-light, 15%) !default;
+$masthead-link-color-hover-light: mix(#fff, $text-color-light, 20%) !default;
+$navicon-link-color-hover-light: mix(#fff, $background-color-light, 30%) !default;
+
 /* notices */
 $notice-background-mix: 90% !default;
 $code-notice-background-mix: 95% !default;
