@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #49 | ubah teks tombol Home masthead menjadi nama pemilik
+- Tanggal: 2026-10-07
+- File: `_includes/masthead.html`, `RIWAYAT.md`
+- Alasan: Mengganti teks tombol "Home" / "Beranda" / "ホーム" di masthead dengan nama panggung pemilik ("Mizo Arkatama Renaldy") untuk semua bahasa sesuai permintaan, tanpa mengubah properti link yang sudah ada.
+
 ## #48 | pisahkan isi CATATAN.md menjadi rules dan plan
 - Tanggal: 2026-10-07
 - File: `_config.yml`, `CATATAN.md`, `plan/current.md`, `plan/future.md`, `plan/past.md`, `RIWAYAT.md`
