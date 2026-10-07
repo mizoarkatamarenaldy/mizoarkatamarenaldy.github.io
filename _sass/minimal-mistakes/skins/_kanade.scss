@@ -32,6 +32,7 @@ $footer-background-color-light: mix(#000, $background-color-light, 5%) !default;
 $link-color-light: mix(#000, $primary-color-light, 20%) !default;
 $link-color-hover-light: mix(#000, $link-color-light, 25%) !default;
 $link-color-visited-light: mix(#fff, $link-color-light, 15%) !default;
+$masthead-link-color-light: $text-color-light !default;
 $masthead-link-color-hover-light: mix(#fff, $text-color-light, 20%) !default;
 $navicon-link-color-hover-light: mix(#fff, $background-color-light, 30%) !default;
 

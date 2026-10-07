@@ -113,6 +113,7 @@ File di `_pages/` bernama `{lang}-{slug}.md`, `/` di slug diganti `-`
 - Hati-hati dengan spesifisitas CSS pada tag `<a>` (link) seperti untuk efek hover atau visited. Tema Minimal Mistakes memiliki styling bawaan (`a:hover`, `a:visited`, dll.) yang bisa menimpa class custom. Gunakan `!important` atau selector yang sangat spesifik jika elemen custom (seperti pemicu easter egg) tidak bereaksi.
 - `robots.txt` tidak boleh memuat `Disallow` untuk URL easter egg karena robots.txt bersifat publik dan justru akan membocorkan URL-nya.
 - JSON-LD Person tidak boleh memuat nama asli, kampus, atau data pribadi lain.
+- Pada SASS Minimal Mistakes, beberapa variabel turunan seperti `$masthead-link-color` dievaluasi pada saat `_kanade.scss` diimpor (mengambil nilai `$text-color` mode gelap). Saat membuat mode terang, meng-override `$text-color` saja tidak cukup karena variabel turunan tersebut sudah menjadi hex. Cara memperbaikinya: definisikan variabel eksplisit seperti `$masthead-link-color-light: $text-color-light !default;` di `_kanade.scss`, lalu override secara manual `$masthead-link-color: $masthead-link-color-light;` di dalam `main-light.scss` dan `main-light-os.scss`.
 
 ## Status fitur
 - [x] Halaman pilih bahasa

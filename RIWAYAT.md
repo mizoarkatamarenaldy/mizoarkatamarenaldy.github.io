@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #47 | perbaiki bug warna masthead di mode terang
+- Tanggal: 2026-10-07
+- File: `_sass/minimal-mistakes/skins/_kanade.scss`, `assets/css/main-light.scss`, `assets/css/main-light-os.scss`, `CATATAN.md`, `RIWAYAT.md`
+- Alasan: Memperbaiki bug di mana warna judul situs dan link di masthead pada mode terang menjadi abu-abu sangat terang (hampir tidak terlihat) karena variabel turunan `$masthead-link-color` sudah telanjur dievaluasi mengambil warna `$text-color` mode gelap `#EDEAF0` ketika `_kanade.scss` diimpor, dan tidak otomatis mengikuti perubahan `$text-color: $text-color-light`. Perbaikan dilakukan dengan mendefinisikan `$masthead-link-color-light: $text-color-light !default;` di `_kanade.scss` dan secara eksplisit meng-override `$masthead-link-color: $masthead-link-color-light;` pada file kompilasi mode terang `main-light.scss` dan `main-light-os.scss`. Elemen yang terpengaruh (judul situs, tombol bahasa, tombol tema) kini memakai warna teks `#121016` (kontras 18.13:1 terhadap background `#FAFAFC`).
+
 ## #46 | bersih-bersih sisa Sesi 6
 - Tanggal: 2026-10-07
 - File: CATATAN.md, RIWAYAT.md, scripts/check-languages.py
