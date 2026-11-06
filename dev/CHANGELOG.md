@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #50 | pindahkan riwayat dan rencana ke dev/
+- Tanggal: 2026-11-06
+- File: `_config.yml`, `CATATAN.md`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`, `plan/current.md`, `plan/future.md`, `plan/past.md`
+- Alasan: Memindahkan riwayat dan rencana ke folder dev/. Mengganti nama RIWAYAT.md menjadi dev/CHANGELOG.md, memindahkan plan/current.md ke dev/PLAN.md serta menempelkan daftar status fitur dari plan/past.md di bawah judul ## Selesai, membuat dev/PLANSPEC.md berisi rencana mode terang dan hasil audit sesi 1 dari plan/past.md, lalu menghapus plan/past.md, plan/future.md, dan folder plan/. Memperbarui aturan agent dan gotcha exclude pada CATATAN.md ke path baru di dev/, serta memperbarui daftar exclude di _config.yml.
+
 ## #49 | ubah teks tombol Home masthead menjadi nama pemilik
 - Tanggal: 2026-10-07
 - File: `_includes/masthead.html`, `RIWAYAT.md`

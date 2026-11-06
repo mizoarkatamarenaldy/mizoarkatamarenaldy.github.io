@@ -171,11 +171,9 @@ include:
   - _pages
   - .well-known
 exclude:
+  - dev/
   - scripts
   - CATATAN.md
-  - RIWAYAT.md
-  - RIWAYAT_ARSIP*.md
-  - plan/
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor

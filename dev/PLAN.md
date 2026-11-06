@@ -56,3 +56,26 @@ mizoarkatamarenaldy.github.io/
 - [/] Halaman Main Portfolio (Psikologi, HR, Bahasa Jepang) — kerangka selesai, isi menunggu Mizo
 - [/] Halaman Additional Portfolio (9 halaman) — kerangka selesai, isi menunggu Mizo
 - [/] Easter egg Kanade (3 bahasa) — kerangka selesai, teks masih [TEKS DARI MIZO]
+
+## Selesai
+- [x] Halaman pilih bahasa
+- [x] Halaman tujuan per bahasa
+- [x] Tombol ganti bahasa (dinamis membawa ke halaman setara)
+- [x] Redirect otomatis sesuai bahasa browser
+- [x] Isi HOME (ringkasan diri, motto 3E sebagai link, dua bagian buka-tutup)
+- [x] Link dari HOME ke semua sub-halaman (3E, 12 portofolio, About, Contact) lewat tombol
+- [x] Halaman Contact — kerangka selesai, isi menunggu Mizo
+- [x] Desain visual dan warna theme (unsur Kanade)
+- [x] Halaman 404 (tiga bahasa: id, en, ja)
+- [x] SEO dan meta tags multibahasa (judul tab, hreflang, lang attribute, deskripsi per bahasa)
+- [x] Tombol "Kembali ke HOME" di semua sub-halaman (dipasang otomatis ke _layouts/single.html menggunakan _includes/back-to-home.html dan class home-btn)
+- [x] Gambar preview (og:image) untuk share link (file di assets/images/og-image.png, tag dipasang terpusat di _includes/seo.html dan _config.yml)
+- [x] Favicon tab browser aksen Kanade (file di assets/images/: favicon.svg, favicon.ico, favicon-32.png, apple-touch-icon.png dikecualikan dari larangan hex; tag dipasang terpusat di _includes/head/custom.html dan manual di index.html serta easter egg Kanade)
+- [x] Sitemap dan robots.txt (jekyll-sitemap, easter egg Kanade dikecualikan via sitemap: false)
+- [x] Structured data JSON-LD Person di HOME (3 bahasa, hanya nama panggung)
+- [x] Pengecekan otomatis konsistensi 3 bahasa (skrip dan GitHub Action)
+- [x] Peringatan teks Jepang tanpa lang="ja" di halaman id/en (tambahan di scripts/check-languages.py, hanya peringatan, tidak menggagalkan push)
+- [x] Peringatan placeholder yang belum diisi (tambahan di scripts/check-languages.py, hanya peringatan, tidak menggagalkan push)
+- [x] Standar embed YouTube dan lazy image tanpa JavaScript
+- [x] Navigasi Sebelumnya/Berikutnya di portofolio (dipasang otomatis ke _layouts/single.html menggunakan _includes/portfolio-nav.html, urutan halaman di _data/portfolio-nav.yml)
+- [x] Mode terang dan tombol ganti tema (rencana multi-sesi, lihat bagian "Rencana: Mode Terang")
