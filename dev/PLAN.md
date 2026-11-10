@@ -21,16 +21,16 @@ mizoarkatamarenaldy.github.io/
       │     ├── [buka-tutup] Main Portfolio
       │     │     ├── Psikologi
       │     │     ├── HR
-      │     │     └── Linguistik Terapan & Multilingual
+      │     │     └── Linguistik
       │     └── [buka-tutup] Additional Portfolio
       │           ├── Developer
-      │           ├── Data Science/Analyst
-      │           ├── Desain & UI/UX
-      │           ├── Ilustrasi & Seni Visual
-      │           ├── Literasi & Creative Writing
-      │           ├── Audio & Komposisi Musik
-      │           ├── Operasional Domestik & Kuliner
-      │           └── Entrepreneurship
+      │           ├── Data
+      │           ├── Desain
+      │           ├── Ilustrasi
+      │           ├── Menulis
+      │           ├── Musik
+      │           ├── Kuliner
+      │           └── Wirausaha
       │
       ├── 3E (detail framework, halaman terpisah)
       │
@@ -52,10 +52,11 @@ mizoarkatamarenaldy.github.io/
 ## Status fitur
 - [/] Halaman 3E — kerangka selesai, isi menunggu Mizo
 - [/] Halaman About (latar belakang, pengalaman hidup, CV) — kerangka selesai, isi menunggu Mizo
-- [/] Halaman Main Portfolio (Psikologi, HR, Linguistik Terapan & Multilingual) — kerangka selesai, isi menunggu Mizo
+- [/] Halaman Main Portfolio (Psikologi, HR, Linguistik) — kerangka selesai, isi menunggu Mizo
 - [/] Halaman Additional Portfolio (8 halaman) — kerangka selesai, isi menunggu Mizo
 - [/] Easter egg Kanade (3 bahasa) — kerangka selesai, teks masih [TEKS DARI MIZO]
 - [x] Samakan nama portofolio dengan Big Eleventh Skills
+- [x] Perpendek nama portofolio jadi 1 kata
 
 ## Selesai
 - [x] Halaman pilih bahasa

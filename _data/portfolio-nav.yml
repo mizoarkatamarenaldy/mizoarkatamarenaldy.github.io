@@ -1,13 +1,13 @@
 main:
   - psychology
   - hr
-  - applied-linguistics-multilingual
+  - linguistics
 additional:
   - developer
-  - data-science-analyst
-  - design-ui-ux
-  - illustration-visual-arts
-  - literacy-creative-writing
-  - audio-music-composition
-  - domestic-operations-culinary
+  - data
+  - design
+  - illustration
+  - writing
+  - music
+  - culinary
   - entrepreneurship

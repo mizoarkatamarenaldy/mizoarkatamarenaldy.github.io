@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Design & UI/UX"
-permalink: /en/portfolio/design-ui-ux/
+title: "Culinary"
+permalink: /en/portfolio/culinary/
 lang: en
 change_lang_text: "Change language"
 ---

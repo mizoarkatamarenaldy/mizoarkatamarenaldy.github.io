@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Literacy & Creative Writing"
-permalink: /en/portfolio/literacy-creative-writing/
+title: "Writing"
+permalink: /en/portfolio/writing/
 lang: en
 change_lang_text: "Change language"
 ---

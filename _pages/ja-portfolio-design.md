@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "デザインとUI/UX"
-permalink: /ja/portfolio/design-ui-ux/
+title: "デザイン"
+permalink: /ja/portfolio/design/
 lang: ja
 change_lang_text: "言語を変更"
 ---

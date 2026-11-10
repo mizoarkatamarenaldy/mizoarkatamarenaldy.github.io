@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "人事（HR）"
+title: "HR"
 permalink: /ja/portfolio/hr/
 lang: ja
 change_lang_text: "言語を変更"

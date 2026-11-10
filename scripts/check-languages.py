@@ -21,14 +21,14 @@ SLUGS = {
     "contact": "/{lang}/contact/",
     "portfolio-psychology": "/{lang}/portfolio/psychology/",
     "portfolio-hr": "/{lang}/portfolio/hr/",
-    "portfolio-applied-linguistics-multilingual": "/{lang}/portfolio/applied-linguistics-multilingual/",
+    "portfolio-linguistics": "/{lang}/portfolio/linguistics/",
     "portfolio-developer": "/{lang}/portfolio/developer/",
-    "portfolio-data-science-analyst": "/{lang}/portfolio/data-science-analyst/",
-    "portfolio-design-ui-ux": "/{lang}/portfolio/design-ui-ux/",
-    "portfolio-illustration-visual-arts": "/{lang}/portfolio/illustration-visual-arts/",
-    "portfolio-literacy-creative-writing": "/{lang}/portfolio/literacy-creative-writing/",
-    "portfolio-audio-music-composition": "/{lang}/portfolio/audio-music-composition/",
-    "portfolio-domestic-operations-culinary": "/{lang}/portfolio/domestic-operations-culinary/",
+    "portfolio-data": "/{lang}/portfolio/data/",
+    "portfolio-design": "/{lang}/portfolio/design/",
+    "portfolio-illustration": "/{lang}/portfolio/illustration/",
+    "portfolio-writing": "/{lang}/portfolio/writing/",
+    "portfolio-music": "/{lang}/portfolio/music/",
+    "portfolio-culinary": "/{lang}/portfolio/culinary/",
     "portfolio-entrepreneurship": "/{lang}/portfolio/entrepreneurship/"
 }
 

@@ -4,7 +4,7 @@ title: "Home"
 permalink: /en/main/
 lang: en
 change_lang_text: "Change language"
-description: "Portfolio of Mizo Arkatama Renaldy. Showcasing works and projects in Psychology, HR, and Applied Linguistics & Multilingual."
+description: "Portfolio of Mizo Arkatama Renaldy. Showcasing works and projects in Psychology, HR, and Linguistics."
 ---
 
 Hello! Welcome to my portfolio. This page is still under construction — stay tuned for more content! 🚧
@@ -21,7 +21,7 @@ Hello! Welcome to my portfolio. This page is still under construction — stay t
 <ul class="home-links">
 <li><a class="home-btn" href="/en/portfolio/psychology/">Psychology</a></li>
 <li><a class="home-btn" href="/en/portfolio/hr/">HR</a></li>
-<li><a class="home-btn" href="/en/portfolio/applied-linguistics-multilingual/">Applied Linguistics & Multilingual</a></li>
+<li><a class="home-btn" href="/en/portfolio/linguistics/">Linguistics</a></li>
 </ul>
 
 </details>
@@ -31,12 +31,12 @@ Hello! Welcome to my portfolio. This page is still under construction — stay t
 
 <ul class="home-links">
 <li><a class="home-btn" href="/en/portfolio/developer/">Developer</a></li>
-<li><a class="home-btn" href="/en/portfolio/data-science-analyst/">Data Science/Analyst</a></li>
-<li><a class="home-btn" href="/en/portfolio/design-ui-ux/">Design & UI/UX</a></li>
-<li><a class="home-btn" href="/en/portfolio/illustration-visual-arts/">Illustration & Visual Arts</a></li>
-<li><a class="home-btn" href="/en/portfolio/literacy-creative-writing/">Literacy & Creative Writing</a></li>
-<li><a class="home-btn" href="/en/portfolio/audio-music-composition/">Audio & Music Composition</a></li>
-<li><a class="home-btn" href="/en/portfolio/domestic-operations-culinary/">Domestic Operations & Culinary</a></li>
+<li><a class="home-btn" href="/en/portfolio/data/">Data</a></li>
+<li><a class="home-btn" href="/en/portfolio/design/">Design</a></li>
+<li><a class="home-btn" href="/en/portfolio/illustration/">Illustration</a></li>
+<li><a class="home-btn" href="/en/portfolio/writing/">Writing</a></li>
+<li><a class="home-btn" href="/en/portfolio/music/">Music</a></li>
+<li><a class="home-btn" href="/en/portfolio/culinary/">Culinary</a></li>
 <li><a class="home-btn" href="/en/portfolio/entrepreneurship/">Entrepreneurship</a></li>
 </ul>
 

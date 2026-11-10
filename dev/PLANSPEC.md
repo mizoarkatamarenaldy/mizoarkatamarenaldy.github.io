@@ -68,3 +68,41 @@ Cek manual:
 - Buka HOME di id, en, dan ja. Main Portfolio menampilkan 3 tombol dan Additional Portfolio menampilkan 8 tombol dengan nama baru.
 - Dari halaman pertama sampai terakhir di portofolio, klik Sebelumnya/Berikutnya. Urutannya sesuai daftar di atas dan tidak ada halaman Second Brain atau Sport.
 - Buka halaman Entrepreneurship di tiga bahasa. Kerangkanya sama seperti halaman lain dan muncul peringatan placeholder dari skrip, bukan error.
+
+## Perpendek nama portofolio jadi 1 kata
+
+Tujuan: Nama 11 halaman portofolio terlalu panjang untuk label tombol dan judul halaman. Semuanya dipendekkan jadi satu kata. Hanya nama yang berubah, isi halaman tidak.
+
+Tempat dan tampilan:
+- Tidak ada elemen tampilan baru. Yang berubah hanya teks nama di judul halaman, tombol di HOME, dan navigasi Sebelumnya/Berikutnya.
+
+Aturan:
+- Nama baru per bahasa (id / en / ja):
+  - Psikologi / Psychology / 心理学
+  - HR / HR / HR
+  - Linguistik / Linguistics / 言語学
+  - Developer / Developer / 開発
+  - Data / Data / データ
+  - Desain / Design / デザイン
+  - Ilustrasi / Illustration / イラスト
+  - Menulis / Writing / 執筆
+  - Musik / Music / 音楽
+  - Kuliner / Culinary / 料理
+  - Wirausaha / Entrepreneurship / 起業
+- Urutan dan pembagian tidak berubah. Main Portfolio: Psikologi, HR, Linguistik. Additional Portfolio: Developer, Data, Desain, Ilustrasi, Menulis, Musik, Kuliner, Wirausaha.
+- Nama baru dipakai di semua tempat nama lama muncul, di tiga bahasa: judul halaman (H1), judul tab browser, tombol di HOME, navigasi Sebelumnya/Berikutnya, file _data/portfolio-nav.yml, teks meta description dan teks alt gambar preview yang menyebut nama portofolio, dan JSON-LD kalau ada.
+- Slug dan permalink ikut dipendekkan menjadi: psychology, hr, linguistics, developer, data, design, illustration, writing, music, culinary, entrepreneurship. Slug sama di tiga bahasa, mengikuti pola URL yang sudah ada (/id/portfolio/[slug]/, /en/portfolio/[slug]/, /ja/portfolio/[slug]/).
+- Semua link internal, hreflang, tombol ganti bahasa, dan sitemap harus mengikuti slug baru. Tidak ada link ke slug lama yang tersisa.
+- Jangan mengubah isi halaman selain nama, jangan mengubah salam pembuka, dan jangan menyentuh halaman 3E, About, Contact, dan easter egg Kanade.
+- Jangan membuat redirect dari slug lama.
+- Perbarui pohon "Mapping web" di dev/PLAN.md supaya memakai nama baru. Jangan ubah item di bagian "Selesai".
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Jalankan python scripts/check-languages.py. Hasilnya tanpa error dan tanpa link rusak.
+- Cari teks nama lama (contoh: "Linguistik Terapan", "Applied Linguistics", "応用言語学", "Operasional Domestik", "Data Science/Analyst", "Creative Writing") di seluruh repo di luar dev/arsip/ dan dev/CHANGELOG.md. Tidak boleh ada yang tersisa.
+- Buka HOME di id, en, dan ja. Main Portfolio menampilkan 3 tombol dan Additional Portfolio menampilkan 8 tombol, semuanya satu kata.
+- Dari halaman portofolio pertama sampai terakhir, klik Sebelumnya/Berikutnya. Urutannya sesuai daftar di atas.
+- Di salah satu halaman portofolio, klik tombol ganti bahasa. Tujuannya halaman setara di bahasa lain dengan slug baru.

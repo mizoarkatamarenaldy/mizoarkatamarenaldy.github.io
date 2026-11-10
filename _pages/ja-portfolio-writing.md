@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "リテラシーとクリエイティブライティング"
-permalink: /ja/portfolio/literacy-creative-writing/
+title: "執筆"
+permalink: /ja/portfolio/writing/
 lang: ja
 change_lang_text: "言語を変更"
 ---

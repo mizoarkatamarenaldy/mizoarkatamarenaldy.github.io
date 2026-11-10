@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Data Science/Analyst"
-permalink: /en/portfolio/data-science-analyst/
+title: "Music"
+permalink: /en/portfolio/music/
 lang: en
 change_lang_text: "Change language"
 ---

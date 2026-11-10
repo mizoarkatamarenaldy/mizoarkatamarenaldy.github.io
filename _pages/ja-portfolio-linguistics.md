@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "オーディオと作曲"
-permalink: /ja/portfolio/audio-music-composition/
+title: "言語学"
+permalink: /ja/portfolio/linguistics/
 lang: ja
 change_lang_text: "言語を変更"
 ---

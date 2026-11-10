@@ -55,11 +55,11 @@
 {%- assign page_lang = page.lang | default: current_lang -%}
 {%- case page_lang -%}
   {%- when 'id' -%}
-    {%- assign default_og_image_alt = 'Mizo Arkatama Renaldy - Portofolio Psikologi, HR, dan Bahasa Jepang' -%}
+    {%- assign default_og_image_alt = 'Mizo Arkatama Renaldy - Portofolio Psikologi, HR, dan Linguistik' -%}
   {%- when 'ja' -%}
-    {%- assign default_og_image_alt = 'ミゾ・アルカタマ・レナルディ - 心理学、HR、日本語ポートフォリオ' -%}
+    {%- assign default_og_image_alt = 'ミゾ・アルカタマ・レナルディ - 心理学、HR、言語学ポートフォリオ' -%}
   {%- else -%}
-    {%- assign default_og_image_alt = 'Mizo Arkatama Renaldy - Psychology, HR, and Japanese Portfolio' -%}
+    {%- assign default_og_image_alt = 'Mizo Arkatama Renaldy - Psychology, HR, and Linguistics Portfolio' -%}
 {%- endcase -%}
 
 {%- assign default_og_image_path = site.og_image | default: '/assets/images/og-image.png' -%}

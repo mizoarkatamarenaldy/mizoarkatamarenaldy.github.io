@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Audio & Music Composition"
-permalink: /en/portfolio/audio-music-composition/
+title: "Design"
+permalink: /en/portfolio/design/
 lang: en
 change_lang_text: "Change language"
 ---

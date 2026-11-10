@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Data Science/Analyst"
-permalink: /id/portfolio/data-science-analyst/
+title: "Kuliner"
+permalink: /id/portfolio/culinary/
 lang: id
 change_lang_text: "Ganti bahasa"
 ---
