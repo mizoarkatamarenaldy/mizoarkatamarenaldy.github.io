@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Cooking"
-permalink: /en/portfolio/cooking/
+title: "Developer"
+permalink: /en/portfolio/developer/
 lang: en
 change_lang_text: "Change language"
 ---

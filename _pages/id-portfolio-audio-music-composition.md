@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Memasak"
-permalink: /id/portfolio/cooking/
+title: "Audio & Komposisi Musik"
+permalink: /id/portfolio/audio-music-composition/
 lang: id
 change_lang_text: "Ganti bahasa"
 ---

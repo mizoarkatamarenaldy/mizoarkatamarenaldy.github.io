@@ -4,7 +4,7 @@ title: "Beranda"
 permalink: /id/main/
 lang: id
 change_lang_text: "Ganti bahasa"
-description: "Portofolio Mizo Arkatama Renaldy. Menampilkan karya dan proyek di bidang Psikologi, HR, dan Bahasa Jepang."
+description: "Portofolio Mizo Arkatama Renaldy. Menampilkan karya dan proyek di bidang Psikologi, HR, dan Linguistik Terapan & Multilingual."
 ---
 
 Halo! Selamat datang di portofolio saya. Halaman ini masih dalam tahap pengembangan — nantikan konten selengkapnya! 🚧
@@ -21,7 +21,7 @@ Halo! Selamat datang di portofolio saya. Halaman ini masih dalam tahap pengemban
 <ul class="home-links">
 <li><a class="home-btn" href="/id/portfolio/psychology/">Psikologi</a></li>
 <li><a class="home-btn" href="/id/portfolio/hr/">HR</a></li>
-<li><a class="home-btn" href="/id/portfolio/japanese/">Bahasa Jepang</a></li>
+<li><a class="home-btn" href="/id/portfolio/applied-linguistics-multilingual/">Linguistik Terapan & Multilingual</a></li>
 </ul>
 
 </details>
@@ -30,15 +30,14 @@ Halo! Selamat datang di portofolio saya. Halaman ini masih dalam tahap pengemban
 <summary markdown="span">Portofolio Tambahan</summary>
 
 <ul class="home-links">
-<li><a class="home-btn" href="/id/portfolio/coding/">Coding</a></li>
-<li><a class="home-btn" href="/id/portfolio/data-analysis/">Analisis Data</a></li>
-<li><a class="home-btn" href="/id/portfolio/design/">Desain</a></li>
-<li><a class="home-btn" href="/id/portfolio/illustration/">Ilustrasi</a></li>
-<li><a class="home-btn" href="/id/portfolio/writing/">Menulis</a></li>
-<li><a class="home-btn" href="/id/portfolio/music/">Musik</a></li>
-<li><a class="home-btn" href="/id/portfolio/second-brain/">Second Brain</a></li>
-<li><a class="home-btn" href="/id/portfolio/sport/">Olahraga</a></li>
-<li><a class="home-btn" href="/id/portfolio/cooking/">Memasak</a></li>
+<li><a class="home-btn" href="/id/portfolio/developer/">Developer</a></li>
+<li><a class="home-btn" href="/id/portfolio/data-science-analyst/">Data Science/Analyst</a></li>
+<li><a class="home-btn" href="/id/portfolio/design-ui-ux/">Desain & UI/UX</a></li>
+<li><a class="home-btn" href="/id/portfolio/illustration-visual-arts/">Ilustrasi & Seni Visual</a></li>
+<li><a class="home-btn" href="/id/portfolio/literacy-creative-writing/">Literasi & Creative Writing</a></li>
+<li><a class="home-btn" href="/id/portfolio/audio-music-composition/">Audio & Komposisi Musik</a></li>
+<li><a class="home-btn" href="/id/portfolio/domestic-operations-culinary/">Operasional Domestik & Kuliner</a></li>
+<li><a class="home-btn" href="/id/portfolio/entrepreneurship/">Entrepreneurship</a></li>
 </ul>
 
 </details>

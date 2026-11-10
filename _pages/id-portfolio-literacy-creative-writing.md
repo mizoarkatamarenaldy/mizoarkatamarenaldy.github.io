@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Menulis"
-permalink: /id/portfolio/writing/
+title: "Literasi & Creative Writing"
+permalink: /id/portfolio/literacy-creative-writing/
 lang: id
 change_lang_text: "Ganti bahasa"
 ---

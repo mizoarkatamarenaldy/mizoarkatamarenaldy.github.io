@@ -21,16 +21,15 @@ SLUGS = {
     "contact": "/{lang}/contact/",
     "portfolio-psychology": "/{lang}/portfolio/psychology/",
     "portfolio-hr": "/{lang}/portfolio/hr/",
-    "portfolio-japanese": "/{lang}/portfolio/japanese/",
-    "portfolio-coding": "/{lang}/portfolio/coding/",
-    "portfolio-data-analysis": "/{lang}/portfolio/data-analysis/",
-    "portfolio-design": "/{lang}/portfolio/design/",
-    "portfolio-illustration": "/{lang}/portfolio/illustration/",
-    "portfolio-writing": "/{lang}/portfolio/writing/",
-    "portfolio-music": "/{lang}/portfolio/music/",
-    "portfolio-second-brain": "/{lang}/portfolio/second-brain/",
-    "portfolio-sport": "/{lang}/portfolio/sport/",
-    "portfolio-cooking": "/{lang}/portfolio/cooking/"
+    "portfolio-applied-linguistics-multilingual": "/{lang}/portfolio/applied-linguistics-multilingual/",
+    "portfolio-developer": "/{lang}/portfolio/developer/",
+    "portfolio-data-science-analyst": "/{lang}/portfolio/data-science-analyst/",
+    "portfolio-design-ui-ux": "/{lang}/portfolio/design-ui-ux/",
+    "portfolio-illustration-visual-arts": "/{lang}/portfolio/illustration-visual-arts/",
+    "portfolio-literacy-creative-writing": "/{lang}/portfolio/literacy-creative-writing/",
+    "portfolio-audio-music-composition": "/{lang}/portfolio/audio-music-composition/",
+    "portfolio-domestic-operations-culinary": "/{lang}/portfolio/domestic-operations-culinary/",
+    "portfolio-entrepreneurship": "/{lang}/portfolio/entrepreneurship/"
 }
 
 EXPECTED_PERMALINKS = set()

@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Musik"
-permalink: /id/portfolio/music/
+title: "Entrepreneurship"
+permalink: /id/portfolio/entrepreneurship/
 lang: id
 change_lang_text: "Ganti bahasa"
 ---

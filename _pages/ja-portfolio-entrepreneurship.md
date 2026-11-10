@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "セカンドブレイン"
-permalink: /ja/portfolio/second-brain/
+title: "起業"
+permalink: /ja/portfolio/entrepreneurship/
 lang: ja
 change_lang_text: "言語を変更"
 ---

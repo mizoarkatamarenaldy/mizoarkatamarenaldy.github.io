@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Data Analysis"
-permalink: /en/portfolio/data-analysis/
+title: "Entrepreneurship"
+permalink: /en/portfolio/entrepreneurship/
 lang: en
 change_lang_text: "Change language"
 ---

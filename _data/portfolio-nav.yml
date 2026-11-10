@@ -1,14 +1,13 @@
 main:
   - psychology
   - hr
-  - japanese
+  - applied-linguistics-multilingual
 additional:
-  - coding
-  - data-analysis
-  - design
-  - illustration
-  - writing
-  - music
-  - second-brain
-  - sport
-  - cooking
+  - developer
+  - data-science-analyst
+  - design-ui-ux
+  - illustration-visual-arts
+  - literacy-creative-writing
+  - audio-music-composition
+  - domestic-operations-culinary
+  - entrepreneurship

@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "データ分析"
-permalink: /ja/portfolio/data-analysis/
+title: "オーディオと作曲"
+permalink: /ja/portfolio/audio-music-composition/
 lang: ja
 change_lang_text: "言語を変更"
 ---

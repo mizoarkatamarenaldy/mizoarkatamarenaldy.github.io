@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Music"
-permalink: /en/portfolio/music/
+title: "Design & UI/UX"
+permalink: /en/portfolio/design-ui-ux/
 lang: en
 change_lang_text: "Change language"
 ---

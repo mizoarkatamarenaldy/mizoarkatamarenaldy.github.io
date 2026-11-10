@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "デザイン"
-permalink: /ja/portfolio/design/
+title: "家事運営と料理"
+permalink: /ja/portfolio/domestic-operations-culinary/
 lang: ja
 change_lang_text: "言語を変更"
 ---

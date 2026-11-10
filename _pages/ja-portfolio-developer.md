@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "コーディング"
-permalink: /ja/portfolio/coding/
+title: "デベロッパー"
+permalink: /ja/portfolio/developer/
 lang: ja
 change_lang_text: "言語を変更"
 ---

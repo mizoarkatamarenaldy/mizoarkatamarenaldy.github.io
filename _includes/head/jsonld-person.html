@@ -12,14 +12,14 @@
     
     {%- case current_lang -%}
       {%- when 'id' -%}
-        {%- assign person_desc = "Portofolio Mizo Arkatama Renaldy. Menampilkan karya dan proyek di bidang Psikologi, HR, dan Bahasa Jepang." -%}
-        {%- assign person_knows = "Psikologi, Human Resources, Bahasa Jepang" -%}
+        {%- assign person_desc = "Portofolio Mizo Arkatama Renaldy. Menampilkan karya dan proyek di bidang Psikologi, HR, dan Linguistik Terapan & Multilingual." -%}
+        {%- assign person_knows = "Psikologi, Human Resources, Linguistik Terapan & Multilingual" -%}
       {%- when 'ja' -%}
-        {%- assign person_desc = "ミゾ・アルカタマ・レナルディのポートフォリオ。心理学、人事（HR）、日本語に関する作品やプロジェクトを紹介します。" -%}
-        {%- assign person_knows = "心理学, 人事 (HR), 日本語" -%}
+        {%- assign person_desc = "ミゾ・アルカタマ・レナルディのポートフォリオ。心理学、人事（HR）、応用言語学とマルチリンガルに関する作品やプロジェクトを紹介します。" -%}
+        {%- assign person_knows = "心理学, 人事 (HR), 応用言語学とマルチリンガル" -%}
       {%- else -%}
-        {%- assign person_desc = "Portfolio of Mizo Arkatama Renaldy. Showcasing works and projects in Psychology, HR, and Japanese language." -%}
-        {%- assign person_knows = "Psychology, Human Resources, Japanese language" -%}
+        {%- assign person_desc = "Portfolio of Mizo Arkatama Renaldy. Showcasing works and projects in Psychology, HR, and Applied Linguistics & Multilingual." -%}
+        {%- assign person_knows = "Psychology, Human Resources, Applied Linguistics & Multilingual" -%}
     {%- endcase -%}
     
     {%- assign knows_array = person_knows | split: ", " -%}

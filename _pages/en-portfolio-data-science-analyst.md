@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Japanese Language"
-permalink: /en/portfolio/japanese/
+title: "Data Science/Analyst"
+permalink: /en/portfolio/data-science-analyst/
 lang: en
 change_lang_text: "Change language"
 ---

@@ -24,3 +24,47 @@ Urutan sesi (satu sesi satu tugas):
 - [x] Sesi 4: Halaman standalone `index.html` (pilih bahasa) dan `404.html` mendukung dua tema.
 - [x] Sesi 5: Easter egg Kanade mendukung dua tema (kanji 奏 tetap menyatu dengan background di keduanya).
 - [x] Sesi 6: Pengecekan akhir. Perbarui `scripts/check-languages.py` agar ikut memeriksa warna hardcode dan teks tombol tiga bahasa. Cek semua halaman x 3 bahasa x 2 tema. Pastikan kontras lolos.
+
+## Samakan nama portofolio dengan Big Eleventh Skills
+
+Tujuan: Daftar halaman portofolio di web harus sama dengan 11 skill pemilik (3 pilar dan 8 sayap). Ini hanya penyesuaian nama dan daftar halaman. Belum ada isi yang diisi.
+
+Tempat dan tampilan:
+- Tidak ada elemen tampilan baru. Yang berubah hanya teks nama halaman, tombol di HOME, dan navigasi Sebelumnya/Berikutnya.
+
+Aturan:
+- Main Portfolio menjadi tiga halaman: Psikologi, HR, Linguistik Terapan & Multilingual. Halaman "Bahasa Jepang" diganti namanya menjadi Linguistik Terapan & Multilingual.
+- Additional Portfolio menjadi delapan halaman, dengan urutan ini:
+  1. Developer (sebelumnya Coding)
+  2. Data Science/Analyst (sebelumnya Data Analysis)
+  3. Desain & UI/UX (sebelumnya Design)
+  4. Ilustrasi & Seni Visual (sebelumnya Illustration)
+  5. Literasi & Creative Writing (sebelumnya Writing)
+  6. Audio & Komposisi Musik (sebelumnya Music)
+  7. Operasional Domestik & Kuliner (sebelumnya Cooking)
+  8. Entrepreneurship (halaman baru)
+- Halaman Second Brain dan Sport dihapus di tiga bahasa (id, en, ja), termasuk semua link ke keduanya.
+- Halaman Entrepreneurship dibuat sebagai kerangka kosong dengan pola yang sama seperti halaman Additional Portfolio lain, di tiga bahasa, dengan placeholder [TEKS DARI MIZO]. Jangan menulis isi sendiri.
+- Nama tampil per bahasa:
+  - Linguistik Terapan & Multilingual / Applied Linguistics & Multilingual / 応用言語学とマルチリンガル
+  - Developer / Developer / デベロッパー
+  - Data Science/Analyst / Data Science/Analyst / データサイエンス/アナリスト
+  - Desain & UI/UX / Design & UI/UX / デザインとUI/UX
+  - Ilustrasi & Seni Visual / Illustration & Visual Arts / イラストとビジュアルアート
+  - Literasi & Creative Writing / Literacy & Creative Writing / リテラシーとクリエイティブライティング
+  - Audio & Komposisi Musik / Audio & Music Composition / オーディオと作曲
+  - Operasional Domestik & Kuliner / Domestic Operations & Culinary / 家事運営と料理
+  - Entrepreneurship / Entrepreneurship / 起業
+- Nama di judul halaman, tombol HOME, navigasi Sebelumnya/Berikutnya (dev/data/portfolio-nav.yml sesuai lokasi aslinya di _data/portfolio-nav.yml), dan JSON-LD kalau ada harus ikut berubah di tiga bahasa.
+- Slug dan permalink halaman yang diganti nama mengikuti pola penamanya yang sudah ada di repo. Isi tiga bahasa tetap sama strukturnya.
+- Perbarui pohon "Mapping web" dan teks status di dev/PLAN.md supaya cocok dengan daftar baru (jumlah halaman Additional jadi 8, total portofolio jadi 11). Jangan ubah item di bagian "Selesai".
+- Jangan mengubah isi halaman yang sudah ada selain nama, jangan mengubah salam pembuka, dan jangan menyentuh halaman 3E, About, Contact, dan easter egg Kanade.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Jalankan python scripts/check-languages.py. Hasilnya harus tanpa error, dan tidak ada link rusak ke halaman Second Brain atau Sport.
+- Buka HOME di id, en, dan ja. Main Portfolio menampilkan 3 tombol dan Additional Portfolio menampilkan 8 tombol dengan nama baru.
+- Dari halaman pertama sampai terakhir di portofolio, klik Sebelumnya/Berikutnya. Urutannya sesuai daftar di atas dan tidak ada halaman Second Brain atau Sport.
+- Buka halaman Entrepreneurship di tiga bahasa. Kerangkanya sama seperti halaman lain dan muncul peringatan placeholder dari skrip, bukan error.

@@ -1,9 +1,9 @@
 ---
 layout: single
-title: "ライティング"
-permalink: /ja/portfolio/writing/
-lang: ja
-change_lang_text: "言語を変更"
+title: "Literacy & Creative Writing"
+permalink: /en/portfolio/literacy-creative-writing/
+lang: en
+change_lang_text: "Change language"
 ---
 
 [TEKS DARI MIZO]

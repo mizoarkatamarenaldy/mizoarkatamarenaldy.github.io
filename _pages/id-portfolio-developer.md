@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Analisis Data"
-permalink: /id/portfolio/data-analysis/
+title: "Developer"
+permalink: /id/portfolio/developer/
 lang: id
 change_lang_text: "Ganti bahasa"
 ---
