@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #57 | penyesuaian mobile Sumi & Washi
+- Tanggal: 2026-11-11
+- File: `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Merapikan tampilan halaman HOME, header, dan footer pada layar sempit (di bawah 768px) dan tablet (768px–1023px) tanpa mengubah tampilan desktop (1024px ke atas) dan tanpa nilai hex baru. Menyamakan padding samping HOME dengan header dan footer (1rem di bawah 768px, 2rem di 768px ke atas) sehingga tepi kiri judul header, nama, ringkasan diri, baris sidebar, dan footer sejajar pada satu garis. Memastikan tinggi minimal 44px dan area sentuh selebar baris penuh pada pemicu buka-tutup serta seluruh baris Main Portfolio dan Additional Portfolio di sidebar HOME. Mengatur pemenggalan baris antar kata pada motto, nama, judul situs, dan menu header agar bebas scroll horizontal hingga lebar 320px serta menjaga karakter Jepang tidak terpotong di tengah kata. Membatasi warna aksen `:hover` pada header, footer, sidebar HOME, dan motto hanya untuk perangkat berfitur hover (`@media (hover: hover)`) serta menampilkan warna aksen saat disentuh (`:active`) di layar sentuh. Memposisikan pemicu easter egg Kanade di bagian ruang bawah kontainer HOME pada layar di bawah 1024px agar tidak menimpa atau tertimpa elemen lain pada lebar 360px, serta memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #56 | header dan footer Sumi & Washi
 - Tanggal: 2026-11-11
 - File: `_includes/footer/custom.html`, `_includes/masthead.html`, `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

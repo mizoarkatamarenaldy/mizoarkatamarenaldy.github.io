@@ -60,6 +60,7 @@ mizoarkatamarenaldy.github.io/
 - [x] Token dan font Sumi & Washi
 - [x] Layout HOME Sumi & Washi
 - [x] Header dan footer Sumi & Washi
+- [x] Penyesuaian mobile Sumi & Washi
 
 ## Selesai
 - [x] Halaman pilih bahasa

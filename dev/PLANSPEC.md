@@ -221,3 +221,37 @@ Cek manual:
 - Buka /id/main/ dan /ja/main/. Teks sesuai bahasa, huruf Jepang tidak terpotong. Buka satu sub-halaman portofolio dan satu URL yang tidak ada (halaman 404). Header dan footer sama, tombol Kembali ke HOME dan navigasi Sebelumnya/Berikutnya tidak berubah.
 - Perkecil lebar jendela ke 360px. Tidak ada scroll horizontal, kedua tombol mudah ditekan, judul boleh dua baris, footer bertumpuk.
 - Buka /?pilih dan halaman easter egg Kanade. Tampilannya persis sama seperti sebelum sesi.
+
+## Penyesuaian mobile Sumi & Washi
+
+Tujuan: Merapikan HOME, header, dan footer di layar sempit dan tablet setelah item layout HOME serta header dan footer Sumi & Washi. Layar desktop tidak berubah.
+
+Tempat dan tampilan:
+- Tiga rentang lebar: di bawah 768px (mobile), 768px sampai 1023px (tablet), 1024px ke atas (desktop, tidak berubah).
+- Padding samping isi HOME, header, dan footer disamakan: 1rem di bawah 768px, 2rem di 768px ke atas. Tepi kiri teks header, nama, ringkasan, baris sidebar, dan footer harus sejajar pada satu garis.
+- Jarak vertikal HOME di bawah 768px: atas 3rem, antara hero dan sidebar 3rem, bawah 3rem.
+- Tablet: hero dan sidebar bertumpuk selebar penuh, ringkasan diri tetap maksimum 36rem.
+- Judul pemicu buka-tutup dan semua baris di sidebar (Main Portfolio dan Additional Portfolio): tinggi minimal 44px, seluruh lebar baris bisa disentuh.
+- Motto, nama, dan judul situs boleh turun baris antar kata. Tidak boleh ada scroll horizontal pada lebar 320px.
+- Warna aksen hover (header, footer, sidebar HOME, motto) hanya berlaku di perangkat yang punya hover (@media (hover: hover)). Di layar sentuh, warna aksen muncul saat disentuh (:active) dan hilang saat jari diangkat.
+
+Aturan:
+- Tampilan di 1024px ke atas tidak berubah sama sekali.
+- Teks, URL, dan fungsi semua elemen tidak diubah.
+- Tidak ada hex baru, tanpa border radius, tanpa bayangan, tanpa animasi gerak.
+- Pemicu easter egg Kanade di HOME tidak berubah perilakunya dan tidak menimpa atau tertimpa elemen lain pada lebar 360px.
+- Tidak menambah menu hamburger, drawer, bottom nav, kartu berlatar, avatar, hanko, teks vertikal Jepang, atau konten lain dari desain mobile Stitch.
+- Tidak mengubah _layouts/single.html, halaman pilih bahasa (index.html), dan easter egg Kanade.
+
+Data:
+- Tidak ada perubahan struktur data di _data/, URL, atau permalink.
+
+Cek manual:
+- Jalankan python scripts/check-languages.py. Tidak ada error baru, tidak ada peringatan warna hardcode baru.
+- Buka /en/main/ di lebar 320px, 360px, dan 390px. Tidak ada scroll horizontal. Tepi kiri header, nama, ringkasan, baris sidebar, dan footer sejajar.
+- Buka /en/main/ di lebar 768px dan 1023px. Hero dan sidebar bertumpuk, tepi sejajar dengan padding 2rem, ringkasan tidak lebih lebar dari 36rem.
+- Buka /en/main/ di lebar 1280px. Tampilan sama persis seperti setelah item layout HOME dan item header footer.
+- Aktifkan emulasi sentuh di DevTools. Tinggi baris sidebar dan tombol header minimal 44px. Sentuh satu baris sidebar, warna aksen muncul, lalu hilang setelah jari diangkat.
+- Buka /id/main/ dan /ja/main/ di mode terang pada lebar 360px. Teks terbaca dan tidak terpotong, huruf Jepang tidak terpotong.
+- Buka satu sub-halaman portofolio dan satu URL yang tidak ada (halaman 404) pada lebar 360px. Header dan footer sejajar sama seperti HOME, tidak ada scroll horizontal.
+- Buka /?pilih dan halaman easter egg Kanade. Tampilannya persis sama seperti sebelum sesi.

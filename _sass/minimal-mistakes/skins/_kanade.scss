@@ -180,14 +180,38 @@ html body.layout--home-sumi #main.sumi-home {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 3rem 2rem;
+  padding: 3rem 1rem;
   box-sizing: border-box;
   float: none;
+}
+
+@media (min-width: 768px) {
+  html body.layout--home-sumi #main.sumi-home {
+    padding: 3rem 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
   html body.layout--home-sumi #main.sumi-home {
     padding: 6rem 2rem;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  html body.layout--home-sumi #main.sumi-home {
+    position: relative;
+  }
+
+  html body.layout--home-sumi #main.sumi-home .kanade-trigger {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  html body.layout--home-sumi #main.sumi-home .kanade-trigger {
+    right: 2rem;
   }
 }
 
@@ -208,6 +232,7 @@ html body.layout--home-sumi #main.sumi-home .sumi-home__grid {
 
 html body.layout--home-sumi #main.sumi-home .sumi-hero {
   width: 100%;
+  min-width: 0;
   box-sizing: border-box;
 }
 
@@ -218,6 +243,7 @@ html body.layout--home-sumi #main.sumi-home .sumi-greeting {
   font-weight: 400;
   color: var(--sumi-text-secondary);
   margin: 0 0 1rem 0;
+  overflow-wrap: break-word;
 }
 
 html body.layout--home-sumi #main.sumi-home h1.sumi-name {
@@ -230,6 +256,9 @@ html body.layout--home-sumi #main.sumi-home h1.sumi-name {
   margin: 0 0 1.25rem 0;
   padding: 0;
   border: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 @media (min-width: 1024px) {
@@ -247,10 +276,14 @@ html body.layout--home-sumi #main.sumi-home .sumi-motto {
   font-size: 22px;
   line-height: 30px;
   margin: 0 0 2rem 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 html body.layout--home-sumi #main.sumi-home .sumi-motto a,
-html body.layout--home-sumi #main.sumi-home .sumi-motto a:visited {
+html body.layout--home-sumi #main.sumi-home .sumi-motto a:visited,
+html body.layout--home-sumi #main.sumi-home .sumi-motto a:hover {
   font-family: $serif;
   font-style: italic;
   font-weight: 300;
@@ -260,9 +293,20 @@ html body.layout--home-sumi #main.sumi-home .sumi-motto a:visited {
   text-decoration: none !important;
   border-bottom: 1px solid var(--sumi-text);
   padding-bottom: 2px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
-html body.layout--home-sumi #main.sumi-home .sumi-motto a:hover,
+@media (hover: hover) {
+  html body.layout--home-sumi #main.sumi-home .sumi-motto a:hover {
+    color: var(--sumi-accent) !important;
+    border-bottom-color: var(--sumi-accent) !important;
+    text-decoration: none !important;
+  }
+}
+
+html body.layout--home-sumi #main.sumi-home .sumi-motto a:active,
 html body.layout--home-sumi #main.sumi-home .sumi-motto a:focus-visible {
   color: var(--sumi-accent) !important;
   border-bottom-color: var(--sumi-accent) !important;
@@ -277,10 +321,12 @@ html body.layout--home-sumi #main.sumi-home .sumi-summary {
   color: var(--sumi-text-secondary);
   max-width: 36rem;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 html body.layout--home-sumi #main.sumi-home .sumi-sidebar {
   width: 100%;
+  min-width: 0;
   box-sizing: border-box;
   padding-left: 0;
   border-left: none;
@@ -303,11 +349,22 @@ html body.layout--home-sumi #main.sumi-home .sumi-group:last-child {
   margin-bottom: 0;
 }
 
-html body.layout--home-sumi #main.sumi-home .sumi-group summary {
+html body.layout--home-sumi #main.sumi-home .sumi-group summary,
+html body.layout--home-sumi #main.sumi-home .sumi-group summary:hover {
   cursor: pointer;
-  padding: 0 0 0.75rem 0;
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 0.25rem 0 0.75rem 0;
   color: var(--sumi-text);
   border-bottom: 1px solid var(--sumi-divider);
+}
+
+@media (min-width: 1024px) {
+  html body.layout--home-sumi #main.sumi-home .sumi-group summary,
+  html body.layout--home-sumi #main.sumi-home .sumi-group summary:hover {
+    padding: 0 0 0.75rem 0;
+  }
 }
 
 html body.layout--home-sumi #main.sumi-home .sumi-group summary h2.sumi-group-title {
@@ -322,7 +379,13 @@ html body.layout--home-sumi #main.sumi-home .sumi-group summary h2.sumi-group-ti
   border: none;
 }
 
-html body.layout--home-sumi #main.sumi-home .sumi-group summary:hover,
+@media (hover: hover) {
+  html body.layout--home-sumi #main.sumi-home .sumi-group summary:hover {
+    color: var(--sumi-accent);
+  }
+}
+
+html body.layout--home-sumi #main.sumi-home .sumi-group summary:active,
 html body.layout--home-sumi #main.sumi-home .sumi-group summary:focus-visible {
   color: var(--sumi-accent);
 }
@@ -340,11 +403,14 @@ html body.layout--home-sumi #main.sumi-home .sumi-list li {
 }
 
 html body.layout--home-sumi #main.sumi-home .sumi-row,
-html body.layout--home-sumi #main.sumi-home .sumi-row:visited {
+html body.layout--home-sumi #main.sumi-home .sumi-row:visited,
+html body.layout--home-sumi #main.sumi-home .sumi-row:hover,
+html body.layout--home-sumi #main.sumi-home .sumi-row:active {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   width: 100%;
+  min-height: 44px;
   padding: 0.75rem 0;
   box-sizing: border-box;
   color: var(--sumi-text) !important;
@@ -376,7 +442,13 @@ html body.layout--home-sumi #main.sumi-home .sumi-list--additional .sumi-row-nam
   color: var(--sumi-text);
 }
 
-html body.layout--home-sumi #main.sumi-home .sumi-row:hover .sumi-row-name,
+@media (hover: hover) {
+  html body.layout--home-sumi #main.sumi-home .sumi-row:hover .sumi-row-name {
+    color: var(--sumi-accent) !important;
+  }
+}
+
+html body.layout--home-sumi #main.sumi-home .sumi-row:active .sumi-row-name,
 html body.layout--home-sumi #main.sumi-home .sumi-row:focus-visible .sumi-row-name {
   color: var(--sumi-accent) !important;
 }
@@ -486,6 +558,7 @@ html body .masthead #site-nav {
 html body .masthead .site-title,
 html body .masthead .site-title:visited,
 html body .masthead .site-title:hover,
+html body .masthead .site-title:active,
 html body .masthead .site-title:focus-visible {
   font-family: $serif !important;
   font-size: 17px !important;
@@ -496,6 +569,9 @@ html body .masthead .site-title:focus-visible {
   margin: 0 !important;
   padding: 0 !important;
   white-space: normal !important;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  min-width: 0 !important;
   flex: 0 1 auto !important;
 }
 
@@ -509,6 +585,7 @@ html body .masthead .site-title:focus-visible {
   html body .masthead .site-title,
   html body .masthead .site-title:visited,
   html body .masthead .site-title:hover,
+  html body .masthead .site-title:active,
   html body .masthead .site-title:focus-visible {
     font-size: 22px !important;
     line-height: 30px !important;
@@ -519,14 +596,24 @@ html body .masthead .site-title:focus-visible {
 
 html body .masthead .visible-links {
   display: flex !important;
+  flex-wrap: wrap !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  gap: 1.5rem !important;
+  column-gap: 1.5rem !important;
+  row-gap: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
   list-style: none !important;
   overflow: visible !important;
+  min-width: 0 !important;
   flex: 1 1 auto !important;
+}
+
+@media (min-width: 768px) {
+  html body .masthead .visible-links {
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important;
+  }
 }
 
 html body .masthead .masthead__menu-item {
@@ -534,6 +621,9 @@ html body .masthead .masthead__menu-item {
   padding: 0 !important;
   list-style: none !important;
   white-space: normal !important;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  min-width: 0 !important;
   flex: 0 1 auto !important;
 }
 
@@ -545,7 +635,8 @@ html body .masthead .masthead__menu-item {
 }
 
 html body .masthead .visible-links a,
-html body .masthead .visible-links a:visited {
+html body .masthead .visible-links a:visited,
+html body .masthead .visible-links a:hover {
   display: inline-flex !important;
   align-items: center !important;
   min-height: 44px !important;
@@ -557,6 +648,7 @@ html body .masthead .visible-links a:visited {
   font-weight: 500 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.18em !important;
+  text-align: right;
   color: var(--sumi-text-secondary) !important;
   text-decoration: none !important;
   background: none !important;
@@ -568,7 +660,15 @@ html body .masthead .visible-links a::after {
   content: none !important;
 }
 
-html body .masthead .visible-links a:hover,
+@media (hover: hover) {
+  html body .masthead .visible-links a:hover {
+    color: var(--sumi-accent) !important;
+    text-decoration: none !important;
+    background: none !important;
+  }
+}
+
+html body .masthead .visible-links a:active,
 html body .masthead .visible-links a:focus-visible {
   color: var(--sumi-accent) !important;
   text-decoration: none !important;
@@ -642,6 +742,9 @@ html body .page__footer .sumi-footer__brand {
   color: var(--sumi-text) !important;
   margin: 0 !important;
   padding: 0 !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 @media (min-width: 768px) {
@@ -667,7 +770,8 @@ html body .page__footer .sumi-footer__links {
 }
 
 html body .page__footer .sumi-footer__links a,
-html body .page__footer .sumi-footer__links a:visited {
+html body .page__footer .sumi-footer__links a:visited,
+html body .page__footer .sumi-footer__links a:hover {
   font-family: $sans-serif !important;
   font-size: 11px !important;
   line-height: 16px !important;
@@ -678,7 +782,14 @@ html body .page__footer .sumi-footer__links a:visited {
   text-decoration: none !important;
 }
 
-html body .page__footer .sumi-footer__links a:hover,
+@media (hover: hover) {
+  html body .page__footer .sumi-footer__links a:hover {
+    color: var(--sumi-accent) !important;
+    text-decoration: none !important;
+  }
+}
+
+html body .page__footer .sumi-footer__links a:active,
 html body .page__footer .sumi-footer__links a:focus-visible {
   color: var(--sumi-accent) !important;
   text-decoration: none !important;
@@ -694,15 +805,25 @@ html body .page__footer .page__footer-copyright {
   color: var(--sumi-text-secondary) !important;
   margin: 0 !important;
   padding: 0 !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 html body .page__footer .page__footer-copyright a,
-html body .page__footer .page__footer-copyright a:visited {
+html body .page__footer .page__footer-copyright a:visited,
+html body .page__footer .page__footer-copyright a:hover {
   color: inherit !important;
   text-decoration: none !important;
 }
 
-html body .page__footer .page__footer-copyright a:hover,
+@media (hover: hover) {
+  html body .page__footer .page__footer-copyright a:hover {
+    color: var(--sumi-accent) !important;
+    text-decoration: none !important;
+  }
+}
+
+html body .page__footer .page__footer-copyright a:active,
 html body .page__footer .page__footer-copyright a:focus-visible {
   color: var(--sumi-accent) !important;
   text-decoration: none !important;
