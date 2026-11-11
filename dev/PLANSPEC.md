@@ -136,3 +136,49 @@ Cek manual:
 - Buka /id/main/, /en/main/, dan /ja/main/ di mode gelap. Semua warna sama seperti sebelum sesi. Judul tampil serif, teks lain sans. Di /ja/ huruf Jepang pada judul memakai Noto Serif JP (cek di DevTools, bagian Rendered Fonts).
 - Ganti ke mode terang lewat tombol tema di salah satu halaman. Warna sama seperti sebelum sesi, font sama seperti mode gelap, tombol tema masih berfungsi.
 - Buka /?pilih dan halaman easter egg Kanade. Tampilannya persis sama seperti sebelum sesi.
+
+## Layout HOME Sumi & Washi
+
+Tujuan: Mengubah tata letak HOME (/id/main/, /en/main/, /ja/main/) menjadi dua kolom: hero di kiri dan sidebar portofolio di kanan, memakai token dan font dari bagian "Sumi & Washi" di dev/DESIGN.md. Hanya HOME yang berubah.
+
+Tempat dan tampilan:
+- Layout baru khusus HOME. Isi hero dari atas ke bawah: salam pembuka, nama lengkap (h1), motto 3E, ringkasan diri.
+- Sidebar kanan berisi dua bagian buka-tutup: Main Portfolio (Psikologi, HR, Linguistik) dan Additional Portfolio (Developer, Data, Desain, Ilustrasi, Menulis, Musik, Kuliner, Wirausaha).
+- Pakai teks, label, dan URL yang sudah ada di HOME sekarang untuk semua elemen di atas. Jangan ganti kata atau tautannya.
+- Konten tengah dengan lebar maksimum 80rem dan padding samping 2rem. Jarak vertikal atas dan bawah 3rem, dan 6rem di layar lebar (1024px ke atas).
+- Layar 1024px ke atas: grid dua kolom, hero 2/3 lebar dan sidebar 1/3 lebar. Sidebar punya padding kiri 3rem dan garis vertikal 1px di sisi kirinya.
+- Layar di bawah 1024px: hero lalu sidebar bertumpuk ke bawah, garis vertikal dihilangkan. Desain mobile khusus dikerjakan di sesi lain.
+- Salam pembuka: teks body 15px, baris 26px, warna teks sekunder, di atas nama.
+- Nama (h1): serif 56px dengan baris 68px, berat 400, letter-spacing -0.02em. Di bawah 1024px: 38px dengan baris 48px, letter-spacing -0.01em.
+- Motto: serif italic berat 300, 22px dengan baris 30px, tetap berupa teks link ke halaman 3E (bukan tombol), dengan garis bawah 1px. Saat kursor diarahkan, warna teks dan garis bawah berubah ke aksen.
+- Ringkasan diri: serif berat 300, 19px dengan baris 32px, warna teks sekunder, lebar maksimum 36rem.
+- Judul bagian sidebar (h2): serif 22px, berat 400.
+- Baris Main Portfolio: nama sans 17px dengan baris 24px, berat 600, nomor 01 sampai 03 di kanan (sans 10px, berat 500, letter-spacing 0.18em, warna sekunder). Baris dipisah garis 1px.
+- Baris Additional Portfolio: nama sans 15px dengan baris 26px, berat 400, dipisah garis 1px, tanpa nomor.
+- Seluruh baris adalah link ke sub-halamannya. Saat kursor diarahkan, warna nama berubah ke aksen.
+- Warna: latar, teks, dan teks sekunder memakai token yang ada. Garis pembagi memakai fusuma wire di mode gelap dan rice paper seam di mode terang. Aksen hover memakai rose di mode gelap dan plum di mode terang.
+- Tanpa border radius, tanpa bayangan, tanpa animasi gerak.
+
+Aturan:
+- Main Portfolio terbuka saat halaman dimuat, Additional Portfolio tertutup.
+- Pakai mekanisme buka-tutup yang sudah ada di HOME. Harus bisa dioperasikan dengan keyboard.
+- Tidak ada hex baru. Hanya pakai token yang sudah ada di _kanade.scss.
+- Teks salam pembuka dan ringkasan diri tidak diubah, hanya dipindahkan posisinya.
+- JSON-LD Person, hreflang, dan meta tags di HOME tetap utuh.
+- Pemicu easter egg Kanade (kanji 奏) di HOME tetap ada, tetap tersembunyi di latar, tetap bisa di-hover dan diklik, dan tidak ikut terblok saat Ctrl+A. Perilakunya tidak berubah, boleh dipindahkan posisinya saja.
+- Tidak mengubah header, footer, tombol ganti bahasa, tombol ganti tema, dan halaman selain HOME.
+- Tidak mengubah _layouts/single.html, karena dipakai semua sub-halaman.
+- Tidak menambah teks vertikal Jepang, hanko, subjudul, deskripsi tiap portofolio, daftar karya, atau konten lain dari desain Stitch yang belum ada di HOME.
+- Tidak memakai Tailwind, Material Symbols, atau font monospace.
+
+Data:
+- Tidak ada perubahan struktur data di _data/, URL, atau permalink.
+
+Cek manual:
+- Jalankan python scripts/check-languages.py. Tidak ada error baru, tidak ada peringatan warna hardcode baru.
+- Buka /en/main/ di layar lebar mode gelap. Hero di kiri, sidebar di kanan dengan garis vertikal tipis. Main Portfolio terbuka dengan tiga baris, Additional Portfolio tertutup. Klik Additional Portfolio, delapan baris muncul. Klik satu baris, halaman tujuan benar. Arahkan kursor ke motto, warna berubah, lalu klik, halaman 3E terbuka.
+- Ulangi di mode terang lewat tombol tema. Semua teks terbaca, aksen hover memakai plum, tombol tema masih berfungsi.
+- Buka /id/main/ dan /ja/main/. Struktur sama dengan /en/main/, teks sesuai bahasa, huruf Jepang tidak terpotong. Teks salam pembuka dan ringkasan sama persis seperti sebelum sesi.
+- Perkecil lebar jendela ke 360px. Hero lalu sidebar bertumpuk, tidak ada scroll horizontal.
+- Di HOME, arahkan kursor ke posisi kanji 奏. Kanji muncul, klik membuka easter egg. Tekan Ctrl+A, kanji tidak ikut terblok.
+- Lihat source HOME. JSON-LD Person dan tag hreflang masih ada.

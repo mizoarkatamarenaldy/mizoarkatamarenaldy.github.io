@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: home-sumi
 title: "Beranda"
 permalink: /id/main/
 lang: id
@@ -7,44 +7,36 @@ change_lang_text: "Ganti bahasa"
 description: "Portofolio Mizo Arkatama Renaldy. Menampilkan karya dan proyek di bidang Psikologi, HR, dan Linguistik."
 ---
 
-Halo! Selamat datang di portofolio saya. Halaman ini masih dalam tahap pengembangan — nantikan konten selengkapnya! 🚧
+<div class="sumi-hero">
+<p class="sumi-greeting">Halo! Selamat datang di portofolio saya. Halaman ini masih dalam tahap pengembangan — nantikan konten selengkapnya! 🚧</p>
+<h1 class="sumi-name">Mizo Arkatama Renaldy</h1>
+<p class="sumi-motto"><a href="/id/3e/" title="Baca tentang framework 3E">Equilibrium Equivalence Equity</a></p>
+<p class="sumi-summary">[TEKS DARI MIZO]</p>
+</div>
 
-## Mizo Arkatama Renaldy
-
-[TEKS DARI MIZO]
-
-<p class="home-motto"><a href="/id/3e/" title="Baca tentang framework 3E">Equilibrium Equivalence Equity</a></p>
-
-<details class="home-portfolio" markdown="1">
-<summary markdown="span">Portofolio Utama</summary>
-
-<ul class="home-links">
-<li><a class="home-btn" href="/id/portfolio/psychology/">Psikologi</a></li>
-<li><a class="home-btn" href="/id/portfolio/hr/">HR</a></li>
-<li><a class="home-btn" href="/id/portfolio/linguistics/">Linguistik</a></li>
+<aside class="sumi-sidebar">
+<details class="sumi-group" open>
+<summary><h2 class="sumi-group-title">Portofolio Utama</h2></summary>
+<ul class="sumi-list sumi-list--main">
+<li><a class="sumi-row" href="/id/portfolio/psychology/"><span class="sumi-row-name">Psikologi</span><span class="sumi-row-num">01</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/hr/"><span class="sumi-row-name">HR</span><span class="sumi-row-num">02</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/linguistics/"><span class="sumi-row-name">Linguistik</span><span class="sumi-row-num">03</span></a></li>
 </ul>
-
 </details>
 
-<details class="home-portfolio" markdown="1">
-<summary markdown="span">Portofolio Tambahan</summary>
-
-<ul class="home-links">
-<li><a class="home-btn" href="/id/portfolio/developer/">Developer</a></li>
-<li><a class="home-btn" href="/id/portfolio/data/">Data</a></li>
-<li><a class="home-btn" href="/id/portfolio/design/">Desain</a></li>
-<li><a class="home-btn" href="/id/portfolio/illustration/">Ilustrasi</a></li>
-<li><a class="home-btn" href="/id/portfolio/writing/">Menulis</a></li>
-<li><a class="home-btn" href="/id/portfolio/music/">Musik</a></li>
-<li><a class="home-btn" href="/id/portfolio/culinary/">Kuliner</a></li>
-<li><a class="home-btn" href="/id/portfolio/entrepreneurship/">Wirausaha</a></li>
+<details class="sumi-group">
+<summary><h2 class="sumi-group-title">Portofolio Tambahan</h2></summary>
+<ul class="sumi-list sumi-list--additional">
+<li><a class="sumi-row" href="/id/portfolio/developer/"><span class="sumi-row-name">Developer</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/data/"><span class="sumi-row-name">Data</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/design/"><span class="sumi-row-name">Desain</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/illustration/"><span class="sumi-row-name">Ilustrasi</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/writing/"><span class="sumi-row-name">Menulis</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/music/"><span class="sumi-row-name">Musik</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/culinary/"><span class="sumi-row-name">Kuliner</span></a></li>
+<li><a class="sumi-row" href="/id/portfolio/entrepreneurship/"><span class="sumi-row-name">Wirausaha</span></a></li>
 </ul>
-
 </details>
-
-<ul class="home-links home-pages">
-<li><a class="home-btn" href="/id/about/">Tentang</a></li>
-<li><a class="home-btn" href="/id/contact/">Kontak</a></li>
-</ul>
+</aside>
 
 <a href="/奏/" class="kanade-trigger" aria-hidden="true">奏</a>

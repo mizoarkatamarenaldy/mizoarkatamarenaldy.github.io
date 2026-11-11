@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: home-sumi
 title: "ホーム"
 permalink: /ja/main/
 lang: ja
@@ -7,44 +7,36 @@ change_lang_text: "言語を変更"
 description: "ミゾ・アルカタマ・レナルディのポートフォリオ。心理学、HR、言語学に関する作品やプロジェクトを紹介します。"
 ---
 
-こんにちは！ポートフォリオへようこそ。このページはただいま制作中です — お楽しみに！ 🚧
+<div class="sumi-hero">
+<p class="sumi-greeting">こんにちは！ポートフォリオへようこそ。このページはただいま制作中です — お楽しみに！ 🚧</p>
+<h1 class="sumi-name">Mizo Arkatama Renaldy</h1>
+<p class="sumi-motto"><a href="/ja/3e/" title="3Eフレームワークについて読む">Equilibrium Equivalence Equity</a></p>
+<p class="sumi-summary">[TEKS DARI MIZO]</p>
+</div>
 
-## Mizo Arkatama Renaldy
-
-[TEKS DARI MIZO]
-
-<p class="home-motto"><a href="/ja/3e/" title="3Eフレームワークについて読む">Equilibrium Equivalence Equity</a></p>
-
-<details class="home-portfolio" markdown="1">
-<summary markdown="span">メインポートフォリオ</summary>
-
-<ul class="home-links">
-<li><a class="home-btn" href="/ja/portfolio/psychology/">心理学</a></li>
-<li><a class="home-btn" href="/ja/portfolio/hr/">HR</a></li>
-<li><a class="home-btn" href="/ja/portfolio/linguistics/">言語学</a></li>
+<aside class="sumi-sidebar">
+<details class="sumi-group" open>
+<summary><h2 class="sumi-group-title">メインポートフォリオ</h2></summary>
+<ul class="sumi-list sumi-list--main">
+<li><a class="sumi-row" href="/ja/portfolio/psychology/"><span class="sumi-row-name">心理学</span><span class="sumi-row-num">01</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/hr/"><span class="sumi-row-name">HR</span><span class="sumi-row-num">02</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/linguistics/"><span class="sumi-row-name">言語学</span><span class="sumi-row-num">03</span></a></li>
 </ul>
-
 </details>
 
-<details class="home-portfolio" markdown="1">
-<summary markdown="span">追加ポートフォリオ</summary>
-
-<ul class="home-links">
-<li><a class="home-btn" href="/ja/portfolio/developer/">開発</a></li>
-<li><a class="home-btn" href="/ja/portfolio/data/">データ</a></li>
-<li><a class="home-btn" href="/ja/portfolio/design/">デザイン</a></li>
-<li><a class="home-btn" href="/ja/portfolio/illustration/">イラスト</a></li>
-<li><a class="home-btn" href="/ja/portfolio/writing/">執筆</a></li>
-<li><a class="home-btn" href="/ja/portfolio/music/">音楽</a></li>
-<li><a class="home-btn" href="/ja/portfolio/culinary/">料理</a></li>
-<li><a class="home-btn" href="/ja/portfolio/entrepreneurship/">起業</a></li>
+<details class="sumi-group">
+<summary><h2 class="sumi-group-title">追加ポートフォリオ</h2></summary>
+<ul class="sumi-list sumi-list--additional">
+<li><a class="sumi-row" href="/ja/portfolio/developer/"><span class="sumi-row-name">開発</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/data/"><span class="sumi-row-name">データ</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/design/"><span class="sumi-row-name">デザイン</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/illustration/"><span class="sumi-row-name">イラスト</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/writing/"><span class="sumi-row-name">執筆</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/music/"><span class="sumi-row-name">音楽</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/culinary/"><span class="sumi-row-name">料理</span></a></li>
+<li><a class="sumi-row" href="/ja/portfolio/entrepreneurship/"><span class="sumi-row-name">起業</span></a></li>
 </ul>
-
 </details>
-
-<ul class="home-links home-pages">
-<li><a class="home-btn" href="/ja/about/">自己紹介</a></li>
-<li><a class="home-btn" href="/ja/contact/">連絡先</a></li>
-</ul>
+</aside>
 
 <a href="/奏/" class="kanade-trigger" aria-hidden="true">奏</a>

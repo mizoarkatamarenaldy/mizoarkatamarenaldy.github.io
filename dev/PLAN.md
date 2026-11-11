@@ -58,6 +58,7 @@ mizoarkatamarenaldy.github.io/
 - [x] Samakan nama portofolio dengan Big Eleventh Skills
 - [x] Perpendek nama portofolio jadi 1 kata
 - [x] Token dan font Sumi & Washi
+- [x] Layout HOME Sumi & Washi
 
 ## Selesai
 - [x] Halaman pilih bahasa

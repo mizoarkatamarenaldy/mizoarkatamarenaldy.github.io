@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #55 | layout HOME Sumi & Washi
+- Tanggal: 2026-11-11
+- File: `_layouts/home-sumi.html`, `_pages/en-main.md`, `_pages/id-main.md`, `_pages/ja-main.md`, `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Mengubah tata letak halaman HOME (/id/main/, /en/main/, /ja/main/) menjadi dua kolom (hero di kiri 2/3 lebar dan sidebar portofolio di kanan 1/3 lebar pada layar 1024px ke atas, serta bertumpuk di bawah 1024px) menggunakan token warna dan tipografi Sumi & Washi tanpa nilai hex baru. Membuat layout baru `_layouts/home-sumi.html` khusus HOME dengan mempertahankan struktur default (masthead, footer, SEO/hreflang, JSON-LD Person). Menyusun ulang isi `_pages/id-main.md`, `_pages/en-main.md`, dan `_pages/ja-main.md` menjadi kolom hero (salam pembuka, nama lengkap H1, motto 3E sebagai link teks bergaris bawah 1px, ringkasan diri) dan sidebar kanan dengan dua bagian `<details>` buka-tutup berlabel H2 (Main Portfolio terbuka saat dimuat dengan nomor 01-03 dan Additional Portfolio tertutup tanpa nomor), serta mempertahankan pemicu easter egg Kanade (奏). Menambahkan aturan gaya khusus HOME di `_sass/minimal-mistakes/skins/_kanade.scss` tanpa border-radius, bayangan, atau animasi gerak, serta memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #54 | token dan font Sumi & Washi
 - Tanggal: 2026-11-11
 - File: `_includes/head/custom.html`, `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/DESIGN.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
