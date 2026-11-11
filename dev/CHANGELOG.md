@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #56 | header dan footer Sumi & Washi
+- Tanggal: 2026-11-11
+- File: `_includes/footer/custom.html`, `_includes/masthead.html`, `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menyamakan tampilan header (masthead) dan footer di semua halaman bertema dengan desain Sumi & Washi menggunakan token warna dan font yang sudah ada di `_kanade.scss` tanpa nilai hex baru. Memperbarui `_includes/masthead.html` agar tautan judul situs mengarah ke halaman HOME bahasa yang sedang dibuka (`/id/main/`, `/en/main/`, `/ja/main/`, dengan fallback `/` untuk halaman tanpa prefix bahasa) serta menonaktifkan perilaku penciutan menu `greedy-nav` agar tombol ganti bahasa dan tombol ganti tema tetap tampil penuh dengan area sentuh minimal 44px. Menambahkan nama situs dan tautan About serta Contact sesuai bahasa halaman di `_includes/footer/custom.html` (dipanggil via `include` tanpa cache sehingga dinamis per bahasa) berdampingan dengan kredit hak cipta yang sudah ada. Menambahkan aturan gaya header dan footer Sumi & Washi di `_sass/minimal-mistakes/skins/_kanade.scss` tanpa border-radius, bayangan, atau animasi gerak, serta memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #55 | layout HOME Sumi & Washi
 - Tanggal: 2026-11-11
 - File: `_layouts/home-sumi.html`, `_pages/en-main.md`, `_pages/id-main.md`, `_pages/ja-main.md`, `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

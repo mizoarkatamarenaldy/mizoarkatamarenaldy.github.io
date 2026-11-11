@@ -1,3 +1,42 @@
 <!-- start custom footer snippets -->
+{% assign footer_lang = page.lang %}
+{% unless footer_lang %}
+  {% assign footer_url_parts = page.url | split: '/' %}
+  {% if footer_url_parts[1] == 'id' or footer_url_parts[1] == 'en' or footer_url_parts[1] == 'ja' %}
+    {% assign footer_lang = footer_url_parts[1] %}
+  {% endif %}
+{% endunless %}
 
+{% case footer_lang %}
+  {% when "id" %}
+    {% assign footer_title = "Mizo Arkatama Renaldy" %}
+    {% assign footer_about_url = "/id/about/" %}
+    {% assign footer_about_text = "Tentang" %}
+    {% assign footer_contact_url = "/id/contact/" %}
+    {% assign footer_contact_text = "Kontak" %}
+  {% when "en" %}
+    {% assign footer_title = "Mizo Arkatama Renaldy" %}
+    {% assign footer_about_url = "/en/about/" %}
+    {% assign footer_about_text = "About" %}
+    {% assign footer_contact_url = "/en/contact/" %}
+    {% assign footer_contact_text = "Contact" %}
+  {% when "ja" %}
+    {% assign footer_title = "Mizo Arkatama Renaldy" %}
+    {% assign footer_about_url = "/ja/about/" %}
+    {% assign footer_about_text = "自己紹介" %}
+    {% assign footer_contact_url = "/ja/contact/" %}
+    {% assign footer_contact_text = "連絡先" %}
+  {% else %}
+    {% assign footer_title = site.masthead_title | default: site.title %}
+    {% assign footer_about_url = "/en/about/" %}
+    {% assign footer_about_text = "About" %}
+    {% assign footer_contact_url = "/en/contact/" %}
+    {% assign footer_contact_text = "Contact" %}
+{% endcase %}
+
+<div class="sumi-footer__brand">{{ footer_title | escape_once | strip }}</div>
+<div class="sumi-footer__links">
+  <a href="{{ footer_about_url | relative_url }}">{{ footer_about_text }}</a>
+  <a href="{{ footer_contact_url | relative_url }}">{{ footer_contact_text }}</a>
+</div>
 <!-- end custom footer snippets -->

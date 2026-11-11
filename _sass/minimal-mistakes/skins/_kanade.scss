@@ -380,3 +380,330 @@ html body.layout--home-sumi #main.sumi-home .sumi-row:hover .sumi-row-name,
 html body.layout--home-sumi #main.sumi-home .sumi-row:focus-visible .sumi-row-name {
   color: var(--sumi-accent) !important;
 }
+
+/* ==========================================================================
+   Header dan footer Sumi & Washi
+   ========================================================================== */
+
+html body {
+  --sumi-text: #{$text-color};
+  --sumi-text-secondary: #{$text-secondary-color};
+  --sumi-divider: #{$divider-color};
+  --sumi-accent: #{$primary-color};
+}
+
+html[data-theme="light"] body {
+  --sumi-text: #{$ink-light};
+  --sumi-text-secondary: #{$text-secondary-color-light};
+  --sumi-divider: #{$divider-color-light};
+  --sumi-accent: #{$plum};
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) body {
+    --sumi-text: #{$ink-light};
+    --sumi-text-secondary: #{$text-secondary-color-light};
+    --sumi-divider: #{$divider-color-light};
+    --sumi-accent: #{$plum};
+  }
+}
+
+html body .masthead,
+html body .masthead *,
+html body .masthead *::before,
+html body .masthead *::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+}
+
+html body .masthead {
+  position: relative !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--sumi-divider) !important;
+  background: none !important;
+}
+
+html body .masthead__inner-wrap {
+  width: 100% !important;
+  max-width: 80rem !important;
+  min-height: 4rem !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-family: $sans-serif !important;
+}
+
+html body .masthead__inner-wrap::before,
+html body .masthead__inner-wrap::after,
+html body .masthead__menu::before,
+html body .masthead__menu::after {
+  display: none !important;
+  content: none !important;
+}
+
+@media (min-width: 768px) {
+  html body .masthead__inner-wrap {
+    min-height: 5rem !important;
+    padding: 0 2rem !important;
+  }
+}
+
+html body .masthead__menu {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body .masthead #site-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  column-gap: 1rem !important;
+  width: 100% !important;
+  min-height: 4rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+@media (min-width: 768px) {
+  html body .masthead #site-nav {
+    min-height: 5rem !important;
+  }
+}
+
+html body .masthead .site-title,
+html body .masthead .site-title:visited,
+html body .masthead .site-title:hover,
+html body .masthead .site-title:focus-visible {
+  font-family: $serif !important;
+  font-size: 17px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  color: var(--sumi-text) !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: normal !important;
+  flex: 0 1 auto !important;
+}
+
+@media (max-width: 767.98px) {
+  html body .masthead .site-title {
+    max-width: 8.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  html body .masthead .site-title,
+  html body .masthead .site-title:visited,
+  html body .masthead .site-title:hover,
+  html body .masthead .site-title:focus-visible {
+    font-size: 22px !important;
+    line-height: 30px !important;
+    white-space: nowrap !important;
+    max-width: none;
+  }
+}
+
+html body .masthead .visible-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 1.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  overflow: visible !important;
+  flex: 1 1 auto !important;
+}
+
+html body .masthead .masthead__menu-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  white-space: normal !important;
+  flex: 0 1 auto !important;
+}
+
+@media (min-width: 768px) {
+  html body .masthead .masthead__menu-item {
+    white-space: nowrap !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+html body .masthead .visible-links a,
+html body .masthead .visible-links a:visited {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: $sans-serif !important;
+  font-size: 10px !important;
+  line-height: 14px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.18em !important;
+  color: var(--sumi-text-secondary) !important;
+  text-decoration: none !important;
+  background: none !important;
+}
+
+html body .masthead .visible-links a::before,
+html body .masthead .visible-links a::after {
+  display: none !important;
+  content: none !important;
+}
+
+html body .masthead .visible-links a:hover,
+html body .masthead .visible-links a:focus-visible {
+  color: var(--sumi-accent) !important;
+  text-decoration: none !important;
+  background: none !important;
+}
+
+html body .masthead .greedy-nav__toggle,
+html body .masthead .hidden-links {
+  display: none !important;
+}
+
+html body .page__footer,
+html body .page__footer *,
+html body .page__footer *::before,
+html body .page__footer *::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+}
+
+html body .page__footer {
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  margin: 6rem 0 0 0 !important;
+  padding: 0 !important;
+  border-top: 1px solid var(--sumi-divider) !important;
+  background: none !important;
+  color: var(--sumi-text-secondary) !important;
+}
+
+html body .page__footer::before,
+html body .page__footer::after,
+html body .page__footer footer::before,
+html body .page__footer footer::after {
+  display: none !important;
+  content: none !important;
+}
+
+html body .page__footer footer {
+  width: 100% !important;
+  max-width: 80rem !important;
+  margin: 0 auto !important;
+  padding: 3rem 1rem !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  html body .page__footer footer {
+    padding: 3rem 2rem !important;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    justify-content: flex-start !important;
+    gap: 1.5rem !important;
+  }
+}
+
+html body .page__footer .sumi-footer__brand {
+  font-family: $serif !important;
+  font-size: 22px !important;
+  line-height: 30px !important;
+  font-weight: 400 !important;
+  color: var(--sumi-text) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 768px) {
+  html body .page__footer .sumi-footer__brand {
+    margin-right: auto !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+html body .page__footer .sumi-footer__links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 1.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 768px) {
+  html body .page__footer .sumi-footer__links {
+    flex-shrink: 0 !important;
+  }
+}
+
+html body .page__footer .sumi-footer__links a,
+html body .page__footer .sumi-footer__links a:visited {
+  font-family: $sans-serif !important;
+  font-size: 11px !important;
+  line-height: 16px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  color: var(--sumi-text-secondary) !important;
+  text-decoration: none !important;
+}
+
+html body .page__footer .sumi-footer__links a:hover,
+html body .page__footer .sumi-footer__links a:focus-visible {
+  color: var(--sumi-accent) !important;
+  text-decoration: none !important;
+}
+
+html body .page__footer .page__footer-copyright {
+  font-family: $sans-serif !important;
+  font-size: 10px !important;
+  line-height: 14px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.18em !important;
+  color: var(--sumi-text-secondary) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body .page__footer .page__footer-copyright a,
+html body .page__footer .page__footer-copyright a:visited {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+html body .page__footer .page__footer-copyright a:hover,
+html body .page__footer .page__footer-copyright a:focus-visible {
+  color: var(--sumi-accent) !important;
+  text-decoration: none !important;
+}

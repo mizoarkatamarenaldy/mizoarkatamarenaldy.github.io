@@ -59,6 +59,7 @@ mizoarkatamarenaldy.github.io/
 - [x] Perpendek nama portofolio jadi 1 kata
 - [x] Token dan font Sumi & Washi
 - [x] Layout HOME Sumi & Washi
+- [x] Header dan footer Sumi & Washi
 
 ## Selesai
 - [x] Halaman pilih bahasa

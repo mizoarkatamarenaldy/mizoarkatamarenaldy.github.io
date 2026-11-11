@@ -12,15 +12,19 @@
 {% case masthead_lang %}
   {% when "id" %}
     {% assign masthead_title = "Mizo Arkatama Renaldy" %}
+    {% assign masthead_url = "/id/main/" %}
     {% assign theme_btn_text = "Ganti Tema" %}
   {% when "en" %}
     {% assign masthead_title = "Mizo Arkatama Renaldy" %}
+    {% assign masthead_url = "/en/main/" %}
     {% assign theme_btn_text = "Change Theme" %}
   {% when "ja" %}
     {% assign masthead_title = "Mizo Arkatama Renaldy" %}
+    {% assign masthead_url = "/ja/main/" %}
     {% assign theme_btn_text = "テーマ変更" %}
   {% else %}
     {% assign masthead_title = site.masthead_title | default: site.title %}
+    {% assign masthead_url = "/" %}
     {% if page.url == "/404.html" %}
       {% assign theme_btn_text = "Ganti Tema / Change Theme / テーマ変更" %}
     {% else %}
@@ -31,11 +35,11 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ masthead_title }}"></a>
+          <a class="site-logo" href="{{ masthead_url | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ masthead_title }}"></a>
         {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}">
+        <a class="site-title" href="{{ masthead_url | relative_url }}">
           {{ masthead_title | escape_once | strip }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
         </a>

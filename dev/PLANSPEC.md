@@ -182,3 +182,42 @@ Cek manual:
 - Perkecil lebar jendela ke 360px. Hero lalu sidebar bertumpuk, tidak ada scroll horizontal.
 - Di HOME, arahkan kursor ke posisi kanji 奏. Kanji muncul, klik membuka easter egg. Tekan Ctrl+A, kanji tidak ikut terblok.
 - Lihat source HOME. JSON-LD Person dan tag hreflang masih ada.
+
+## Header dan footer Sumi & Washi
+
+Tujuan: Menyamakan tampilan header (masthead) dan footer di semua halaman bahasa dengan desain "Sumi & Washi" di dev/DESIGN.md. Hanya tampilan yang berubah, bukan isi, teks, atau fungsinya.
+
+Tempat dan tampilan:
+- Header dan footer di semua halaman yang memakai layout tema (HOME, sub-halaman, 404).
+- Konten header dan footer memakai lebar maksimum 80rem, di tengah, padding samping 2rem. Di bawah 768px padding samping 1rem.
+- Header: tinggi 5rem (4rem di bawah 768px), tidak menempel saat scroll, garis bawah 1px. Kiri: judul situs (teks yang sudah ada), link ke HOME bahasa yang sedang dibuka. Kanan: tombol ganti bahasa dan tombol ganti tema yang sudah ada, berjarak 1.5rem.
+- Judul situs: serif 22px dengan baris 30px, berat 400, warna teks utama. Di bawah 768px: 17px dengan baris 24px, boleh turun ke dua baris.
+- Tombol header: sans 10px dengan baris 14px, berat 500, huruf kapital, letter-spacing 0.18em, warna teks sekunder. Saat kursor diarahkan, warna berubah ke aksen. Area sentuh tiap tombol minimal 44px tingginya.
+- Footer: garis atas 1px, jarak atas dari konten 6rem, padding atas dan bawah 3rem. Latar sama dengan latar halaman.
+- Layar 768px ke atas: footer satu baris, rata dasar teks. Kiri: nama (teks yang sama dengan judul situs, serif 22px dengan baris 30px, berat 400, warna teks utama). Kanan: link About dan Contact, lalu kredit yang sudah ada. Di bawah 768px: ketiganya bertumpuk ke bawah, jarak 1.5rem.
+- Link About dan Contact: sans 11px dengan baris 16px, berat 600, huruf kapital, letter-spacing 0.14em, warna teks sekunder, jarak antar link 1.5rem. Saat kursor diarahkan, warna berubah ke aksen. Teks label dan URL memakai yang sudah dipakai untuk link About dan Contact di HOME, sesuai bahasa halaman.
+- Kredit footer: teks yang sudah ada, sans 10px dengan baris 14px, berat 500, huruf kapital, letter-spacing 0.18em, warna teks sekunder.
+- Warna: garis pembagi memakai fusuma wire di mode gelap dan rice paper seam di mode terang. Aksen hover memakai rose di mode gelap dan plum di mode terang.
+- Tanpa border radius, tanpa bayangan, tanpa animasi gerak.
+
+Aturan:
+- Tombol ganti bahasa dan tombol ganti tema tetap satu tombol masing-masing seperti sekarang. Teks (tiga bahasa), link, dan perilakunya tidak diubah, hanya gayanya.
+- Elemen header dan footer lain yang sudah ada tetap ada, teks dan fungsinya tidak diubah.
+- Jangan pakai include_cached untuk masthead, sesuai gotcha di RULES.md.
+- Tidak ada hex baru. Hanya pakai token yang sudah ada di _kanade.scss.
+- Fokus keyboard tetap terlihat, pakai gaya fokus yang sudah ada.
+- Tidak mengubah _layouts/single.html, layout HOME, tombol Kembali ke HOME, navigasi Sebelumnya/Berikutnya, halaman pilih bahasa (index.html), dan easter egg Kanade.
+- Tidak menambah menu atas, foto atau avatar, ikon, deskripsi, tahun hak cipta baru, hanko, atau konten lain dari desain Stitch yang belum ada di situs.
+- Tidak memakai Tailwind, Material Symbols, atau font monospace.
+
+Data:
+- Tidak ada perubahan struktur data di _data/, URL, atau permalink.
+
+Cek manual:
+- Jalankan python scripts/check-languages.py. Tidak ada error baru, tidak ada peringatan warna hardcode baru, teks tombol ganti tema tiga bahasa tetap lengkap.
+- Buka /en/main/ di layar lebar mode gelap. Header: judul di kiri, dua tombol di kanan, garis tipis di bawah. Footer: garis tipis di atas, nama di kiri, About, Contact, dan kredit di kanan. Klik judul, HOME bahasa yang sama terbuka. Klik About dan Contact, halaman bahasa yang sama terbuka.
+- Pakai tombol ganti bahasa dan tombol ganti tema. Keduanya berfungsi seperti sebelum sesi, dan warna berubah ke aksen saat kursor diarahkan.
+- Ulangi di mode terang. Semua teks terbaca, aksen hover memakai plum, garis memakai warna seam.
+- Buka /id/main/ dan /ja/main/. Teks sesuai bahasa, huruf Jepang tidak terpotong. Buka satu sub-halaman portofolio dan satu URL yang tidak ada (halaman 404). Header dan footer sama, tombol Kembali ke HOME dan navigasi Sebelumnya/Berikutnya tidak berubah.
+- Perkecil lebar jendela ke 360px. Tidak ada scroll horizontal, kedua tombol mudah ditekan, judul boleh dua baris, footer bertumpuk.
+- Buka /?pilih dan halaman easter egg Kanade. Tampilannya persis sama seperti sebelum sesi.
