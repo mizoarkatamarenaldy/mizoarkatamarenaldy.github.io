@@ -57,6 +57,7 @@ mizoarkatamarenaldy.github.io/
 - [/] Easter egg Kanade (3 bahasa) — kerangka selesai, teks masih [TEKS DARI MIZO]
 - [x] Samakan nama portofolio dengan Big Eleventh Skills
 - [x] Perpendek nama portofolio jadi 1 kata
+- [x] Token dan font Sumi & Washi
 
 ## Selesai
 - [x] Halaman pilih bahasa

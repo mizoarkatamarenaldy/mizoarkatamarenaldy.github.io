@@ -84,3 +84,37 @@
 5. **Pemicu easter egg Kanade (.kanade-trigger)**: Sesuai instruksi, pemicu ini sengaja dibuat sembunyi dan dilarang diubah. Outline sudah diatur 
 one, namun ketika menerima fokus (hover/focus-visible), warna teks berubah menjadi #BB6588.
    *Perbaikan*: Tidak diubah tampilannya, warna teks #BB6588 memiliki kontras 4.80:1 terhadap latar #121016 sehingga masih terbaca dan lulus WCAG (meskipun sengaja dibuat obscure).
+
+## Sumi & Washi
+
+Fondasi desain baru (token warna dan font) yang disiapkan untuk layout dan komponen situs.
+
+### Token Warna Baru
+
+#### Mode Gelap
+- **Rose** (`#BB6588`): Aksen utama (padanan peran sudah ada di `_kanade.scss` sebagai `$primary-color: #BB6588`)
+- **Plum** (`#93506B`): Hover dan garis aksen sekunder (`$plum`, `$plum-color`, `$accent-secondary-color`)
+- **Hanko** (`#C25450`): Hanya untuk stempel hanko, bukan teks (`$hanko`, `$hanko-color`)
+- **Bamboo Ash** (`#9A96A0`): Teks sekunder (`$bamboo-ash`, `$bamboo-ash-color`, `$text-secondary-color`)
+- **Fusuma Wire** (`#26232D`): Garis pembagi (`$fusuma-wire`, `$fusuma-wire-color`, `$divider-color`)
+*(Catatan: Latar `#121016` dan teks `#EDEAF0` sudah ada di `_kanade.scss` sebagai `$background-color` dan `$text-color`)*
+
+#### Mode Terang
+- **Washi** (`#F8F6F0`): Latar (`$washi-light`, `$washi-color-light`)
+- **Ink** (`#1D1A20`): Teks (`$ink-light`, `$ink-color-light`)
+- **Dry Reed** (`#706B76`): Teks sekunder (`$dry-reed-light`, `$dry-reed-color-light`, `$text-secondary-color-light`)
+- **Rice Paper Seam** (`#E5E0D5`): Garis pembagi (`$rice-paper-seam-light`, `$rice-paper-seam-color-light`, `$divider-color-light`)
+
+> **Catatan Kontras Aksesibilitas**: Di mode terang, rose `#BB6588` tidak dipakai untuk teks kecil (kontras 3,65:1 di atas `#F8F6F0`, batas 4,5:1), pakai plum `#93506B` (5,4:1).
+
+### Tipografi & Font
+
+- **Link Google Fonts**: Dimuat lewat satu link di `_includes/head/custom.html` dengan `display=swap`:
+  - Noto Serif: 300 dan 400 (normal dan italic)
+  - Plus Jakarta Sans: 400, 500, 600
+  - Noto Serif JP: 300 dan 400
+- **Font Stack Serif**: `"Noto Serif", "Noto Serif JP", Georgia, serif`
+  - Diterapkan pada heading (`h1` sampai `h6`) via `$header-font-family` dan judul masthead (`.site-title`).
+- **Font Stack Sans**: `"Plus Jakarta Sans", system-ui, sans-serif`
+  - Diterapkan pada teks global (`body`) via `$global-font-family`, serta tombol, navigasi, dan elemen teks lainnya via `$sans-serif`.
+- **Font Monospace**: Bawaan tema (tidak diubah).

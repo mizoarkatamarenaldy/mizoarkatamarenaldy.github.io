@@ -36,6 +36,39 @@ $masthead-link-color-light: $text-color-light !default;
 $masthead-link-color-hover-light: mix(#fff, $text-color-light, 20%) !default;
 $navicon-link-color-hover-light: mix(#fff, $background-color-light, 30%) !default;
 
+/* Sumi & Washi tokens (Dark Mode) */
+$plum: #93506B !default;
+$plum-color: $plum !default;
+$hanko: #C25450 !default;
+$hanko-color: $hanko !default;
+$bamboo-ash: #9A96A0 !default;
+$bamboo-ash-color: $bamboo-ash !default;
+$text-secondary-color: $bamboo-ash !default;
+$fusuma-wire: #26232D !default;
+$fusuma-wire-color: $fusuma-wire !default;
+$divider-color: $fusuma-wire !default;
+
+/* Sumi & Washi tokens (Light Mode) */
+$washi-light: #F8F6F0 !default;
+$washi-color-light: $washi-light !default;
+$ink-light: #1D1A20 !default;
+$ink-color-light: $ink-light !default;
+$dry-reed-light: #706B76 !default;
+$dry-reed-color-light: $dry-reed-light !default;
+$text-secondary-color-light: $dry-reed-light !default;
+$rice-paper-seam-light: #E5E0D5 !default;
+$rice-paper-seam-color-light: $rice-paper-seam-light !default;
+$divider-color-light: $rice-paper-seam-light !default;
+
+/* Typography - Sumi & Washi */
+$serif: "Noto Serif", "Noto Serif JP", Georgia, serif !default;
+$sans-serif: "Plus Jakarta Sans", system-ui, sans-serif !default;
+$sans-serif-narrow: $sans-serif !default;
+
+$global-font-family: $sans-serif !default;
+$header-font-family: $serif !default;
+$caption-font-family: $sans-serif !default;
+
 /* notices */
 $notice-background-mix: 90% !default;
 $code-notice-background-mix: 95% !default;
@@ -83,4 +116,10 @@ $base0f: #c47a6a !default;
 ::selection {
   background: $primary-color !important;
   color: $background-color !important;
+}
+
+/* Masthead title */
+.masthead .site-title,
+.site-title {
+  font-family: $header-font-family;
 }

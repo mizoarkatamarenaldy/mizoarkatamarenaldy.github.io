@@ -106,3 +106,33 @@ Cek manual:
 - Buka HOME di id, en, dan ja. Main Portfolio menampilkan 3 tombol dan Additional Portfolio menampilkan 8 tombol, semuanya satu kata.
 - Dari halaman portofolio pertama sampai terakhir, klik Sebelumnya/Berikutnya. Urutannya sesuai daftar di atas.
 - Di salah satu halaman portofolio, klik tombol ganti bahasa. Tujuannya halaman setara di bahasa lain dengan slug baru.
+
+## Token dan font Sumi & Washi
+
+Tujuan: Menyiapkan fondasi desain baru (token warna dan font) supaya sesi berikutnya (layout home, header, footer, mobile) bisa memakainya. Sesi ini tidak mengubah layout atau komponen apa pun.
+
+Tempat dan tampilan:
+- Warna: hanya variabel baru di _kanade.scss yang belum dipakai di elemen mana pun, jadi warna tampilan tidak berubah.
+- Font: semua halaman yang memakai layout tema. Heading (h1 sampai h6) dan judul masthead memakai serif, teks lainnya memakai sans. Ukuran, berat, jarak, dan layout tidak berubah.
+
+Aturan:
+- Semua nilai hex hanya ditulis di _kanade.scss.
+- Tambahkan token hanya kalau belum ada padanan perannya di _kanade.scss. Nilai variabel yang sudah ada tidak diubah. Ikuti pola penamaan yang sudah ada.
+- Token mode gelap: rose #BB6588 (aksen utama), plum #93506B (hover dan garis aksen sekunder), hanko #C25450 (hanya untuk stempel hanko, bukan teks), bamboo ash #9A96A0 (teks sekunder), fusuma wire #26232D (garis pembagi). Latar #121016 dan teks #EDEAF0 sudah ada.
+- Token mode terang: washi #F8F6F0 (latar), ink #1D1A20 (teks), dry reed #706B76 (teks sekunder), rice paper seam #E5E0D5 (garis pembagi). Definisikan sebagai variabel terpisah berakhiran -light sesuai gotcha SASS di RULES.md.
+- Di dev/DESIGN.md, buat bagian baru "Sumi & Washi" tanpa mengubah bagian lama. Isinya semua token baru beserta nilainya, font yang dipakai, dan catatan ini: di mode terang, rose #BB6588 tidak dipakai untuk teks kecil (kontras 3,65:1 di atas #F8F6F0, batas 4,5:1), pakai plum #93506B (5,4:1).
+- Font dimuat lewat satu link Google Fonts di _includes/head/custom.html dengan display=swap. Keluarga dan berat: Noto Serif 300 dan 400 (normal dan italic), Plus Jakarta Sans 400, 500, 600, Noto Serif JP 300 dan 400.
+- Stack serif: "Noto Serif", "Noto Serif JP", Georgia, serif. Stack sans: "Plus Jakarta Sans", system-ui, sans-serif.
+- Terapkan lewat variabel font bawaan tema di _kanade.scss (font global dan font header), bukan dengan aturan CSS baru, kecuali variabel tidak cukup. Berlaku di semua file entry SASS tema, termasuk main-light.scss dan main-light-os.scss.
+- Tidak mengubah font monospace, ukuran, berat, jarak, layout, atau teks halaman.
+- Tidak memakai Tailwind, Material Symbols, gambar, atau hanko.
+- Tidak menyentuh halaman pilih bahasa (index.html) dan easter egg Kanade.
+
+Data:
+- Tidak ada perubahan struktur data di _data/, URL, atau permalink.
+
+Cek manual:
+- Jalankan python scripts/check-languages.py. Tidak ada error baru dan tidak ada peringatan warna hardcode baru.
+- Buka /id/main/, /en/main/, dan /ja/main/ di mode gelap. Semua warna sama seperti sebelum sesi. Judul tampil serif, teks lain sans. Di /ja/ huruf Jepang pada judul memakai Noto Serif JP (cek di DevTools, bagian Rendered Fonts).
+- Ganti ke mode terang lewat tombol tema di salah satu halaman. Warna sama seperti sebelum sesi, font sama seperti mode gelap, tombol tema masih berfungsi.
+- Buka /?pilih dan halaman easter egg Kanade. Tampilannya persis sama seperti sebelum sesi.
