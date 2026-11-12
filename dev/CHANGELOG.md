@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #58 | isi halaman Developer: tiga repo
+- Tanggal: 2026-11-12
+- File: `_pages/en-portfolio-developer.md`, `_pages/id-portfolio-developer.md`, `_pages/ja-portfolio-developer.md`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menampilkan tiga repositori GitHub (`mizan-okane`, `shugen-hub`, `Shinri-LLM`) pada halaman Developer di tiga bahasa (`/id/portfolio/developer/`, `/en/portfolio/developer/`, `/ja/portfolio/developer/`) dengan urutan, struktur, dan tautan keluar (`target="_blank" rel="noopener noreferrer"`) yang identik. Setiap item menampilkan nama repo tetap, placeholder deskripsi `[TEKS DARI MIZO]`, serta tautan sesuai bahasa (`Buka di GitHub`, `Open on GitHub`, `GitHubで開く`) menggunakan variabel palet yang sudah ada tanpa warna hardcode, font baru, bayangan, atau animasi, serta memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #57 | penyesuaian mobile Sumi & Washi
 - Tanggal: 2026-11-11
 - File: `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

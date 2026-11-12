@@ -255,3 +255,38 @@ Cek manual:
 - Buka /id/main/ dan /ja/main/ di mode terang pada lebar 360px. Teks terbaca dan tidak terpotong, huruf Jepang tidak terpotong.
 - Buka satu sub-halaman portofolio dan satu URL yang tidak ada (halaman 404) pada lebar 360px. Header dan footer sejajar sama seperti HOME, tidak ada scroll horizontal.
 - Buka /?pilih dan halaman easter egg Kanade. Tampilannya persis sama seperti sebelum sesi.
+
+## Isi halaman Developer: tiga repo
+
+Tujuan: Menampilkan tiga repo GitHub milik pemilik di halaman Developer (bagian Additional Portfolio), supaya pengunjung bisa melihat dan membuka proyeknya.
+
+Tempat dan tampilan:
+- Halaman Developer di /id/, /en/, dan /ja/. Cari lokasi filenya lewat dev/STRUKTUR.md.
+- Tiga kartu atau item daftar, urutan: mizan-okane, shugen-hub, Shinri-LLM.
+- Tiap item berisi nama repo (teks tetap, tidak diterjemahkan), satu baris deskripsi, dan tautan ke repo.
+- Tautan:
+  - https://github.com/mizoarkatamarenaldy/mizan-okane
+  - https://github.com/mizoarkatamarenaldy/shugen-hub
+  - https://github.com/mizoarkatamarenaldy/Shinri-LLM
+- Teks deskripsi di semua bahasa ditulis persis "[TEKS DARI MIZO]". Pemilik yang mengisinya nanti.
+- Teks tautan: id "Buka di GitHub", en "Open on GitHub", ja "GitHubで開く".
+
+Aturan:
+- Isi tiga bahasa sama: jumlah item, urutan, dan tautan identik.
+- Tautan keluar dibuka di tab baru dengan rel="noopener noreferrer".
+- Deskripsi tidak boleh ditulis atau dikarang oleh agent.
+- Teks Jepang di halaman id dan en wajib memakai atribut lang="ja".
+- Salam pembuka halaman tidak diubah.
+- Tidak ada nama asli, kampus, atau data pribadi lain di halaman.
+- Tidak ada warna hardcode, tidak ada JavaScript baru, tidak ada gambar baru.
+- Tidak mengubah halaman lain, _config.yml, atau _data/portfolio-nav.yml.
+
+Data:
+- Tidak ada perubahan struktur data, _config.yml, atau navigasi.
+
+Cek manual:
+- Buka halaman Developer di /id/, /en/, dan /ja/: tiga item tampil dengan urutan sama dan tautannya mengarah ke repo yang benar.
+- Klik tautan tiap item: repo GitHub terbuka di tab baru.
+- Jalankan python scripts/check-languages.py: tidak ada error. Peringatan placeholder untuk "[TEKS DARI MIZO]" boleh muncul.
+- Ganti bahasa lewat tombol di masthead: pindah ke halaman Developer yang setara.
+- Buka di mode gelap dan mode terang: teks dan tautan terbaca.
