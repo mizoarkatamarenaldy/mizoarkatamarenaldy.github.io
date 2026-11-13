@@ -7,65 +7,90 @@ change_lang_text: "言語を変更"
 ---
 
 <style>
-.page__content .dev-repo-list {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-list {
   list-style: none;
-  margin: 1.5rem 0;
+  margin: 2rem 0 2.5rem 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid var(--sumi-divider);
 }
-.page__content .dev-repo-item {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item {
   margin: 0;
-  padding: 1.25rem;
-  border: 1px solid var(--sumi-divider);
-  background-color: var(--kanade-bg);
-  color: var(--kanade-text);
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  border: none;
+  border-bottom: 1px solid var(--sumi-divider);
+  background: none;
+  color: var(--sumi-text);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.75rem;
   box-sizing: border-box;
 }
-.page__content .dev-repo-name {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item h2.dev-repo-name {
   margin: 0;
   padding: 0;
   border: none;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  color: var(--kanade-text);
+  font-family: "Noto Serif", "Noto Serif JP", Georgia, serif;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 400;
+  color: var(--sumi-text);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
-.page__content .dev-repo-desc {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item p.dev-repo-desc {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
   color: var(--sumi-text-secondary);
-  line-height: 1.6;
+  overflow-wrap: break-word;
 }
-.page__content a.dev-repo-link,
-.page__content a.dev-repo-link:visited,
-.page__content a.dev-repo-link:hover {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link:visited,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link:hover {
   display: inline-block;
   margin-top: 0.25rem;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
   color: var(--sumi-text) !important;
   text-decoration: none !important;
   border-bottom: 1px solid var(--sumi-text) !important;
   padding-bottom: 2px;
-  font-weight: 500;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 @media (hover: hover) {
-  .page__content a.dev-repo-link:hover {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link:hover {
     color: var(--sumi-accent) !important;
     border-bottom-color: var(--sumi-accent) !important;
     text-decoration: none !important;
   }
 }
-.page__content a.dev-repo-link:focus {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link:focus {
   outline: none;
 }
-.page__content a.dev-repo-link:active,
-.page__content a.dev-repo-link:focus-visible {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link:active,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link:focus-visible {
   color: var(--sumi-accent) !important;
   border-bottom-color: var(--sumi-accent) !important;
   text-decoration: none !important;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .dev-repo-item a.dev-repo-link:focus-visible {
+  outline: 2px solid var(--sumi-text) !important;
+  outline-offset: 2px !important;
 }
 </style>
 

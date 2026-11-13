@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #61 | samakan desain halaman Developer dengan HOME
+- Tanggal: 2026-11-13
+- File: `_includes/head/custom.html`, `_pages/en-portfolio-developer.md`, `_pages/id-portfolio-developer.md`, `_pages/ja-portfolio-developer.md`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menyamakan tampilan halaman Developer di `/id/`, `/en/`, dan `/ja/` dengan desain Sumi & Washi pada HOME dan sub-halaman standar tanpa mengubah struktur HTML, teks, header, footer, background, HOME, sub-halaman standar, maupun Contact, serta tanpa warna hex baru atau warna hardcode. Menghapus pengecualian `:not(:has(.dev-repo-list))` pada CSS sub-halaman di `_includes/head/custom.html` sehingga halaman Developer memakai ulang tata letak kontainer (`max-width: 80rem` dan padding `3rem 1rem` / `3rem 2rem` / `6rem 2rem`), judul halaman serif (`h1#page-title.page__title`), teks isi sans (`15px/26px`), navigasi Sebelumnya/Berikutnya, dan tombol "Back to HOME" bergaya Sumi & Washi. Memperbarui `<style>` pada ketiga file `_pages/*-portfolio-developer.md` agar daftar repo menggunakan garis pembagi horizontal `--sumi-divider` dengan jarak lega tanpa kotak berlatar, judul repo memakai font serif (`"Noto Serif", "Noto Serif JP", Georgia, serif`, `22px/30px`, bobot 400), deskripsi memakai font sans (`15px/26px`, warna `--sumi-text-secondary`), dan tautan "Buka di GitHub" / "Open on GitHub" / "GitHubで開く" memakai gaya tautan HOME (`--sumi-text`, underline 1px, serta `--sumi-accent` pada hover/active/focus-visible dengan spesifisitas tinggi agar tidak tertimpa gaya `:hover`/`:visited` bawaan tema) di mode gelap, mode terang, dan layar mobile, serta memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #60 | samakan desain sub-halaman standar dengan HOME
 - Tanggal: 2026-11-13
 - File: `_includes/head/custom.html`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

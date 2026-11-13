@@ -353,3 +353,34 @@ Cek manual:
 - Buka About dan 3E. Gayanya sama dengan Psychology.
 - Buka salah satu halaman di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
 - Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
+
+## Samakan desain halaman Developer dengan HOME
+
+Tujuan: Halaman Developer (tiga kartu repo) masih tampil seperti gaya bawaan tema, sementara HOME sudah mengikuti desain Sumi & Washi (dev/DESIGN.md). Item ini menyamakan kartu repo dengan gaya HOME. Acuannya HOME dan dev/DESIGN.md, bukan gaya baru.
+
+Tempat dan tampilan:
+- Cakupan: hanya halaman Developer di /id/, /en/, dan /ja/.
+- Kartu repo: border, garis pemisah, jarak dalam, dan jarak antar kartu mengikuti bahasa visual HOME (garis tipis dari token pembagi di dev/DESIGN.md, jarak lega). Sekarang berupa kartu dengan border tipis gelap kebiruan.
+- Judul repo memakai font serif seperti judul di HOME. Teks deskripsi memakai font sans dengan ukuran dan warna sekunder yang sama dengan teks isi HOME. Sekarang teks placeholder berwarna abu yang tidak sama dengan HOME.
+- Link "Open on GitHub" memakai gaya link HOME: warna, underline, dan efek hover yang sama. Sekarang putih dengan underline abu.
+- Sub-halaman standar sudah disamakan dengan HOME di sesi sebelumnya. Pakai ulang nilai, variabel, dan class dari sana dan dari HOME untuk judul halaman, jarak ke header, lebar konten, dan tombol Back to HOME. Jangan membuat nilai baru.
+- Cara mengerjakan: baca CSS HOME dan sub-halaman standar dulu, lalu pakai ulang nilainya. Jangan menebak nilai dari tampilan.
+
+Aturan:
+- Hanya CSS yang diubah. Teks dan struktur HTML tidak diubah.
+- Tidak ada warna hex baru dan tidak ada warna hardcode. Semua warna dari variabel palet sesuai dev/DESIGN.md.
+- Perhatikan gotcha spesifisitas CSS pada tag `<a>` di dev/RULES.md. Styling bawaan tema untuk `a:hover` dan `a:visited` tidak boleh menimpa gaya link "Open on GitHub".
+- Mode gelap dan mode terang harus sama-sama benar.
+- Tiga bahasa (id, en, ja) harus tampil sama.
+- Tampilan mobile tidak boleh rusak. Teks panjang tidak boleh terpotong di tengah kata dan kartu tidak boleh melebar keluar layar.
+- Tidak mengubah HOME, sub-halaman standar, halaman Contact, header, footer, dan background.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka halaman Developer di /id/, /en/, dan /ja/ dalam mode gelap. Bandingkan dengan HOME: garis, jarak, font judul, dan font deskripsi terasa satu keluarga.
+- Ulangi di mode terang. Teks dan link tetap terbaca dan tidak ada warna bawaan tema yang muncul.
+- Arahkan kursor ke link "Open on GitHub", lalu klik dan kembali. Gaya hover dan visited sama dengan link di HOME.
+- Buka halaman Developer di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
