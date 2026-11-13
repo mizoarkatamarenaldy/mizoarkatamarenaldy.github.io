@@ -66,6 +66,7 @@ mizoarkatamarenaldy.github.io/
 - [x] Samakan desain sub-halaman standar dengan HOME
 - [x] Samakan desain halaman Developer dengan HOME
 - [x] Samakan desain halaman Contact dengan HOME
+- [x] Samakan warna latar HOME dan sub-halaman
 
 ## Selesai
 - [x] Halaman pilih bahasa

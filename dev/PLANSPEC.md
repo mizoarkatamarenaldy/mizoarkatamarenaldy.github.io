@@ -452,3 +452,33 @@ Cek manual:
 - Arahkan kursor ke link di kartu, lalu klik dan kembali. Gaya hover dan visited sama dengan link di HOME.
 - Buka halaman Contact di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
 - Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
+
+## Samakan warna latar HOME dan sub-halaman
+
+Tujuan: Latar situs harus satu warna rata yang sama di header, HOME, dan semua sub-halaman. Sekarang ada dua masalah: HOME punya patch kotak yang sedikit lebih ungu dengan tepi tajam, dan sub-halaman terlihat lebih ungu dari header. Item ini menghilangkan patch dan menyamakan warna latar. Acuannya warna latar header dan HOME di luar patch, sesuai dev/DESIGN.md.
+
+Tempat dan tampilan:
+- Patch di HOME: ada area berbentuk kotak yang sedikit lebih ungu dengan tepi tajam, di sisi kiri bawah halaman, sekitar x 470 pada layar selebar 1264. Area itu harus hilang sehingga latar HOME rata dari ujung ke ujung dan dari atas sampai bawah, termasuk saat di-scroll.
+- Sub-halaman: warna latar harus sama persis dengan latar header dan HOME. Tidak ada beda warna antara header dan area konten.
+- Cakupan: HOME dan semua sub-halaman (Psychology, HR, Linguistics, About, 3E, semua portofolio tambahan, Developer, dan Contact) di /id/, /en/, dan /ja/.
+- Cara mengerjakan: cari penyebabnya dulu. Periksa semua elemen yang punya latar atau gradasi di HOME dan sub-halaman (html, body, pembungkus halaman, sidebar, konten, header) dan temukan elemen yang membuat patch dan beda warna itu. Perbaiki di sumbernya, jangan menutup dengan elemen atau warna tambahan.
+- Warna latar yang dipakai adalah warna latar header dan HOME di luar patch. Pakai variabel palet yang sudah dipakai di sana.
+
+Aturan:
+- Hanya CSS yang diubah. Teks dan struktur HTML tidak diubah.
+- Tidak ada warna hex baru dan tidak ada warna hardcode. Semua warna dari variabel palet sesuai dev/DESIGN.md. Nilai hex hanya boleh ada di `_kanade.scss`.
+- Perhatikan cara kerja `kanade-palette.css` dan `main-light.css` di dev/DESIGN.md. Perbaikan harus berlaku di mode gelap dan mode terang. Cek latar mode terang juga, jangan hanya mode gelap.
+- Tiga bahasa (id, en, ja) harus tampil sama.
+- Tampilan mobile tidak boleh rusak, dan tidak ada patch atau beda warna di lebar layar HP.
+- Tidak mengubah teks, gaya kartu, gaya link, tombol, header, dan footer. Footer dikerjakan di sesi lain.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka HOME di /id/ pada lebar sekitar 1264 dalam mode gelap. Scroll dari atas sampai bawah. Tidak ada patch kotak, tidak ada tepi tajam, dan latar rata.
+- Buka Psychology di mode gelap. Warna latar konten sama dengan warna latar header, tidak lebih ungu.
+- Ulangi dua cek di atas di mode terang.
+- Buka HOME dan satu sub-halaman di /en/ dan /ja/. Hasilnya sama dengan /id/.
+- Buka HOME dan satu sub-halaman di lebar layar HP. Tidak ada patch dan tidak ada beda warna.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.

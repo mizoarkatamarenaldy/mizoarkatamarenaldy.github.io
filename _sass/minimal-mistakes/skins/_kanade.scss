@@ -461,14 +461,18 @@ html body.layout--home-sumi #main.sumi-home .sumi-row:focus-visible .sumi-row-na
    Header dan footer Sumi & Washi
    ========================================================================== */
 
+html,
 html body {
+  --sumi-bg: #{$background-color};
   --sumi-text: #{$text-color};
   --sumi-text-secondary: #{$text-secondary-color};
   --sumi-divider: #{$divider-color};
   --sumi-accent: #{$primary-color};
 }
 
+html[data-theme="light"],
 html[data-theme="light"] body {
+  --sumi-bg: #{$washi-light};
   --sumi-text: #{$ink-light};
   --sumi-text-secondary: #{$text-secondary-color-light};
   --sumi-divider: #{$divider-color-light};
@@ -476,12 +480,31 @@ html[data-theme="light"] body {
 }
 
 @media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]),
   html:not([data-theme="dark"]) body {
+    --sumi-bg: #{$washi-light};
     --sumi-text: #{$ink-light};
     --sumi-text-secondary: #{$text-secondary-color-light};
     --sumi-divider: #{$divider-color-light};
     --sumi-accent: #{$plum};
   }
+}
+
+html:has(> body[class*="layout--"]),
+html body[class*="layout--"] {
+  --kanade-bg: var(--sumi-bg);
+  background-color: var(--sumi-bg) !important;
+}
+
+html body[class*="layout--"] .initial-content,
+html body[class*="layout--"] #main,
+html body[class*="layout--"] .page,
+html body[class*="layout--"] .page__inner-wrap,
+html body[class*="layout--"] .page__content,
+html body[class*="layout--"] .sumi-home__grid,
+html body[class*="layout--"] .sumi-hero,
+html body[class*="layout--"] .sumi-sidebar {
+  background: none !important;
 }
 
 html body .masthead,

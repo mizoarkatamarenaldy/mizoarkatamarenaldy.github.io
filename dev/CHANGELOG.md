@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #63 | Samakan warna latar HOME dan sub-halaman
+- Tanggal: 2026-11-13
+- File: `_sass/minimal-mistakes/skins/_kanade.scss`, `assets/css/main-light-os.scss`, `assets/css/main-light.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menyamakan warna latar `html`, `body`, header, HOME, dan seluruh sub-halaman (Psychology, HR, Linguistics, About, 3E, portofolio tambahan, Developer, dan Contact) di `/id/`, `/en/`, dan `/ja/` baik di mode gelap (`#121016`) maupun mode terang (`#F8F6F0` / `$washi-light`) tanpa warna hex baru atau warna hardcode serta tanpa mengubah HTML maupun teks. Sebelumnya `--sumi-bg`, `--kanade-bg`, dan `background-color: var(--sumi-bg) !important` hanya diterapkan pada `html body.layout--home-sumi`, sementara `html`, `body` sub-halaman (`layout--single`), serta `assets/css/main-light.scss` dan `assets/css/main-light-os.scss` masih memakai `$background-color-light` (`#FAFAFC`, sedikit lebih dingin/kebiruan dibanding `#F8F6F0`). Memindahkan definisi `--sumi-bg` ke `html` dan `html body` (mode gelap, `[data-theme="light"]`, serta fallback `@media (prefers-color-scheme: light)`), menerapkan `--kanade-bg: var(--sumi-bg)` dan `background-color: var(--sumi-bg) !important` ke `html:has(> body[class*="layout--"])` serta `html body[class*="layout--"]`, menetralkan latar pembungkus `.initial-content`, `#main`, `.page`, `.page__inner-wrap`, `.page__content`, `.sumi-home__grid`, `.sumi-hero`, dan `.sumi-sidebar` menjadi `background: none !important`, serta mengganti `$background-color: $washi-light;` pada `assets/css/main-light.scss` dan `assets/css/main-light-os.scss` agar elemen `html` dan Minimal Mistakes di mode terang ikut menyatu dengan `$washi-light` sementara halaman standalone (`index.html`, `奏/`) tetap memakai `kanade-palette.css`. Memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #62 | samakan desain halaman Contact dengan HOME
 - Tanggal: 2026-11-13
 - File: `_includes/head/custom.html`, `_pages/en-contact.md`, `_pages/id-contact.md`, `_pages/ja-contact.md`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

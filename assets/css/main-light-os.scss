@@ -7,7 +7,7 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 
 // Override with light mode variables for the MM core import
-$background-color: $background-color-light;
+$background-color: $washi-light;
 $text-color: $text-color-light;
 $primary-color: $primary-color-light;
 $border-color: $border-color-light;
