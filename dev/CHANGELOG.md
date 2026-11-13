@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #65 | Kembalikan teks Powered by di footer
+- Tanggal: 2026-11-13
+- File: `_includes/footer.html`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Mengembalikan tulisan `"Powered by Jekyll & Minimal Mistakes"` beserta tautannya di footer seluruh halaman bertema (`/id/`, `/en/`, `/ja/`, dan `404.html`) sesuai kondisi sebelum commit `#64` (`Bersihkan teks footer`), sambil tetap mempertahankan penghapusan tahun awal `2013` sehingga baris copyright menampilkan `&copy; {{ site_time }}. {{ site.data.ui-text[locale].powered_by | default: "Powered by" }} Jekyll & Minimal Mistakes.` tanpa mengubah `_config.yml`, CSS, warna, atau tata letak footer. Memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #64 | Bersihkan teks footer
 - Tanggal: 2026-11-13
 - File: `_config.yml`, `_includes/footer.html`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

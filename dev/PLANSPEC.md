@@ -510,3 +510,29 @@ Cek manual:
 - Cek lebar layar HP. Footer tetap rapi dan tidak ada teks terpotong.
 - Cari teks "2013" dan "Powered by" di folder _includes, _layouts, _data, _pages, dan _config.yml. Tidak ada sisa yang masih tampil di situs.
 - Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
+
+## Kembalikan teks Powered by di footer
+
+Tujuan: Item "Bersihkan teks footer" sebelumnya menghapus dua hal, yaitu tahun 2013 dan tulisan "Powered by Jekyll & Minimal Mistakes". Pemilik hanya ingin tahun 2013 yang hilang. Item ini mengembalikan tulisan "Powered by Jekyll & Minimal Mistakes".
+
+Tempat dan tampilan:
+- Cakupan: footer di semua halaman, di /id/, /en/, dan /ja/, termasuk halaman pilih bahasa dan halaman 404 kalau footer tampil di sana.
+- Tulisan "Powered by Jekyll & Minimal Mistakes" tampil lagi di footer persis seperti sebelum item "Bersihkan teks footer", termasuk link di dalamnya kalau ada dan posisinya di footer.
+- Copyright tetap "© 2026" tanpa 2013. Bagian ini tidak diubah.
+- Cara mengerjakan: lihat riwayat git dari item "Bersihkan teks footer" untuk menemukan file dan isi yang dihapus, lalu kembalikan hanya bagian "Powered by" itu secara manual. Jangan pakai git revert dan jangan mengembalikan 2013.
+
+Aturan:
+- Hanya file yang tadi diubah oleh item "Bersihkan teks footer" yang boleh diubah, dan hanya untuk mengembalikan tulisan "Powered by" itu. Tidak ada perubahan lain.
+- Tidak ada warna, font, atau CSS baru.
+- Tiga bahasa (id, en, ja) harus konsisten, sesuai pengecekan di scripts/check-languages.py.
+- Tidak mengubah header, background, kartu, link, dan tombol.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka HOME di /id/, /en/, dan /ja/. Footer menampilkan "© 2026" tanpa "2013", dan menampilkan "Powered by Jekyll & Minimal Mistakes".
+- Buka satu sub-halaman. Hasilnya sama.
+- Cek mode gelap dan mode terang. Footer tetap rapi dan terbaca.
+- Cek lebar layar HP. Footer tetap rapi dan tidak ada teks terpotong.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
