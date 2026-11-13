@@ -319,3 +319,37 @@ Cek manual:
 - Buka halaman Psychology. "Back to HOME" tampil dengan gaya tombol yang sama di semua sub-halaman yang punya tombol itu.
 - Ganti ke mode terang lalu ulangi dua cek di atas. Warna tetap terbaca dan tetap sama antar elemen.
 - Jalankan `python scripts/check-languages.py`. Tidak ada error baru dan tidak ada peringatan warna hardcode baru.
+
+## Samakan desain sub-halaman standar dengan HOME
+
+Tujuan: HOME sudah mengikuti desain Sumi & Washi (dev/DESIGN.md), tetapi sub-halaman masih tampil seperti gaya bawaan tema Minimal Mistakes. Item ini menyamakan sub-halaman standar dengan HOME. Acuannya HOME dan dev/DESIGN.md, bukan gaya baru dan bukan penyamaan acak antar halaman.
+
+Tempat dan tampilan:
+- Cakupan: Psychology, HR, Linguistics, About, 3E, dan halaman portofolio lain yang memakai layout sub-halaman yang sama. Halaman Developer dan Contact tidak termasuk, dikerjakan di sesi lain.
+- Judul halaman memakai gaya judul HOME: serif besar, bobot dan ukuran mengikuti HOME, tidak tebal bawaan tema.
+- Jarak antara header dan judul selega jarak header ke konten di HOME. Sekarang judul hampir menempel ke header.
+- Teks isi memakai font sans dan ukuran yang sama dengan teks isi HOME. Sekarang teks placeholder lebih besar dari HOME.
+- Lebar konten dan margin samping mengikuti HOME.
+- Link Next dan Previous memakai warna, underline, dan efek hover yang sama dengan link di HOME. Sekarang berwarna pink-ungu dengan underline seperti link bawaan tema.
+- Tombol "Back to HOME" memakai gaya tombol HOME, bukan border pink bawaan.
+- Cara mengerjakan: baca CSS dan layout HOME dulu, lalu pakai ulang nilai, variabel, dan class yang sudah dipakai HOME. Jangan menebak nilai dari tampilan.
+
+Aturan:
+- Hanya CSS yang diubah. Teks dan struktur HTML tidak diubah.
+- Tidak ada warna hex baru dan tidak ada warna hardcode. Semua warna dari variabel palet sesuai dev/DESIGN.md.
+- Perhatikan gotcha spesifisitas CSS pada tag `<a>` di dev/RULES.md. Styling bawaan tema untuk `a:hover` dan `a:visited` tidak boleh menimpa gaya link dan tombol yang baru.
+- Mode gelap dan mode terang harus sama-sama benar.
+- Tiga bahasa (id, en, ja) harus tampil sama. Pastikan font serif untuk judul bahasa Jepang tetap memakai font stack di dev/DESIGN.md.
+- Tampilan mobile tidak boleh rusak.
+- Tidak mengubah HOME, header, footer, background, halaman Developer, dan halaman Contact.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka halaman Psychology di /id/, /en/, dan /ja/ dalam mode gelap. Bandingkan dengan HOME: judul, jarak ke header, ukuran teks isi, dan lebar konten harus terasa satu keluarga.
+- Ulangi di mode terang. Teks, link, dan tombol tetap terbaca, dan tidak ada warna bawaan tema yang muncul.
+- Arahkan kursor ke link Next/Previous dan tombol Back to HOME, lalu klik salah satu dan kembali. Gaya hover dan visited sama dengan link di HOME.
+- Buka About dan 3E. Gayanya sama dengan Psychology.
+- Buka salah satu halaman di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.

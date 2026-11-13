@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #60 | samakan desain sub-halaman standar dengan HOME
+- Tanggal: 2026-11-13
+- File: `_includes/head/custom.html`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menyamakan tampilan sub-halaman standar (Psychology, HR, Linguistics, About, 3E, dan halaman portofolio standar lainnya di `/id/`, `/en/`, `/ja/`, tanpa mengubah HOME, header, footer, background, Developer, Contact, maupun 404) dengan desain Sumi & Washi pada HOME melalui CSS di `_includes/head/custom.html` tanpa mengubah HTML maupun menambah nilai hex/warna hardcode. Menyamakan lebar kontainer (`max-width: 80rem`) dan padding samping/atas (`3rem 1rem`, `3rem 2rem` pada `>= 768px`, `6rem 2rem` pada `>= 1024px`) dengan HOME serta menghapus ruang sidebar bawaan Minimal Mistakes, menyamakan judul halaman (`h1#page-title.page__title`) dengan gaya `h1.sumi-name` (serif `"Noto Serif", "Noto Serif JP", Georgia, serif`, bobot 400, 38px/48px di mobile dan 56px/68px di `>= 1024px`), menyamakan teks isi `.page__content` dengan teks sans HOME (`"Plus Jakarta Sans", system-ui, sans-serif`, 15px/26px, bobot 400), menyamakan link navigasi portofolio Sebelumnya/Berikutnya (termasuk perbaikan susunan satu kolom di mobile `<= 600px`) serta tombol "Back to HOME" (garis tepi tipis `--sumi-divider`, sudut siku, tanpa transisi, hover/active/focus-visible memakai `--sumi-accent`, serta `:visited` tetap `--sumi-text`), dan memperbarui `dev/PLAN.md` serta `dev/PLANSPEC.md`.
+
 ## #59 | samakan gaya link dan tombol
 - Tanggal: 2026-11-13
 - File: `_includes/head/custom.html`, `_pages/en-contact.md`, `_pages/en-portfolio-developer.md`, `_pages/id-contact.md`, `_pages/id-portfolio-developer.md`, `_pages/ja-contact.md`, `_pages/ja-portfolio-developer.md`, `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
