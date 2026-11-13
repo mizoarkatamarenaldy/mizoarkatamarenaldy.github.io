@@ -482,3 +482,31 @@ Cek manual:
 - Buka HOME dan satu sub-halaman di /en/ dan /ja/. Hasilnya sama dengan /id/.
 - Buka HOME dan satu sub-halaman di lebar layar HP. Tidak ada patch dan tidak ada beda warna.
 - Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
+
+## Bersihkan teks footer
+
+Tujuan: Footer masih memuat dua sisa teks bawaan tema: tahun awal "2013" di copyright dan tulisan "Powered by Jekyll & Minimal Mistakes". Keduanya tidak relevan untuk situs ini. Item ini menghapus keduanya.
+
+Tempat dan tampilan:
+- Cakupan: footer di semua halaman, di /id/, /en/, dan /ja/, termasuk halaman pilih bahasa dan halaman 404 kalau footer tampil di sana.
+- Copyright yang sekarang tampil "© 2013 - 2026" menjadi hanya tahun berjalan, yaitu "© 2026". Tahun diambil dari tanggal build Jekyll seperti sekarang, bukan angka yang ditulis tetap. Teks lain di baris copyright tidak diubah.
+- Tulisan "Powered by Jekyll & Minimal Mistakes" dihapus seluruhnya, termasuk di tiga bahasa.
+- Tata letak footer tidak diubah: nama di kiri, lalu About, Contact, dan copyright di kanan.
+- Cara mengerjakan: cari dulu dari mana kedua teks itu berasal (include footer, layout, _config.yml, atau data teks UI per bahasa). Hapus di sumbernya, jangan disembunyikan dengan CSS.
+
+Aturan:
+- Izin dari pemilik: boleh mengubah file yang menjadi sumber kedua teks itu (include footer, layout, _config.yml, atau data teks UI), hanya untuk dua penghapusan di atas. Tidak ada perubahan teks atau struktur lain.
+- Tidak ada warna, font, atau CSS baru.
+- Tiga bahasa (id, en, ja) harus konsisten, sesuai pengecekan di scripts/check-languages.py.
+- Tidak mengubah header, background, kartu, link, dan tombol.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka HOME di /id/, /en/, dan /ja/. Footer menampilkan "© 2026" tanpa "2013", dan tanpa "Powered by Jekyll & Minimal Mistakes".
+- Buka satu sub-halaman, halaman pilih bahasa, dan halaman 404. Hasilnya sama kalau footer tampil di sana.
+- Cek mode gelap dan mode terang. Footer tetap rapi dan terbaca.
+- Cek lebar layar HP. Footer tetap rapi dan tidak ada teks terpotong.
+- Cari teks "2013" dan "Powered by" di folder _includes, _layouts, _data, _pages, dan _config.yml. Tidak ada sisa yang masih tampil di situs.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.

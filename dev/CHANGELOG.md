@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #64 | Bersihkan teks footer
+- Tanggal: 2026-11-13
+- File: `_config.yml`, `_includes/footer.html`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menghapus dua sisa teks bawaan tema di footer pada seluruh halaman yang memakai layout tema (`/id/`, `/en/`, `/ja/`, serta `404.html`): tahun awal `"2013"` pada copyright dan tulisan `"Powered by Jekyll & Minimal Mistakes"` di ketiga bahasa tanpa menambah CSS, warna, font, maupun mengubah tata letak footer. Menghapus `since: "2013"` pada bagian `footer:` di `_config.yml` serta menghapus kondisi `site.footer.since` dan blok `powered_by` beserta tautan Jekyll dan Minimal Mistakes di `_includes/footer.html`, sehingga baris copyright hanya menampilkan `&copy; {{ site_time }}` (tahun berjalan dari tanggal build Jekyll `site.time | date: '%Y'`). Memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #63 | Samakan warna latar HOME dan sub-halaman
 - Tanggal: 2026-11-13
 - File: `_sass/minimal-mistakes/skins/_kanade.scss`, `assets/css/main-light-os.scss`, `assets/css/main-light.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

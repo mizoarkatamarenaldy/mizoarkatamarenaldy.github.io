@@ -67,6 +67,7 @@ mizoarkatamarenaldy.github.io/
 - [x] Samakan desain halaman Developer dengan HOME
 - [x] Samakan desain halaman Contact dengan HOME
 - [x] Samakan warna latar HOME dan sub-halaman
+- [x] Bersihkan teks footer
 
 ## Selesai
 - [x] Halaman pilih bahasa
