@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #59 | samakan gaya link dan tombol
+- Tanggal: 2026-11-13
+- File: `_includes/head/custom.html`, `_pages/en-contact.md`, `_pages/en-portfolio-developer.md`, `_pages/id-contact.md`, `_pages/id-portfolio-developer.md`, `_pages/ja-contact.md`, `_pages/ja-portfolio-developer.md`, `_sass/minimal-mistakes/skins/_kanade.scss`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menyamakan seluruh gaya link teks (motto 3E, tautan "Open on GitHub" di halaman Developer, navigasi portofolio Sebelumnya/Berikutnya, serta tautan teks dalam konten halaman) mengikuti acuan gaya motto 3E dengan warna teks utama (`--sumi-text`), garis bawah tipis 1px, serta aksen (`--sumi-accent`) saat hover pada perangkat berfitur hover, active, dan focus-visible. Menyamakan gaya tombol ("Back to HOME" dan tautan tombol lainnya di `.home-links` serta kartu tombol Contact tanpa mengubah border kartunya) mengikuti acuan "Back to HOME" termasuk state `:visited`, `:hover` di `@media (hover: hover)`, `:focus`, `:focus-visible`, dan `:active`. Meningkatkan spesifisitas CSS dan `!important` agar gaya bawaan Minimal Mistakes (`a:hover`, `a:visited`, `.page__content a:not(.btn):hover`) tidak menimpa gaya baru baik di mode gelap maupun mode terang tanpa warna hex baru atau warna hardcode, serta memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #58 | isi halaman Developer: tiga repo
 - Tanggal: 2026-11-12
 - File: `_pages/en-portfolio-developer.md`, `_pages/id-portfolio-developer.md`, `_pages/ja-portfolio-developer.md`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`

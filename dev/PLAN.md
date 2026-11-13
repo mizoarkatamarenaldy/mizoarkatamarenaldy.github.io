@@ -62,6 +62,7 @@ mizoarkatamarenaldy.github.io/
 - [x] Header dan footer Sumi & Washi
 - [x] Penyesuaian mobile Sumi & Washi
 - [x] Isi halaman Developer: tiga repo
+- [x] Samakan gaya link dan tombol
 
 ## Selesai
 - [x] Halaman pilih bahasa

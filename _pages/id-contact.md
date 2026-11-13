@@ -43,17 +43,27 @@ Mau ngobrol, kolaborasi, atau sekadar menyapa? Pilih jalur yang paling nyaman di
 div.contact-btn {
   cursor: default;
 }
-a.contact-btn:hover,
-a.contact-btn:focus-visible {
-  background-color: var(--kanade-accent);
-  color: var(--kanade-bg);
-  text-decoration: none;
-  outline: 2px solid var(--kanade-text);
-  outline-offset: 2px;
+html body .page__content a.contact-btn,
+html body .page__content a.contact-btn:visited,
+html body .page__content a.contact-btn:hover {
+  background-color: var(--kanade-bg) !important;
+  color: var(--kanade-text) !important;
+  text-decoration: none !important;
 }
-a.contact-btn:active {
-  background-color: var(--kanade-accent);
-  color: var(--kanade-bg);
+html body .page__content a.contact-btn:focus {
+  outline: none;
+}
+html body .page__content a.contact-btn:focus-visible {
+  background-color: var(--kanade-accent) !important;
+  color: var(--kanade-bg) !important;
+  text-decoration: none !important;
+  outline: 2px solid var(--kanade-text) !important;
+  outline-offset: 2px !important;
+}
+html body .page__content a.contact-btn:active {
+  background-color: var(--kanade-accent) !important;
+  color: var(--kanade-bg) !important;
+  text-decoration: none !important;
 }
 .contact-platform {
   font-weight: bold;
@@ -76,17 +86,27 @@ a.contact-btn:active {
   height: 100%;
   box-sizing: border-box;
 }
-a.contact-btn-col:hover,
-a.contact-btn-col:focus-visible {
-  background-color: var(--kanade-accent);
-  color: var(--kanade-bg);
-  text-decoration: none;
-  outline: 2px solid var(--kanade-text);
-  outline-offset: 2px;
+html body .page__content a.contact-btn-col,
+html body .page__content a.contact-btn-col:visited,
+html body .page__content a.contact-btn-col:hover {
+  background-color: var(--kanade-bg) !important;
+  color: var(--kanade-text) !important;
+  text-decoration: none !important;
 }
-a.contact-btn-col:active {
-  background-color: var(--kanade-accent);
-  color: var(--kanade-bg);
+html body .page__content a.contact-btn-col:focus {
+  outline: none;
+}
+html body .page__content a.contact-btn-col:focus-visible {
+  background-color: var(--kanade-accent) !important;
+  color: var(--kanade-bg) !important;
+  text-decoration: none !important;
+  outline: 2px solid var(--kanade-text) !important;
+  outline-offset: 2px !important;
+}
+html body .page__content a.contact-btn-col:active {
+  background-color: var(--kanade-accent) !important;
+  color: var(--kanade-bg) !important;
+  text-decoration: none !important;
 }
 .yt-header {
   display: flex;
@@ -102,10 +122,11 @@ a.contact-btn-col:active {
   width: 100%;
 }
 @media (hover: hover) {
-  a.contact-btn:hover,
-  a.contact-btn-col:hover {
-    background-color: var(--kanade-accent);
-    color: var(--kanade-bg);
+  html body .page__content a.contact-btn:hover,
+  html body .page__content a.contact-btn-col:hover {
+    background-color: var(--kanade-accent) !important;
+    color: var(--kanade-bg) !important;
+    text-decoration: none !important;
   }
 }
 @media (prefers-reduced-motion: reduce) {

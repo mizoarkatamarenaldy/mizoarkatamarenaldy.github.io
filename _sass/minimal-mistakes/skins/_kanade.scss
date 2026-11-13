@@ -291,7 +291,7 @@ html body.layout--home-sumi #main.sumi-home .sumi-motto a:hover {
   line-height: 30px;
   color: var(--sumi-text) !important;
   text-decoration: none !important;
-  border-bottom: 1px solid var(--sumi-text);
+  border-bottom: 1px solid var(--sumi-text) !important;
   padding-bottom: 2px;
   white-space: normal;
   overflow-wrap: break-word;
@@ -304,6 +304,10 @@ html body.layout--home-sumi #main.sumi-home .sumi-motto a:hover {
     border-bottom-color: var(--sumi-accent) !important;
     text-decoration: none !important;
   }
+}
+
+html body.layout--home-sumi #main.sumi-home .sumi-motto a:focus {
+  outline: none;
 }
 
 html body.layout--home-sumi #main.sumi-home .sumi-motto a:active,

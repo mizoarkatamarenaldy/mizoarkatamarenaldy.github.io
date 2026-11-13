@@ -41,12 +41,13 @@ change_lang_text: "言語を変更"
   line-height: 1.6;
 }
 .page__content a.dev-repo-link,
-.page__content a.dev-repo-link:visited {
+.page__content a.dev-repo-link:visited,
+.page__content a.dev-repo-link:hover {
   display: inline-block;
   margin-top: 0.25rem;
-  color: var(--kanade-text) !important;
+  color: var(--sumi-text) !important;
   text-decoration: none !important;
-  border-bottom: 1px solid var(--sumi-accent);
+  border-bottom: 1px solid var(--sumi-text) !important;
   padding-bottom: 2px;
   font-weight: 500;
 }
@@ -56,6 +57,9 @@ change_lang_text: "言語を変更"
     border-bottom-color: var(--sumi-accent) !important;
     text-decoration: none !important;
   }
+}
+.page__content a.dev-repo-link:focus {
+  outline: none;
 }
 .page__content a.dev-repo-link:active,
 .page__content a.dev-repo-link:focus-visible {

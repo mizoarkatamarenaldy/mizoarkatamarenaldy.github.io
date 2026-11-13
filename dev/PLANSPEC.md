@@ -290,3 +290,32 @@ Cek manual:
 - Jalankan python scripts/check-languages.py: tidak ada error. Peringatan placeholder untuk "[TEKS DARI MIZO]" boleh muncul.
 - Ganti bahasa lewat tombol di masthead: pindah ke halaman Developer yang setara.
 - Buka di mode gelap dan mode terang: teks dan tautan terbaca.
+
+## Samakan gaya link dan tombol
+
+Tujuan: Link dan tombol di seluruh situs tampil dengan gaya yang sama, karena sekarang ada empat gaya berbeda dan situs terasa tidak konsisten.
+
+Tempat dan tampilan:
+- Link teks yang dipakai sekarang: motto 3E di HOME (italic, underline putih), "Next/Previous" di navigasi portofolio (warna pink-ungu dengan underline, terlihat seperti warna link bawaan tema), dan "Open on GitHub" di halaman Developer (putih dengan underline abu).
+- Tombol yang dipakai sekarang: "Back to HOME" (border pink).
+- Semua link teks memakai satu gaya, dengan gaya link motto 3E sebagai acuan (warna teks utama, underline tipis).
+- Semua tombol memakai satu gaya, dengan gaya "Back to HOME" sebagai acuan.
+- Gaya hover, focus, dan visited juga disamakan di semua link dan tombol tersebut.
+
+Aturan:
+- Hanya CSS yang diubah. Teks, urutan, dan struktur HTML tidak berubah.
+- Motto 3E tetap italic. Yang disamakan hanya warna, underline, hover, dan visited.
+- Warna, ukuran, dan font diambil dari token di dev/DESIGN.md. Tidak ada warna hex baru dan tidak ada warna hardcode.
+- Gaya bawaan Minimal Mistakes untuk `a:hover` dan `a:visited` tidak boleh menimpa gaya baru. Ikuti gotcha spesifisitas CSS di dev/RULES.md.
+- Berlaku di mode gelap dan mode terang, di tiga bahasa (id, en, ja).
+- Border kartu (kartu Developer dan Contact) tidak diubah di item ini.
+- Link di masthead dan footer tidak diubah di item ini.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka HOME, halaman Psychology, dan halaman Developer di mode gelap. Motto 3E, "Next HR", dan "Open on GitHub" tampil dengan gaya link yang sama, termasuk saat kursor diarahkan dan setelah link pernah dikunjungi.
+- Buka halaman Psychology. "Back to HOME" tampil dengan gaya tombol yang sama di semua sub-halaman yang punya tombol itu.
+- Ganti ke mode terang lalu ulangi dua cek di atas. Warna tetap terbaca dan tetap sama antar elemen.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error baru dan tidak ada peringatan warna hardcode baru.
