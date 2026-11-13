@@ -354,6 +354,40 @@ Cek manual:
 - Buka salah satu halaman di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
 - Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
 
+## Samakan desain halaman Contact dengan HOME
+
+Tujuan: Halaman Contact masih tampil seperti gaya bawaan tema dan punya dua bug tampilan. HOME sudah mengikuti desain Sumi & Washi (dev/DESIGN.md). Item ini menyamakan kartu Contact dengan gaya HOME dan memperbaiki dua bug tersebut. Acuannya HOME dan dev/DESIGN.md, bukan gaya baru.
+
+Tempat dan tampilan:
+- Cakupan: hanya halaman Contact di /id/, /en/, dan /ja/.
+- Kartu: border pink diganti dengan bahasa visual HOME (garis tipis dari token pembagi di dev/DESIGN.md, jarak lega). Jarak dalam dan jarak antar kartu mengikuti HOME.
+- Teks label dan isi kartu memakai font, ukuran, dan warna yang sama dengan teks di HOME. Link di dalam kartu memakai gaya link HOME: warna, underline, dan efek hover yang sama.
+- Bug 1, label ganda: beberapa kartu menampilkan nama platform dua kali ("LinkedIn LinkedIn", "Wantedly Wantedly"). Cari penyebabnya dulu. Kalau penyebabnya CSS, perbaiki di CSS. Kalau penyebabnya teks di HTML, hapus salah satunya sehingga nama platform tampil satu kali di setiap kartu yang bermasalah. Perbaikan ini harus berlaku sama di tiga bahasa.
+- Bug 2, handle GitHub terpotong: handle GitHub terpotong di tengah kata dan membuat kartunya lebih tinggi dari kartu lain. Perbaiki di CSS supaya handle tampil utuh dan tinggi semua kartu sejajar. Teks handle tidak diubah.
+- Sub-halaman standar dan halaman Developer sudah disamakan dengan HOME di sesi sebelumnya. Pakai ulang nilai, variabel, dan class dari sana dan dari HOME untuk judul halaman, jarak ke header, lebar konten, dan tombol Back to HOME. Jangan membuat nilai baru.
+- Cara mengerjakan: baca CSS HOME dan halaman yang sudah disamakan dulu, lalu pakai ulang nilainya. Jangan menebak nilai dari tampilan.
+
+Aturan:
+- Izin dari pemilik: perubahan di luar CSS hanya boleh satu hal, yaitu menghapus teks nama platform yang ganda di file halaman Contact (id, en, ja) kalau penyebab bug 1 ada di teks. Tidak ada perubahan teks atau struktur HTML lain.
+- Tidak ada warna hex baru dan tidak ada warna hardcode. Semua warna dari variabel palet sesuai dev/DESIGN.md.
+- Perhatikan gotcha spesifisitas CSS pada tag `<a>` di dev/RULES.md. Styling bawaan tema untuk `a:hover` dan `a:visited` tidak boleh menimpa gaya link di kartu.
+- Mode gelap dan mode terang harus sama-sama benar.
+- Tiga bahasa (id, en, ja) harus tampil sama dan konsisten, sesuai pengecekan di scripts/check-languages.py.
+- Tampilan mobile tidak boleh rusak. Tidak ada teks terpotong dan kartu tidak melebar keluar layar.
+- Tidak mengubah HOME, sub-halaman standar, halaman Developer, header, footer, dan background.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka halaman Contact di /id/, /en/, dan /ja/ dalam mode gelap. Bandingkan dengan HOME: garis, jarak, font, dan warna link terasa satu keluarga. Tidak ada border pink.
+- Cek semua kartu: nama platform tampil satu kali, termasuk LinkedIn dan Wantedly.
+- Cek kartu GitHub: handle tampil utuh dan tinggi kartu sama dengan kartu lain yang sejajar.
+- Ulangi di mode terang. Teks dan link tetap terbaca dan tidak ada warna bawaan tema yang muncul.
+- Arahkan kursor ke link di kartu, lalu klik dan kembali. Gaya hover dan visited sama dengan link di HOME.
+- Buka halaman Contact di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
+
 ## Samakan desain halaman Developer dengan HOME
 
 Tujuan: Halaman Developer (tiga kartu repo) masih tampil seperti gaya bawaan tema, sementara HOME sudah mengikuti desain Sumi & Washi (dev/DESIGN.md). Item ini menyamakan kartu repo dengan gaya HOME. Acuannya HOME dan dev/DESIGN.md, bukan gaya baru.
@@ -383,4 +417,38 @@ Cek manual:
 - Ulangi di mode terang. Teks dan link tetap terbaca dan tidak ada warna bawaan tema yang muncul.
 - Arahkan kursor ke link "Open on GitHub", lalu klik dan kembali. Gaya hover dan visited sama dengan link di HOME.
 - Buka halaman Developer di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
+- Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.
+
+## Samakan desain halaman Contact dengan HOME
+
+Tujuan: Halaman Contact masih tampil seperti gaya bawaan tema dan punya dua bug tampilan. HOME sudah mengikuti desain Sumi & Washi (dev/DESIGN.md). Item ini menyamakan kartu Contact dengan gaya HOME dan memperbaiki dua bug tersebut. Acuannya HOME dan dev/DESIGN.md, bukan gaya baru.
+
+Tempat dan tampilan:
+- Cakupan: hanya halaman Contact di /id/, /en/, dan /ja/.
+- Kartu: border pink diganti dengan bahasa visual HOME (garis tipis dari token pembagi di dev/DESIGN.md, jarak lega). Jarak dalam dan jarak antar kartu mengikuti HOME.
+- Teks label dan isi kartu memakai font, ukuran, dan warna yang sama dengan teks di HOME. Link di dalam kartu memakai gaya link HOME: warna, underline, dan efek hover yang sama.
+- Bug 1, label ganda: beberapa kartu menampilkan nama platform dua kali ("LinkedIn LinkedIn", "Wantedly Wantedly"). Cari penyebabnya dulu. Kalau penyebabnya CSS, perbaiki di CSS. Kalau penyebabnya teks di HTML, hapus salah satunya sehingga nama platform tampil satu kali di setiap kartu yang bermasalah. Perbaikan ini harus berlaku sama di tiga bahasa.
+- Bug 2, handle GitHub terpotong: handle GitHub terpotong di tengah kata dan membuat kartunya lebih tinggi dari kartu lain. Perbaiki di CSS supaya handle tampil utuh dan tinggi semua kartu sejajar. Teks handle tidak diubah.
+- Sub-halaman standar dan halaman Developer sudah disamakan dengan HOME di sesi sebelumnya. Pakai ulang nilai, variabel, dan class dari sana dan dari HOME untuk judul halaman, jarak ke header, lebar konten, dan tombol Back to HOME. Jangan membuat nilai baru.
+- Cara mengerjakan: baca CSS HOME dan halaman yang sudah disamakan dulu, lalu pakai ulang nilainya. Jangan menebak nilai dari tampilan.
+
+Aturan:
+- Izin dari pemilik: perubahan di luar CSS hanya boleh satu hal, yaitu menghapus teks nama platform yang ganda di file halaman Contact (id, en, ja) kalau penyebab bug 1 ada di teks. Tidak ada perubahan teks atau struktur HTML lain.
+- Tidak ada warna hex baru dan tidak ada warna hardcode. Semua warna dari variabel palet sesuai dev/DESIGN.md.
+- Perhatikan gotcha spesifisitas CSS pada tag `<a>` di dev/RULES.md. Styling bawaan tema untuk `a:hover` dan `a:visited` tidak boleh menimpa gaya link di kartu.
+- Mode gelap dan mode terang harus sama-sama benar.
+- Tiga bahasa (id, en, ja) harus tampil sama dan konsisten, sesuai pengecekan di scripts/check-languages.py.
+- Tampilan mobile tidak boleh rusak. Tidak ada teks terpotong dan kartu tidak melebar keluar layar.
+- Tidak mengubah HOME, sub-halaman standar, halaman Developer, header, footer, dan background.
+
+Data:
+- Tidak ada perubahan struktur data, sinkron Drive, ekspor, atau impor.
+
+Cek manual:
+- Buka halaman Contact di /id/, /en/, dan /ja/ dalam mode gelap. Bandingkan dengan HOME: garis, jarak, font, dan warna link terasa satu keluarga. Tidak ada border pink.
+- Cek semua kartu: nama platform tampil satu kali, termasuk LinkedIn dan Wantedly.
+- Cek kartu GitHub: handle tampil utuh dan tinggi kartu sama dengan kartu lain yang sejajar.
+- Ulangi di mode terang. Teks dan link tetap terbaca dan tidak ada warna bawaan tema yang muncul.
+- Arahkan kursor ke link di kartu, lalu klik dan kembali. Gaya hover dan visited sama dengan link di HOME.
+- Buka halaman Contact di lebar layar HP. Tidak ada teks terpotong dan tidak ada scroll samping.
 - Jalankan `python scripts/check-languages.py`. Tidak ada error, dan tidak ada peringatan warna hardcode baru.

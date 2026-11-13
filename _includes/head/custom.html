@@ -319,9 +319,9 @@ html body .page__content .portfolio-nav-wrapper a.home-btn:focus-visible {
   padding-bottom: 2px;
 }
 
-/* Sub-halaman standar dan Developer Sumi & Washi (kecuali HOME, Contact, dan 404) */
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)),
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) * {
+/* Sub-halaman standar, Developer, dan Contact Sumi & Washi (kecuali HOME dan 404) */
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main * {
   border-radius: 0 !important;
   box-shadow: none !important;
   transition: none !important;
@@ -329,7 +329,7 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   animation: none !important;
   -webkit-animation: none !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main {
   width: 100% !important;
   max-width: 80rem !important;
   margin-left: auto !important;
@@ -339,29 +339,29 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   float: none !important;
 }
 @media (min-width: 768px) {
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main {
     padding: 3rem 2rem !important;
   }
 }
 @media (min-width: 1024px) {
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main {
     padding: 6rem 2rem !important;
   }
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page {
   float: none !important;
   width: 100% !important;
   padding-inline-end: 0 !important;
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__inner-wrap {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__inner-wrap {
   float: none !important;
   margin-top: 0 !important;
   margin-inline: 0 !important;
   width: 100% !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) h1#page-title.page__title {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main h1#page-title.page__title {
   font-family: "Noto Serif", "Noto Serif JP", Georgia, serif !important;
   font-size: 38px !important;
   line-height: 48px !important;
@@ -376,17 +376,17 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   word-break: keep-all;
 }
 @media (min-width: 1024px) {
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) h1#page-title.page__title {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main h1#page-title.page__title {
     font-size: 56px !important;
     line-height: 68px !important;
     letter-spacing: -0.02em !important;
   }
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) h1#page-title.page__title a,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) h1#page-title.page__title a:visited,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) h1#page-title.page__title a:hover,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) h1#page-title.page__title a:active,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) h1#page-title.page__title a:focus-visible {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main h1#page-title.page__title a,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main h1#page-title.page__title a:visited,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main h1#page-title.page__title a:hover,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main h1#page-title.page__title a:active,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main h1#page-title.page__title a:focus-visible {
   font-family: inherit !important;
   font-size: inherit !important;
   line-height: inherit !important;
@@ -396,7 +396,7 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   text-decoration: none !important;
   border: none !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content {
   float: none !important;
   margin-inline: 0 !important;
   width: 100% !important;
@@ -407,50 +407,50 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   color: var(--sumi-text);
   overflow-wrap: break-word;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content p,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content li,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content dl {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content p,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content li,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content dl {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   font-size: 15px;
   line-height: 26px;
   font-weight: 400;
   color: var(--sumi-text);
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content h2,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content h3,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content h4,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content h5,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content h6 {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content h2,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content h3,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content h4,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content h5,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content h6 {
   font-family: "Noto Serif", "Noto Serif JP", Georgia, serif;
   font-weight: 400;
   color: var(--sumi-text);
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content h2 {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content h2 {
   border-bottom-color: var(--sumi-divider);
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) footer.page__meta:not(:has(*)) {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main footer.page__meta:not(:has(*)) {
   display: none !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper {
   margin: 2rem 0 1rem;
 }
 @media (max-width: 600px) {
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper {
     grid-template-columns: 1fr;
   }
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper > div[style*="visibility"] {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper > div[style*="visibility"] {
     display: none;
   }
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper .next-btn {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper .next-btn {
     grid-column: 1;
     align-items: flex-start;
     justify-self: start;
     text-align: left;
   }
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn:visited,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn:hover {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn:visited,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn:hover {
   min-height: 44px;
   padding: 0.5rem 0;
   color: var(--sumi-text) !important;
@@ -459,24 +459,24 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   border: none !important;
 }
 @media (hover: hover) {
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn:hover {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn:hover {
     color: var(--sumi-accent) !important;
     text-decoration: none !important;
   }
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn:focus {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn:focus {
   outline: none;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn:active,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn:focus-visible {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn:active,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn:focus-visible {
   color: var(--sumi-accent) !important;
   text-decoration: none !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-wrapper a.home-btn:focus-visible {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-wrapper a.home-btn:focus-visible {
   outline: 2px solid var(--sumi-text) !important;
   outline-offset: 2px !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-label {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-label {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   font-size: 10px;
   line-height: 14px;
@@ -487,7 +487,7 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   opacity: 1;
   margin-bottom: 0.35rem;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .portfolio-nav-title {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .portfolio-nav-title {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -496,9 +496,9 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .home-links a.home-btn,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .home-links a.home-btn:visited,
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .home-links a.home-btn:hover {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .home-links a.home-btn,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .home-links a.home-btn:visited,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .home-links a.home-btn:hover {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -515,23 +515,23 @@ html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:ha
   text-decoration: none !important;
 }
 @media (hover: hover) {
-  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .home-links a.home-btn:hover {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .home-links a.home-btn:hover {
     background: none !important;
     color: var(--sumi-accent) !important;
     border-color: var(--sumi-accent) !important;
     text-decoration: none !important;
   }
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .home-links a.home-btn:active {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .home-links a.home-btn:active {
   background: none !important;
   color: var(--sumi-accent) !important;
   border-color: var(--sumi-accent) !important;
   text-decoration: none !important;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .home-links a.home-btn:focus {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .home-links a.home-btn:focus {
   outline: none;
 }
-html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main:not(:has(.contact-group)) .page__content .home-links a.home-btn:focus-visible {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .home-links a.home-btn:focus-visible {
   background: none !important;
   color: var(--sumi-accent) !important;
   border-color: var(--sumi-accent) !important;

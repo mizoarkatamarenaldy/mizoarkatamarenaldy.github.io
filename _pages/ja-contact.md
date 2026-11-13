@@ -9,130 +9,159 @@ change_lang_text: "言語を変更"
 おしゃべり、コラボレーション、または単に挨拶したいですか？以下の最も快適な方法をお選びください。
 
 <style>
-.contact-group {
-  margin-top: 2em;
-  margin-bottom: 2em;
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .contact-group {
+  margin: 2.5rem 0;
 }
-.contact-links {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .contact-group h2 {
+  margin: 0 0 1.25rem 0;
+  padding: 0 0 0.75rem 0;
+  border: none;
+  border-bottom: 1px solid var(--sumi-divider);
+  font-family: "Noto Serif", "Noto Serif JP", Georgia, serif;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 400;
+  color: var(--sumi-text);
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .contact-links {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-  margin: 1em 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin: 0;
   padding: 0;
   list-style: none;
-}
-@media (min-width: 600px) {
-  .contact-links {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--kanade-accent);
-  border-radius: 4px;
-  background-color: var(--kanade-bg);
-  color: var(--kanade-text);
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  height: 100%;
+  width: 100%;
   box-sizing: border-box;
 }
-div.contact-btn {
-  cursor: default;
+@media (min-width: 768px) {
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .contact-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+  }
 }
-html body .page__content a.contact-btn,
-html body .page__content a.contact-btn:visited,
-html body .page__content a.contact-btn:hover {
-  background-color: var(--kanade-bg) !important;
-  color: var(--kanade-text) !important;
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .contact-links li {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  display: flex;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:visited,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:hover,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:visited,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:hover {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 1rem;
+  border: 1px solid var(--sumi-divider) !important;
+  background: none !important;
+  color: var(--sumi-text) !important;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
   text-decoration: none !important;
+  box-sizing: border-box;
 }
-html body .page__content a.contact-btn:focus {
-  outline: none;
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
 }
-html body .page__content a.contact-btn:focus-visible {
-  background-color: var(--kanade-accent) !important;
-  color: var(--kanade-bg) !important;
-  text-decoration: none !important;
-  outline: 2px solid var(--kanade-text) !important;
-  outline-offset: 2px !important;
-}
-html body .page__content a.contact-btn:active {
-  background-color: var(--kanade-accent) !important;
-  color: var(--kanade-bg) !important;
-  text-decoration: none !important;
-}
-.contact-platform {
-  font-weight: bold;
-  margin-right: 1rem;
-}
-.contact-text {
-  text-align: right;
-  word-break: break-word;
-}
-.contact-btn-col {
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col {
   display: flex;
   flex-direction: column;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--kanade-accent);
-  border-radius: 4px;
-  background-color: var(--kanade-bg);
-  color: var(--kanade-text);
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  height: 100%;
-  box-sizing: border-box;
-}
-html body .page__content a.contact-btn-col,
-html body .page__content a.contact-btn-col:visited,
-html body .page__content a.contact-btn-col:hover {
-  background-color: var(--kanade-bg) !important;
-  color: var(--kanade-text) !important;
-  text-decoration: none !important;
-}
-html body .page__content a.contact-btn-col:focus {
-  outline: none;
-}
-html body .page__content a.contact-btn-col:focus-visible {
-  background-color: var(--kanade-accent) !important;
-  color: var(--kanade-bg) !important;
-  text-decoration: none !important;
-  outline: 2px solid var(--kanade-text) !important;
-  outline-offset: 2px !important;
-}
-html body .page__content a.contact-btn-col:active {
-  background-color: var(--kanade-accent) !important;
-  color: var(--kanade-bg) !important;
-  text-decoration: none !important;
-}
-.yt-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.yt-desc {
-  font-size: 0.85em;
-  margin-top: 0.5rem;
-  opacity: 0.9;
-  line-height: 1.4;
-  width: 100%;
+  justify-content: flex-start;
+  gap: 0.5rem;
 }
 @media (hover: hover) {
-  html body .page__content a.contact-btn:hover,
-  html body .page__content a.contact-btn-col:hover {
-    background-color: var(--kanade-accent) !important;
-    color: var(--kanade-bg) !important;
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:hover,
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:hover {
+    background: none !important;
+    color: var(--sumi-accent) !important;
+    border-color: var(--sumi-accent) !important;
     text-decoration: none !important;
   }
-}
-@media (prefers-reduced-motion: reduce) {
-  .contact-btn, .contact-btn-col {
-    transition: none;
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:hover .contact-platform,
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:hover .contact-text,
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:hover .contact-platform,
+  html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:hover .contact-text {
+    color: var(--sumi-accent) !important;
   }
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:focus,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:focus {
+  outline: none;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:active,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:focus-visible,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:active,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:focus-visible {
+  background: none !important;
+  color: var(--sumi-accent) !important;
+  border-color: var(--sumi-accent) !important;
+  text-decoration: none !important;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:active .contact-platform,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:active .contact-text,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:focus-visible .contact-platform,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:focus-visible .contact-text,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:active .contact-platform,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:active .contact-text,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:focus-visible .contact-platform,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:focus-visible .contact-text {
+  color: var(--sumi-accent) !important;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn:focus-visible,
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content a.contact-btn-col:focus-visible {
+  outline: 2px solid var(--sumi-text) !important;
+  outline-offset: 2px !important;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .contact-platform {
+  flex-shrink: 0;
+  margin: 0;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 600;
+  color: var(--sumi-text);
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .contact-text {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 0 0 auto;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--sumi-text-secondary);
+  text-align: right;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .yt-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+  width: 100%;
+}
+html:is([lang="id"], [lang="en"], [lang="ja"]) body.layout--single #main .page__content .yt-desc {
+  margin: 0;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--sumi-text-secondary);
+  overflow-wrap: break-word;
 }
 </style>
 
@@ -142,13 +171,11 @@ html body .page__content a.contact-btn-col:active {
     <li>
       <a href="https://www.linkedin.com/in/mizoridh" class="contact-btn" target="_blank" rel="noopener noreferrer">
         <span class="contact-platform">LinkedIn</span>
-        <span class="contact-text">LinkedIn</span>
       </a>
     </li>
     <li>
       <a href="https://www.wantedly.com/id/muhammad_ali_ridho" class="contact-btn" target="_blank" rel="noopener noreferrer">
         <span class="contact-platform">Wantedly</span>
-        <span class="contact-text">Wantedly</span>
       </a>
     </li>
     <li>

@@ -10,6 +10,11 @@ Aturan:
 
 ---
 
+## #62 | samakan desain halaman Contact dengan HOME
+- Tanggal: 2026-11-13
+- File: `_includes/head/custom.html`, `_pages/en-contact.md`, `_pages/id-contact.md`, `_pages/ja-contact.md`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
+- Alasan: Menyamakan tampilan halaman Contact di `/id/`, `/en/`, dan `/ja/` dengan desain Sumi & Washi pada HOME dan sub-halaman standar tanpa mengubah struktur HTML selain menghapus label platform ganda, serta tanpa warna hex baru atau warna hardcode. Menghapus pengecualian `:not(:has(.contact-group))` pada CSS sub-halaman di `_includes/head/custom.html` sehingga halaman Contact memakai ulang tata letak kontainer (`max-width: 80rem` dan padding `3rem 1rem` / `3rem 2rem` / `6rem 2rem`), judul halaman serif (`h1#page-title.page__title`), teks isi sans (`15px/26px`), dan tombol "Back to HOME" bergaya Sumi & Washi. Memperbarui `<style>` pada ketiga file `_pages/*-contact.md` agar judul grup memakai font serif (`"Noto Serif", "Noto Serif JP", Georgia, serif`, `22px/30px`, bobot 400) dengan garis pembagi `--sumi-divider`, kartu memakai garis tepi tipis `--sumi-divider` tanpa latar, tanpa border-radius, dan tanpa animasi/transisi dengan hover/active/focus-visible `--sumi-accent` (spesifisitas tinggi agar `:hover` dan `:visited` tidak tertimpa tema), teks label memakai sans `15px/26px` bobot 600 `--sumi-text` serta teks isi/deskripsi memakai sans `15px/26px` `--sumi-text-secondary`. Memperbaiki bug label ganda dengan menghapus `<span class="contact-text">` ganda pada kartu LinkedIn dan Wantedly di ketiga bahasa, dan memperbaiki bug handle GitHub terpotong serta tinggi kartu tidak sejajar lewat grid `minmax(0, 1fr)` (2 kolom sejajar `grid-auto-rows: 1fr` mulai `768px`), `flex-wrap: wrap`, `flex-shrink: 0` pada `.contact-platform`, serta `word-break: normal` + `overflow-wrap: break-word` pada `.contact-text`. Memperbarui `dev/PLAN.md` dan `dev/PLANSPEC.md`.
+
 ## #61 | samakan desain halaman Developer dengan HOME
 - Tanggal: 2026-11-13
 - File: `_includes/head/custom.html`, `_pages/en-portfolio-developer.md`, `_pages/id-portfolio-developer.md`, `_pages/ja-portfolio-developer.md`, `dev/CHANGELOG.md`, `dev/PLAN.md`, `dev/PLANSPEC.md`
